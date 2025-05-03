@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>M&MGAMERV2</title>
   <style>
+    @font-face {
+      font-family: 'Copperplate';
+      src: local('Copperplate');
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background-image: url('https://wallpapercave.com/wp/wp2757874.jpg');
+      background-image: url('https://www.itl.cat/pngfile/big/256-2568578_color-cycling-pixel-art.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -46,11 +51,30 @@
       padding-top: 100px;
     }
 
-    h1, p {
+    h1 {
       background-color: rgba(0, 0, 0, 0.6);
       display: inline-block;
       padding: 10px 20px;
       border-radius: 10px;
+      font-family: 'Copperplate', Arial, sans-serif;
+      text-transform: uppercase;
+    }
+
+    p.description {
+      background-color: rgba(0, 0, 0, 0.7);
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-size: 1.3em;
+      font-weight: 500;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
 
     .button {
@@ -84,9 +108,15 @@
   <!-- Contenido principal -->
   <div class="container" id="inicio">
     <h1>Bienvenido a M&M GAMERV2</h1><br><br>
-    <p>Este es el sitio web oficial de VENTA DE JUEGOS. ¡Gracias por visitarlo!</p><br><br>
+    <p class="description">Claro, aquí tienes una descripción corta enfocada en ventas de juegos para Xbox One o Series:
+
+**"Descubre los mejores juegos para Xbox One y Series X|S al mejor precio. ¡Acción, aventura y diversión sin límites en tu consola favorita!"**
+
+¿Quieres que tenga un estilo más formal, juvenil o técnico?
+</p><br><br>
     <a href="https://link-a-tu-juego.com" class="button">Jugar Ahora</a>
   </div>
 
 </body>
 </html>
+
