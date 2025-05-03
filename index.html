@@ -28,9 +28,9 @@
       padding: 15px;
       text-align: center;
       position: absolute;
-      top: 50%;
+      top: calc(50% + 5cm); /* Desplaza 5 cm hacia abajo desde el centro */
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       z-index: 999;
     }
 
@@ -50,7 +50,7 @@
     /* Contenido */
     .container {
       text-align: center;
-      padding-top: 200px;  /* Aumenta el valor de padding-top para mover la descripción más abajo */
+      padding-top: 100px;
     }
 
     h1 {
@@ -85,7 +85,7 @@
       font-weight: 500;
       opacity: 0;
       animation: fadeIn 2s ease forwards;
-      margin-top: 30px;  /* Añadido margen para separar la descripción */
+      margin-top: 30px;
     }
 
     @keyframes fadeIn {
