@@ -554,13 +554,18 @@ function cerrarCarrito() {
 function pagarAhora() {
 
   let total = 0;
-  let mensaje = "🛒 *NUEVO PEDIDO MYMGAMERV2*\n\n";
+  let mensaje = "🧾 *MYMGAMERV2 - FACTURA DE COMPRA*\n";
+  mensaje += "━━━━━━━━━━━━━━━━━━\n\n";
 
   for (let juego in juegos) {
     const item = juegos[juego];
     const subtotal = item.cantidad * item.precio;
 
-    mensaje += `🎮 ${juego} x${item.cantidad} = $${subtotal}\n`;
+    mensaje += `🎮 *${juego}*\n`;
+    mensaje += `   Cantidad: ${item.cantidad}\n`;
+    mensaje += `   Precio unitario: $${item.precio}\n`;
+    mensaje += `   Subtotal: $${subtotal}\n\n`;
+
     total += subtotal;
   }
 
@@ -569,16 +574,17 @@ function pagarAhora() {
     return;
   }
 
-  mensaje += `\n💰 *TOTAL: $${total}*\n`;
-  mensaje += `\n👉 Quiero hacer el pedido`;
+  mensaje += "━━━━━━━━━━━━━━━━━━\n";
+  mensaje += `💰 *TOTAL A PAGAR: $${total}*\n\n`;
+  mensaje += "📦 Estado: Pendiente de confirmación\n";
+  mensaje += "👨‍💻 Gracias por tu compra en MYMGAMERV2\n";
 
-  const telefono = "573112031399"; // tu número WhatsApp
+  const telefono = "573112031399";
   const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
-  // abrir WhatsApp
   window.open(url, "_blank");
 
-  // limpiar carrito después de enviar
+  // limpiar carrito
   juegos = {};
   cantidad = 0;
   carrito.innerHTML = `🛒 Carrito (0)`;
