@@ -730,23 +730,27 @@ function pagarAhora() {
   mensaje += `💰 TOTAL: $${total}%0A`;
   mensaje += "📦 Pedido MYMGAMERV2";
 
-  window.open(
-  `https://wa.me/573112031399?text=${mensaje}`,
-  "_blank"
+ const enviado = confirm(
+"Se abrirá WhatsApp. ¿Deseas continuar?"
 );
 
-if(confirm("¿Ya enviaste el pedido por WhatsApp?")){
+if(enviado){
 
-    juegos = {};
-    cantidad = 0;
+  window.open(
+    `https://wa.me/573112031399?text=${mensaje}`,
+    "_blank"
+  );
 
-    localStorage.removeItem("carritoJuegos");
-    localStorage.removeItem("carritoCantidad");
+  juegos = {};
+  cantidad = 0;
 
-    actualizarCarrito();
-    cerrarCarrito();
+  localStorage.removeItem("carritoJuegos");
+  localStorage.removeItem("carritoCantidad");
 
-    mostrarToast("✅ Pedido enviado correctamente");
+  actualizarCarrito();
+  cerrarCarrito();
+
+  mostrarToast("✅ Pedido enviado correctamente");
 }
 
 }
