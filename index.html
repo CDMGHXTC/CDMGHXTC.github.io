@@ -392,6 +392,22 @@ VER CATÁLOGO
 <button class="comprar" data-juego="EA Sports FC 26">
 Agregar al carrito
 </button>
+
+<button onclick="mostrarDetallesFC26()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
 </div>
 </div>
 
@@ -400,6 +416,7 @@ Agregar al carrito
 <div class="info">
 <h3>Call of Duty</h3>
 <div class="precio">$15.000</div>
+
 
 <button class="comprar" data-juego="Call of Duty">
 Agregar al carrito
@@ -579,6 +596,57 @@ const precios = {
 const carrito = document.querySelector(".carrito");
 const botones = document.querySelectorAll(".comprar");
 
+function mostrarDetallesFC26(){
+
+document.getElementById("detalleTitulo").innerText =
+"EA Sports FC 26";
+
+document.getElementById("detalleImagen").src =
+"https://wallpaperaccess.com/full/22537619.jpg";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+Disfruta de EA Sports FC 26 con equipos y plantillas actualizadas.
+</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+⚽ Ultimate Team<br>
+🏆 Modo Carrera<br>
+🌐 Online y Offline
+</p>
+`;
+}
 function actualizarCarrito() {
 
   const lista = document.getElementById("juegosCarrito");
@@ -804,6 +872,14 @@ document
 .getElementById("overlay")
 .addEventListener("click", cerrarCarrito);
 
+function cerrarDetalles(){
+
+document.getElementById("modalDetalles").style.display = "none";
+
+document.getElementById("overlay").style.display = "none";
+
+}
+
 actualizarCarrito();
 
 
@@ -829,6 +905,54 @@ Juego agregado
 <audio id="sonidoAgregar">
 <source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3">
 </audio>
+<div id="modalDetalles" style="
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#161b22;
+padding:20px;
+border-radius:15px;
+border:2px solid #00ff88;
+width:90%;
+max-width:500px;
+z-index:10000;
+">
+
+<h2 id="detalleTitulo"></h2>
+
+<img
+id="detalleImagen"
+style="
+width:100%;
+border-radius:10px;
+margin-top:10px;
+">
+
+<p
+id="detalleTexto"
+style="
+margin-top:15px;
+line-height:1.6;
+">
+</p>
+
+<button onclick="cerrarDetalles()"
+style="
+width:100%;
+padding:12px;
+margin-top:15px;
+background:#107C10;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+">
+Cerrar
+</button>
+
+</div>
 </body>
 
 
