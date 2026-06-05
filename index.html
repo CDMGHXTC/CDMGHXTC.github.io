@@ -216,6 +216,13 @@ color:white;
 font-weight:bold;
 border-radius:8px;
 cursor:pointer;
+transition:.3s;
+}
+
+.comprar:hover{
+background:#00ff88;
+color:black;
+transform:scale(1.03);
 }
 
 .stats{
@@ -257,6 +264,10 @@ transition: transform .2s;
 }
 .carrito-pop{
 animation: pop .3s;
+box-shadow:
+0 0 15px #00ff88,
+0 0 30px #00ff88,
+0 0 50px #00ff88;
 }
 
 @keyframes pop{
@@ -508,7 +519,10 @@ width:100%;
 background:#107C10;
 color:white;
 border:none;
-border-radius:8px;">
+border-radius:8px;
+cursor:pointer;
+transition:.3s;">
+
 Cerrar
 </button>
 
@@ -601,30 +615,23 @@ botones.forEach(boton => {
         cantidad: 1,
         precio: precios[juego]
       };
-    }carrito.animate(
-[
- { transform: "scale(1)" },
- { transform: "scale(1.2)" },
- { transform: "scale(1)" }
-],
-{
- duration: 200
+    }carrito.classList.remove("carrito-pop");
+
+void carrito.offsetWidth;
+
+carrito.classList.add("carrito-pop");
+
+cantidad++;
+
+actualizarCarrito();
+
+const sonido = document.getElementById("sonidoAgregar");
+
+if(sonido){
+  sonido.play().catch(()=>{});
 }
-);
-carrito.classList.remove("carrito-pop");
 
-setTimeout(() => {
-  carrito.classList.add("carrito-pop");
-}, 10);
-
-    cantidad++;
-
-    actualizarCarrito();
-	carrito.innerHTML = `✅ ${juego} agregado`;
-
-setTimeout(()=>{
-carrito.innerHTML = `🛒 Carrito (${cantidad})`;
-},1500);
+mostrarToast(`✅ ${juego} agregado al carrito`);
   });
 });
 
@@ -674,13 +681,61 @@ function pagarAhora() {
   );
 
 }
+let toastTimeout;
+
+
+function mostrarToast(texto){
+
+const toast = document.getElementById("toast");
+
+clearTimeout(toastTimeout);
+
+toast.innerHTML = texto;
+toast.style.display = "block";
+toast.style.opacity = "1";
+
+toastTimeout = setTimeout(()=>{
+
+toast.style.opacity = "0";
+
+setTimeout(()=>{
+toast.style.display = "none";
+},300);
+
+},2000);
+
+}
+
 function cerrarCarrito() {
   document.getElementById("listaCarrito").style.display = "none";
 }
 
 actualizarCarrito();
 
+
 </script>
+
+<div id="toast" style="
+position:fixed;
+bottom:90px;
+right:20px;
+background:#00ff88;
+color:black;
+padding:12px 18px;
+border-radius:10px;
+font-weight:bold;
+display:none;
+opacity:0;
+transition:opacity .3s ease;
+box-shadow:0 0 15px #00ff88;
+z-index:99999;
+">
+Juego agregado
+</div>
+<audio id="sonidoAgregar">
+<source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3">
+</audio>
 </body>
+
 
 </html>
