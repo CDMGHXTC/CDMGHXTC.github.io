@@ -868,10 +868,13 @@ function vaciarCarrito() {
   mostrarToast("🗑️ Carrito vaciado");
 }
 
-document
-.getElementById("overlay")
-.addEventListener("click", cerrarCarrito);
+document.getElementById("overlay")
+.addEventListener("click", () => {
 
+cerrarCarrito();
+cerrarDetalles();
+
+});
 function cerrarDetalles(){
 
 document.getElementById("modalDetalles").style.display = "none";
