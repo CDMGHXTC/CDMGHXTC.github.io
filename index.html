@@ -252,6 +252,35 @@ border-radius:50px;
 font-weight:bold;
 box-shadow:0 0 20px #107C10;
 cursor:pointer;
+animation: flotar 2s infinite;
+transition: transform .2s;
+}
+.carrito-pop{
+animation: pop .3s;
+}
+
+@keyframes pop{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.2);
+}
+100%{
+transform:scale(1);
+}
+}
+
+@keyframes flotar{
+0%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-5px);
+}
+100%{
+transform:translateY(0);
+}
 }
 
 .btn{
@@ -360,7 +389,11 @@ Agregar al carrito
 <div class="info">
 <h3>Call of Duty</h3>
 <div class="precio">$15.000</div>
-<button class="comprar">Agregar al carrito</button>
+
+<button class="comprar" data-juego="Call of Duty">
+Agregar al carrito
+</button>
+
 </div>
 </div>
 
@@ -369,7 +402,9 @@ Agregar al carrito
 <div class="info">
 <h3>Forza Horizon 5</h3>
 <div class="precio">$10.000</div>
-<button class="comprar">Agregar al carrito</button>
+<button class="comprar" data-juego="Forza Horizon 5">
+Agregar al carrito
+</button>
 </div>
 </div>
 
@@ -378,7 +413,9 @@ Agregar al carrito
 <div class="info">
 <h3>Minecraft</h3>
 <div class="precio">$8.000</div>
-<button class="comprar">Agregar al carrito</button>
+<button class="comprar" data-juego="Minecraft">
+Agregar al carrito
+</button>
 </div>
 </div>
 
@@ -428,6 +465,7 @@ Agregar al carrito
 <div class="carrito">
 🛒 Carrito (0)
 </div>
+<div id="factura" style="display:none; margin-top:15px;"></div>
 
 <div id="listaCarrito" style="
 display:none;
@@ -491,6 +529,7 @@ const carrito = document.querySelector(".carrito");
 const botones = document.querySelectorAll(".comprar");
 
 function actualizarCarrito() {
+
   const lista = document.getElementById("juegosCarrito");
   lista.innerHTML = "";
 
@@ -500,25 +539,59 @@ function actualizarCarrito() {
     total += juegos[juego].cantidad * juegos[juego].precio;
   }
 
-  lista.innerHTML += `<li><strong>Total: $${total}</strong></li><hr>`;
+  lista.innerHTML += `
+  <div style="
+  background:#0d1117;
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:15px;
+  border:1px solid #00ff88;
+  ">
+  <h4>🧾 Factura</h4>
+  <p>Total productos: ${cantidad}</p>
+  <p style="color:#00ff88;font-size:20px;">
+  💰 $${total}
+  </p>
+  </div>
+  `;
 
   for (let juego in juegos) {
+
     lista.innerHTML += `
-      <li>
-        ${juego} x${juegos[juego].cantidad}
-        <button onclick="eliminarJuego('${juego}')"
-        style="margin-left:10px;background:red;color:white;border:none;border-radius:5px;">
-        ❌</button>
-      </li>
+    <li style="
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+    padding:8px;
+    background:#111827;
+    border-radius:8px;
+    ">
+      <span>${juego} x${juegos[juego].cantidad}</span>
+
+      <button
+      onclick="eliminarJuego('${juego}')"
+      style="
+      background:red;
+      border:none;
+      color:white;
+      padding:5px 8px;
+      border-radius:5px;
+      cursor:pointer;
+      ">
+      ❌
+      </button>
+    </li>
     `;
   }
 
   carrito.innerHTML = `🛒 Carrito (${cantidad})`;
 }
-
 botones.forEach(boton => {
   boton.addEventListener("click", () => {
+
     const juego = boton.dataset.juego;
+
     if (!juego) return;
 
     if (juegos[juego]) {
@@ -526,12 +599,32 @@ botones.forEach(boton => {
     } else {
       juegos[juego] = {
         cantidad: 1,
-        precio: precios[juego] || 0
+        precio: precios[juego]
       };
-    }
+    }carrito.animate(
+[
+ { transform: "scale(1)" },
+ { transform: "scale(1.2)" },
+ { transform: "scale(1)" }
+],
+{
+ duration: 200
+}
+);
+carrito.classList.remove("carrito-pop");
+
+setTimeout(() => {
+  carrito.classList.add("carrito-pop");
+}, 10);
 
     cantidad++;
-    carrito.innerHTML = `🛒 Carrito (${cantidad})`;
+
+    actualizarCarrito();
+	carrito.innerHTML = `✅ ${juego} agregado`;
+
+setTimeout(()=>{
+carrito.innerHTML = `🛒 Carrito (${cantidad})`;
+},1500);
   });
 });
 
@@ -546,51 +639,46 @@ function eliminarJuego(juego) {
 
   actualizarCarrito();
 }
-
-function cerrarCarrito() {
-  document.getElementById("listaCarrito").style.display = "none";
-}
-
 function pagarAhora() {
 
   let total = 0;
-  let mensaje = "🧾 *MYMGAMERV2 - FACTURA DE COMPRA*\n";
-  mensaje += "━━━━━━━━━━━━━━━━━━\n\n";
+
+  let mensaje = "🧾 *MYMGAMERV2 - FACTURA DE COMPRA*%0A";
+  mensaje += "━━━━━━━━━━━━━━━━━━%0A";
 
   for (let juego in juegos) {
-    const item = juegos[juego];
-    const subtotal = item.cantidad * item.precio;
 
-    mensaje += `🎮 *${juego}*\n`;
-    mensaje += `   Cantidad: ${item.cantidad}\n`;
-    mensaje += `   Precio unitario: $${item.precio}\n`;
-    mensaje += `   Subtotal: $${subtotal}\n\n`;
+    let subtotal =
+      juegos[juego].cantidad *
+      juegos[juego].precio;
+
+    mensaje += `🎮 ${juego}%0A`;
+    mensaje += `Cantidad: ${juegos[juego].cantidad}%0A`;
+    mensaje += `Subtotal: $${subtotal}%0A%0A`;
 
     total += subtotal;
   }
 
   if (total === 0) {
-    alert("Tu carrito está vacío 🛒");
+    alert("Tu carrito está vacío");
     return;
   }
 
-  mensaje += "━━━━━━━━━━━━━━━━━━\n";
-  mensaje += `💰 *TOTAL A PAGAR: $${total}*\n\n`;
-  mensaje += "📦 Estado: Pendiente de confirmación\n";
-  mensaje += "👨‍💻 Gracias por tu compra en MYMGAMERV2\n";
+  mensaje += "━━━━━━━━━━━━━━━━━━%0A";
+  mensaje += `💰 TOTAL: $${total}%0A`;
+  mensaje += "📦 Pedido MYMGAMERV2";
 
-  const telefono = "573112031399";
-  const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+  window.open(
+    `https://wa.me/573112031399?text=${mensaje}`,
+    "_blank"
+  );
 
-  window.open(url, "_blank");
-
-  // limpiar carrito
-  juegos = {};
-  cantidad = 0;
-  carrito.innerHTML = `🛒 Carrito (0)`;
-
+}
+function cerrarCarrito() {
   document.getElementById("listaCarrito").style.display = "none";
 }
+
+actualizarCarrito();
 
 </script>
 </body>
