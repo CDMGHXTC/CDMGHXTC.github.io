@@ -532,6 +532,17 @@ Cerrar
 let cantidad = 0;
 let juegos = {};
 
+const juegosGuardados = localStorage.getItem("carritoJuegos");
+const cantidadGuardada = localStorage.getItem("carritoCantidad");
+
+if (juegosGuardados) {
+  juegos = JSON.parse(juegosGuardados);
+}
+
+if (cantidadGuardada) {
+  cantidad = parseInt(cantidadGuardada);
+}
+
 const precios = {
   "EA Sports FC 26": 12000,
   "Call of Duty": 15000,
@@ -600,6 +611,16 @@ function actualizarCarrito() {
   }
 
   carrito.innerHTML = `🛒 Carrito (${cantidad})`;
+  localStorage.setItem(
+  "carritoJuegos",
+  JSON.stringify(juegos)
+);
+
+localStorage.setItem(
+  "carritoCantidad",
+  cantidad
+);
+  
 }
 botones.forEach(boton => {
   boton.addEventListener("click", () => {
@@ -638,6 +659,7 @@ mostrarToast(`✅ ${juego} agregado al carrito`);
 carrito.addEventListener("click", () => {
   actualizarCarrito();
   document.getElementById("listaCarrito").style.display = "block";
+  
 });
 
 function eliminarJuego(juego) {
@@ -679,6 +701,15 @@ function pagarAhora() {
     `https://wa.me/573112031399?text=${mensaje}`,
     "_blank"
   );
+ 
+ juegos = {};
+cantidad = 0;
+
+localStorage.removeItem("carritoJuegos");
+localStorage.removeItem("carritoCantidad");
+
+actualizarCarrito();
+cerrarCarrito();
 
 }
 let toastTimeout;
