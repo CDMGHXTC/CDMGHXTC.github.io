@@ -339,6 +339,21 @@ text-decoration:none;
 VER CATÁLOGO
 </a>
 
+<div style="text-align:center; margin:20px;">
+  <input 
+    type="text" 
+    id="buscador" 
+    placeholder="🔎 Buscar juego..."
+    style="
+      padding:12px;
+      width:80%;
+      max-width:400px;
+      border-radius:10px;
+      border:none;
+      outline:none;
+    ">
+</div>
+
 
 </section>
 
@@ -384,7 +399,7 @@ VER CATÁLOGO
 
 <div class="grid">
 
-<div class="card">
+<div class="card juego-card">
 <img src="https://wallpaperaccess.com/full/22537619.jpg">
 <div class="info">
 <h3>EA Sports FC 26</h3>
@@ -411,7 +426,7 @@ cursor:pointer;
 </div>
 </div>
 
-<div class="card">
+<div class="card juego-card">
 <img src="https://newsd.in/wp-content/uploads/2025/06/Call-of-Duty-Black-Ops-7.jpg">
 <div class="info">
 <h3> Call of Duty Black Ops7 </h3>
@@ -441,7 +456,7 @@ cursor:pointer;
 </div>
 </div>
 
-<div class="card">
+<div class="card juego-card">
 <img src="https://store-images.s-microsoft.com/image/apps.23625.13806078025361171.9723cf5e-1e29-4d9d-ad0a-cc37a95bb75d.e02f4ead-d89b-45cd-8eb5-5dcbf44ae91f">
 <div class="info">
 <h3>Forza Horizon 5</h3>
@@ -467,7 +482,7 @@ cursor:pointer;
 </div>
 </div>
 
-<div class="card">
+<div class="card juego-card">
 <img src="https://th.bing.com/th/id/R.0d20f161c2c66d4ddc157e134aa67680?rik=EUZPPw31KD4urg&pid=ImgRaw&r=0">
 <div class="info">
 <h3>Minecraft</h3>
@@ -493,7 +508,7 @@ cursor:pointer;
 </div>
 </div>
 
-<div class="card">
+<div class="card juego-card">
 <img src="https://www.que.es/wp-content/uploads/2019/02/jump-force-portada.jpg">
 <div class="info">
 <h3>Jump Force</h3>
@@ -519,12 +534,12 @@ cursor:pointer;
 </div>
 </div>
 
-<div class="card">
+<div class="card juego-card">
 <img src="https://xboxwire.thesourcemediaassets.com/sites/2/2020/10/OptimizedLegion_HERO.jpg">
 <div class="info">
 <h3>Watch Dogs Legion</h3>
 <div class="precio">$15.000</div>
-<button class="comprar" data-juego=Watch Dogs Legion">
+<button class="comprar" data-juego=" Watch Dogs Legion ">
 Agregar al carrito
 </button>
 <button onclick="mostrarDetallesWatchDogsLegion()"
@@ -683,16 +698,34 @@ if (cantidadGuardada) {
 }
 
 const precios = {
-  "EA Sports FC 26": 3000,
+  "EA Sports FC 26": 30000,
   "Call of Duty Black Ops7": 15000,
   "Forza Horizon 5": 15000,
   "Minecraft": 15000,
   "Jump Force": 15000,
-  "Watch Dogs Legion": 15000,
+  " Watch Dogs Legion ": 15000,
+  
 };
 
 const carrito = document.querySelector(".carrito");
 const botones = document.querySelectorAll(".comprar");
+
+const buscador = document.getElementById("buscador");
+const cards = document.querySelectorAll(".juego-card");
+
+buscador.addEventListener("keyup", function () {
+  const texto = buscador.value.toLowerCase();
+
+  cards.forEach(card => {
+    const nombre = card.querySelector("h3").textContent.toLowerCase();
+
+   if (nombre.includes(texto)) {
+  card.style.display = "";
+} else {
+  card.style.display = "none";
+}
+  });
+});
 
 function mostrarDetallesFC26(){
 
@@ -801,72 +834,7 @@ font-weight:bold;
 `;
 
 }
-function mostrarDetallesorzaHorizon5(){
 
-document.getElementById("detalleTitulo").innerText =
-"Call of Duty Black Ops 7";
-
-document.getElementById("detalleImagen").src =
-"https://th.bing.com/th/id/R.27d9f59aff9f14d94146a2e21bd45b91?rik=qVcewZT2VO52aA&pid=ImgRaw&r=0";
-
-document.getElementById("overlay").style.display = "block";
-
-document.getElementById("modalDetalles").style.display = "block";
-
-document.getElementById("detalleTexto").innerHTML = `
-<p>
-Forza Horizon 5
-
-Forza Horizon 5 te lleva a un mundo abierto espectacular ambientado en México, con paisajes variados como desiertos, selvas, ciudades y playas. Compite en carreras extremas y explora libremente con cientos de autos realistas.
-
-Incluye eventos dinámicos, clima cambiante y una experiencia de conducción arcade llena de velocidad y libertad..
-</p>
-
-<div style="
-display:flex;
-justify-content:center;
-gap:15px;
-margin:15px 0;
-">
-
-<div style="
-background:#c9dfb7;
-padding:8px 15px;
-border-radius:20px;
-font-weight:bold;
-">
-✅ XBOX ONE
-</div>
-
-<div style="
-background:#c9dfb7;
-padding:8px 15px;
-border-radius:20px;
-font-weight:bold;
-">
-✅ XBOX SERIES X|S
-</div>
-
-</div>
-
-<p>
-🌎 Mundo abierto ambientado en México<br>
-
-🏎️ Más de 500 autos para coleccionar y personalizar<br>
-
-🌦️ Clima dinámico (tormentas, lluvia, polvo)<br>
-
-🎮 Carreras en solitario y multijugador online<br>
-
-🏁 Eventos y desafíos constantes en el mapa<br>
-
-🎨 Gráficos realistas y gran nivel de detalle<br>
-
-🚀 Exploración libre sin límites<br>
-
-</p>
-`;
-}
 function mostrarDetallesMinecraft(){
 
 document.getElementById("detalleTitulo").innerText =
@@ -932,7 +900,7 @@ font-weight:bold;
 function mostrarDetallesorzaHorizon5(){
 
 document.getElementById("detalleTitulo").innerText =
-"Call of Duty Black Ops 7";
+" Forza Horizon 5 ";
 
 document.getElementById("detalleImagen").src =
 "https://th.bing.com/th/id/R.27d9f59aff9f14d94146a2e21bd45b91?rik=qVcewZT2VO52aA&pid=ImgRaw&r=0";
@@ -1069,12 +1037,12 @@ document.getElementById("modalDetalles").style.display = "block";
 
 document.getElementById("detalleTexto").innerHTML = `
 <p>
+Watch Dogs: Legion
 
-Jump Force
+Watch Dogs: Legion está ambientado en un Londres futurista controlado por un sistema de vigilancia total. Tú formas parte de un grupo de resistencia llamado DedSec, cuyo objetivo es liberar la ciudad del control autoritario.
 
-Jump Force es un juego de peleas donde se enfrentan los personajes más famosos del anime en batallas épicas en 3D. Une universos como Dragon Ball, One Piece y Naruto en combates llenos de poder y efectos espectaculares.
+Una de sus mecánicas más innovadoras es que puedes reclutar y controlar a cualquier persona en la ciudad, cada uno con habilidades únicas.
 
-El jugador crea su propio avatar y se une a los héroes para detener una amenaza que pone en peligro el mundo..
 </p>
 
 <div style="
@@ -1105,13 +1073,13 @@ font-weight:bold;
 </div>
 
 <p>
-🥊 Combates 3 vs 3 con cambios de personaje en batalla <br>
-🌍 Personajes de múltiples animes como Dragon Ball, Naruto, One Piece y más<br>
-🎮 Modo historia donde creas tu propio héroe<br>
-💥 Ataques especiales y transformaciones icónicas<br>
-🏙️ Escenarios reales del mundo mezclados con estilo anime<br>
-🧑‍🤝‍🧑 Multijugador online competitivo<br>
-🎨 Gráficos estilo realista + anime<br>
+🌆 Mundo abierto: Londres futurista <br>
+🧑‍🤝‍🧑 Sistema “Play as Anyone” (juega con cualquier NPC)<br>
+🕵️ Hackeo de cámaras, drones y sistemas de seguridad<br>
+🔫 Combate con armas, gadgets y sigilo<br>
+🎮 Modo historia + multijugador online<br>
+🚨 Sistema de resistencia contra un gobierno opresor<br>
+🤖 Drones y tecnología avanzada para infiltración<br>
 </p>
 `;
 }
