@@ -388,7 +388,7 @@ VER CATÁLOGO
 <img src="https://wallpaperaccess.com/full/22537619.jpg">
 <div class="info">
 <h3>EA Sports FC 26</h3>
-<div class="precio">$12.000</div>
+<div class="precio">$30.000</div>
 <button class="comprar" data-juego="EA Sports FC 26">
 Agregar al carrito
 </button>
@@ -418,7 +418,7 @@ cursor:pointer;
 <div class="precio">$15.000</div>
 
 
-<button class="comprar" data-juego="Call of Duty">
+<button class="comprar" data-juego="Call of Duty Black Ops7">
 Agregar al carrito
 </button>
 
@@ -445,11 +445,11 @@ cursor:pointer;
 <img src="https://store-images.s-microsoft.com/image/apps.23625.13806078025361171.9723cf5e-1e29-4d9d-ad0a-cc37a95bb75d.e02f4ead-d89b-45cd-8eb5-5dcbf44ae91f">
 <div class="info">
 <h3>Forza Horizon 5</h3>
-<div class="precio">$10.000</div>
+<div class="precio">$15.000</div>
 <button class="comprar" data-juego="Forza Horizon 5">
 Agregar al carrito
 </button>
-<button onclick="Horizon 5()"
+<button onclick="mostrarDetallesorzaHorizon5()"
 style="
 width:100%;
 margin-top:8px;
@@ -468,14 +468,14 @@ cursor:pointer;
 </div>
 
 <div class="card">
-<img src="https://picsum.photos/500/700?7">
+<img src="https://th.bing.com/th/id/R.0d20f161c2c66d4ddc157e134aa67680?rik=EUZPPw31KD4urg&pid=ImgRaw&r=0">
 <div class="info">
 <h3>Minecraft</h3>
-<div class="precio">$8.000</div>
+<div class="precio">$15.000</div>
 <button class="comprar" data-juego="Minecraft">
 Agregar al carrito
 </button>
-<button onclick="Minecraft()"
+<button onclick="mostrarDetallesMinecraft()"
 style="
 width:100%;
 margin-top:8px;
@@ -493,6 +493,56 @@ cursor:pointer;
 </div>
 </div>
 
+<div class="card">
+<img src="https://www.que.es/wp-content/uploads/2019/02/jump-force-portada.jpg">
+<div class="info">
+<h3>Jump Force</h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego="Jump Force">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesJumpForce()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card">
+<img src="https://xboxwire.thesourcemediaassets.com/sites/2/2020/10/OptimizedLegion_HERO.jpg">
+<div class="info">
+<h3>Watch Dogs Legion</h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego=Watch Dogs Legion">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesWatchDogsLegion()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
 </div>
 
 </section>
@@ -633,10 +683,12 @@ if (cantidadGuardada) {
 }
 
 const precios = {
-  "EA Sports FC 26": 12000,
-  "Call of Duty": 15000,
-  "Forza Horizon 5": 10000,
-  "Minecraft": 8000
+  "EA Sports FC 26": 3000,
+  "Call of Duty Black Ops7": 15000,
+  "Forza Horizon 5": 15000,
+  "Minecraft": 15000,
+  "Jump Force": 15000,
+  "Watch Dogs Legion": 15000,
 };
 
 const carrito = document.querySelector(".carrito");
@@ -742,12 +794,328 @@ font-weight:bold;
 </div>
 
 <p>
-🧠 Campaña cooperativa innovadora (puedes jugar solo o en equipo)
-🔫 Multijugador competitivo con mapas y modos variados
-🧟 Modo Zombies con historia y supervivencia en el Éter Oscuro
+🧠 Campaña cooperativa innovadora (puedes jugar solo o en equipo) <br>
+🔫 Multijugador competitivo con mapas y modos variados<br>
+🧟 Modo Zombies con historia y supervivencia en el Éter Oscuro<br>
+</p>
+`;
+
+}
+function mostrarDetallesorzaHorizon5(){
+
+document.getElementById("detalleTitulo").innerText =
+"Call of Duty Black Ops 7";
+
+document.getElementById("detalleImagen").src =
+"https://th.bing.com/th/id/R.27d9f59aff9f14d94146a2e21bd45b91?rik=qVcewZT2VO52aA&pid=ImgRaw&r=0";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+Forza Horizon 5
+
+Forza Horizon 5 te lleva a un mundo abierto espectacular ambientado en México, con paisajes variados como desiertos, selvas, ciudades y playas. Compite en carreras extremas y explora libremente con cientos de autos realistas.
+
+Incluye eventos dinámicos, clima cambiante y una experiencia de conducción arcade llena de velocidad y libertad..
+</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🌎 Mundo abierto ambientado en México<br>
+
+🏎️ Más de 500 autos para coleccionar y personalizar<br>
+
+🌦️ Clima dinámico (tormentas, lluvia, polvo)<br>
+
+🎮 Carreras en solitario y multijugador online<br>
+
+🏁 Eventos y desafíos constantes en el mapa<br>
+
+🎨 Gráficos realistas y gran nivel de detalle<br>
+
+🚀 Exploración libre sin límites<br>
+
 </p>
 `;
 }
+function mostrarDetallesMinecraft(){
+
+document.getElementById("detalleTitulo").innerText =
+"Minecraft";
+
+document.getElementById("detalleImagen").src =
+"https://i.ytimg.com/vi/tKlwhWz5gHA/maxresdefault.jpg";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+Disfruta de🎮 Minecraft ⛏️ Minecraft
+
+Minecraft
+
+Minecraft es un juego de mundo abierto donde puedes explorar, construir y sobrevivir en un universo hecho completamente de bloques. Puedes jugar en modo creativo para construir sin límites o en modo supervivencia enfrentando enemigos y buscando recursos.
+
+Es uno de los juegos más populares del mundo gracias a su libertad total y su infinita creatividad..
+</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🧱 Mundo abierto infinito generado por bloques <br>
+🛠️ Modo supervivencia y creativo (construcción libre o desafío)<br>
+🧟 Enemigos icónicos como zombis, creepers y enderman <br>
+🌍 Exploración de biomas: bosques, desiertos, cuevas, océanos y más <br>
+⚒️ Crafteo de herramientas, armas y estructuras <br>
+🎮 Multijugador para jugar con amigos en servidores <br>
+🔄 Actualizaciones constantes con nuevos mobs y contenido <br>
+</p>
+`;
+
+}
+function mostrarDetallesorzaHorizon5(){
+
+document.getElementById("detalleTitulo").innerText =
+"Call of Duty Black Ops 7";
+
+document.getElementById("detalleImagen").src =
+"https://th.bing.com/th/id/R.27d9f59aff9f14d94146a2e21bd45b91?rik=qVcewZT2VO52aA&pid=ImgRaw&r=0";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+Forza Horizon 5
+
+Forza Horizon 5 te lleva a un mundo abierto espectacular ambientado en México, con paisajes variados como desiertos, selvas, ciudades y playas. Compite en carreras extremas y explora libremente con cientos de autos realistas.
+
+Incluye eventos dinámicos, clima cambiante y una experiencia de conducción arcade llena de velocidad y libertad..
+</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🌎 Mundo abierto ambientado en México<br>
+
+🏎️ Más de 500 autos para coleccionar y personalizar<br>
+
+🌦️ Clima dinámico (tormentas, lluvia, polvo)<br>
+
+🎮 Carreras en solitario y multijugador online<br>
+
+🏁 Eventos y desafíos constantes en el mapa<br>
+
+🎨 Gráficos realistas y gran nivel de detalle<br>
+
+🚀 Exploración libre sin límites<br>
+
+</p>
+`;
+}
+function mostrarDetallesJumpForce(){
+
+document.getElementById("detalleTitulo").innerText =
+"Jump Force";
+
+document.getElementById("detalleImagen").src =
+"https://www.que.es/wp-content/uploads/2019/02/jump-force-portada.jpg";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+Jump Force
+
+Jump Force es un juego de peleas donde se enfrentan los personajes más famosos del anime en batallas épicas en 3D. Une universos como Dragon Ball, One Piece y Naruto en combates llenos de poder y efectos espectaculares.
+
+El jugador crea su propio avatar y se une a los héroes para detener una amenaza que pone en peligro el mundo..
+</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🥊 Combates 3 vs 3 con cambios de personaje en batalla <br>
+🌍 Personajes de múltiples animes como Dragon Ball, Naruto, One Piece y más<br>
+🎮 Modo historia donde creas tu propio héroe<br>
+💥 Ataques especiales y transformaciones icónicas<br>
+🏙️ Escenarios reales del mundo mezclados con estilo anime<br>
+🧑‍🤝‍🧑 Multijugador online competitivo<br>
+🎨 Gráficos estilo realista + anime<br>
+</p>
+`;
+}
+function mostrarDetallesWatchDogsLegion(){
+
+document.getElementById("detalleTitulo").innerText =
+"Watch Dogs Legion";
+
+document.getElementById("detalleImagen").src =
+"https://xboxwire.thesourcemediaassets.com/sites/2/2020/10/OptimizedLegion_HERO.jpg";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+Jump Force
+
+Jump Force es un juego de peleas donde se enfrentan los personajes más famosos del anime en batallas épicas en 3D. Une universos como Dragon Ball, One Piece y Naruto en combates llenos de poder y efectos espectaculares.
+
+El jugador crea su propio avatar y se une a los héroes para detener una amenaza que pone en peligro el mundo..
+</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🥊 Combates 3 vs 3 con cambios de personaje en batalla <br>
+🌍 Personajes de múltiples animes como Dragon Ball, Naruto, One Piece y más<br>
+🎮 Modo historia donde creas tu propio héroe<br>
+💥 Ataques especiales y transformaciones icónicas<br>
+🏙️ Escenarios reales del mundo mezclados con estilo anime<br>
+🧑‍🤝‍🧑 Multijugador online competitivo<br>
+🎨 Gráficos estilo realista + anime<br>
+</p>
+`;
+}
+
 function actualizarCarrito() {
 
   const lista = document.getElementById("juegosCarrito");
