@@ -560,6 +560,85 @@ cursor:pointer;
 </div>
 </div>
 
+<div class="card juego-card">
+<img src="https://image.api.playstation.com/vulcan/img/rnd/202105/1714/WHeOu95nW2SZQy6H5IKgE2Bg.png">
+<div class="info">
+<h3>STAR WARS Jedi: Fallen Order</h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego=" STAR WARS Jedi Fallen Order ">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesSTARWARSJediFallenOrder()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://static.kinguin.net/media/catalog/category/cache/1/hi_image/9df78eab33525d08d6e5fb8d27136e95/888Legacy_1.jpg">
+<div class="info">
+<h3>Watch NARUTO SHIPPUDEN Ultimate Ninja STORM Legacy</h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego=" NARUTO SHIPPUDEN Ultimate Ninja STORM Legacy ">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesNARUTOSHIPPUDENUltimateNinjaSTORMLegacy()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://gaming-cdn.com/images/products/10501/orig/tiny-tina-s-wonderlands-xbox-one-juego-microsoft-store-europe-cover.jpg?v=1739378109">
+<div class="info">
+<h3>Watch Tiny Tina's Wonderlands Legacy</h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego=" Tiny Tina's Wonderlands ">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesTinyTinasWonderlands()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
 </section>
 
 <section>
@@ -1084,6 +1163,188 @@ font-weight:bold;
 `;
 }
 
+function mostrarDetallesSTARWARSJediFallenOrder(){
+
+document.getElementById("detalleTitulo").innerText =
+"STAR WARS Jedi Fallen Order";
+
+document.getElementById("detalleImagen").src =
+"https://wallpapers.com/images/hd/star-wars-jedi-fallen-order-4k-ultra-hd-0iopncv3awa81xpv.jpg";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+🌌 Star Wars Jedi: Fallen Order
+
+Star Wars Jedi: Fallen Order
+
+Descripción:
+Tras la ejecución de la Orden 66, el joven padawan Cal Kestis lucha por sobrevivir mientras intenta reconstruir la Orden Jedi. En su viaje deberá dominar la Fuerza, enfrentarse al Imperio y descubrir antiguos secretos de la galaxia.
+
+</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+⚔️ Combate con sable de luz y poderes de la Fuerza <br>
+🌍 Exploración de múltiples planetas <br>
+🧩 Puzles y desafíos de plataformas <br>
+🤖 Compañero droide BD-1 <br>
+👥 Enfrentamientos contra inquisidores imperiales <br>
+📈 Sistema de progresión y habilidades Jedi <br>
+🎬 Historia original ambientada en el universo Star Wars <br>
+🎮 Mezcla de acción, aventura y exploración <br>
+</p>
+`;
+}
+function mostrarDetallesNARUTOSHIPPUDENUltimateNinjaSTORMLegacy(){
+
+document.getElementById("detalleTitulo").innerText =
+"NARUTO SHIPPUDEN: Ultimate Ninja STORM Legacy";
+
+document.getElementById("detalleImagen").src =
+"https://shared.fastly.steamstatic.com/store_item_assets/steam/bundles/4308/11jk75qui8fhp8xj/header_ratio.jpg?t=1599052413";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+🍥 Naruto Shippuden: Ultimate Ninja Storm Legacy
+
+Naruto Shippuden: Ultimate Ninja Storm Legacy
+
+Descripción:
+Revive toda la historia de Naruto desde sus inicios hasta la Cuarta Gran Guerra Ninja en una colección que reúne los principales juegos de la saga Ultimate Ninja Storm. Disfruta de combates espectaculares, escenas cinematográficas y cientos de personajes del universo Naruto.
+</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+⚔️ Combate con sable de luz y poderes de la Fuerza <br>
+⚔️ Incluye los juegos Ultimate Ninja Storm 1, 2, 3 Full Burst y 4 Road to Boruto <br>
+👥 Más de 100 personajes jugables <br>
+🎬 Escenas y momentos icónicos del anime <br>
+🔥 Combates ninja rápidos y llenos de acción <br>
+🌪️ Técnicas especiales y transformaciones legendarias <br>
+🏆 Modos historia, combate libre y multijugador <br>
+🎮 Gráficos mejorados con estilo anime <br>
+🍃 Revive la historia completa de Naruto y Naruto Shippuden <br>
+</p>
+`;
+}
+function mostrarDetallesTinyTinasWonderlands(){
+
+document.getElementById("detalleTitulo").innerText =
+"Tiny Tina's Wonderlands";
+
+document.getElementById("detalleImagen").src =
+"https://gaming-cdn.com/images/products/10501/orig/tiny-tina-s-wonderlands-xbox-one-juego-microsoft-store-europe-cover.jpg?v=1739378109";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+Tiny Tina's Wonderlands
+
+Descripción:
+Embárcate en una aventura de fantasía caótica narrada por Tiny Tina, donde la magia, las armas y los dragones se combinan en un mundo impredecible. Crea tu propio héroe y enfréntate a criaturas fantásticas en una misión llena de humor y acción.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+⚔️ Combate con sable de luz y poderes de la Fuerza <br>
+⚔️ Combina armas de fuego con magia y habilidades especiales <br>
+🧙 Personalización completa de personajes y clases <br>
+🌍 Explora un mundo de fantasía lleno de secretos <br>
+🐉 Enfréntate a dragones, esqueletos y monstruos épicos <br>
+👥 Cooperativo online para jugar con amigos <br>
+🎮 Inspirado en la jugabilidad de Borderlands <br>
+💎 Sistema de botín con miles de armas y objetos <br>
+😂 Historia llena de humor y situaciones extravagantes</p>
+`;
+}
 function actualizarCarrito() {
 
   const lista = document.getElementById("juegosCarrito");
