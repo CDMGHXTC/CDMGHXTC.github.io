@@ -657,6 +657,87 @@ cursor:pointer;
 </div>
 </div>
 
+<div class="card juego-card">
+<img src="https://images7.alphacoders.com/115/1151164.jpg">
+<div class="info">
+<h3>Battlefield 2042</h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego="Battlefield 2042">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesBattlefield2042()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://img.asmedia.epimg.net/resizer/v2/47XBVVVITJK43GBMBVCU3BLQJU.jpg?auth=c158e3b6595f650369f952f73649eee023ae331dcf119762084b167798cfc84e&width=1472&height=828&smart=true">
+<div class="info">
+<h3>Crash Team Racing Nitro-Fueled</h3>
+<div class="precio">$15.000</div>
+<button class="comprar"Crash Team Racing Nitro-Fueled">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesCrashTeamRacingNitroFueled()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2020/08/26/15984683755633.jpg">
+<div class="info">
+<h3>Call of Duty: Black Ops Cold War</h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego="CallofDuty : Black Ops Cold War">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesCallofDutyBlackOpsColdWar()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
 
 </section>
 
@@ -1380,6 +1461,198 @@ font-weight:bold;
 🎮 Inspirado en la jugabilidad de Borderlands <br>
 💎 Sistema de botín con miles de armas y objetos <br>
 😂 Historia llena de humor y situaciones extravagantes</p>
+`;
+}
+
+function mostrarDetallesBattlefield2042(){
+
+document.getElementById("detalleTitulo").innerText =
+"Battlefield 2042";
+
+document.getElementById("detalleImagen").src =
+"https://images7.alphacoders.com/115/1151164.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+
+Descripción:
+Battlefield™ 2042 es un videojuego de disparos en primera persona ambientado en un futuro cercano. Ofrece grandes batallas multijugador con vehículos, armas modernas y mapas enormes. Los jugadores pueden elegir diferentes especialistas y participar en combates dinámicos, donde el trabajo en equipo y la estrategia son importantes</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción y disparos en primera persona (FPS). <br>
+🌍 Ambientación: Futuro cercano, en un mundo afectado por conflictos y cambios climáticos. <br>
+👥 Multijugador: Grandes enfrentamientos con muchos jugadores. <br>
+🚁 Vehículos: Incluye tanques, helicópteros, aviones y otros vehículos. <br>
+🔫 Armas: Gran variedad de armas y equipamiento moderno.<br>
+🗺️ Mapas grandes: Escenarios amplios con diferentes condiciones de combate.<br>
+🌪️ Clima dinámico: Tormentas y otros fenómenos pueden cambiar el desarrollo de las partidas.<br>
+🤝 Trabajo en equipo: La coordinación entre jugadores es importante para conseguir la victoria.<br>
+🧑‍💻 Especialistas: Los jugadores pueden elegir personajes con diferentes habilidades y características.<br>
+🏆 Objetivo: Cumplir los objetivos del equipo y derrotar al equipo contrario. <br>
+</p>
+`;
+}
+
+function mostrarDetallesCrashTeamRacingNitroFueled(){
+
+document.getElementById("detalleTitulo").innerText =
+"Crash Team Racing Nitro-Fueled";
+
+document.getElementById("detalleImagen").src =
+"https://img.asmedia.epimg.net/resizer/v2/47XBVVVITJK43GBMBVCU3BLQJU.jpg?auth=c158e3b6595f650369f952f73649eee023ae331dcf119762084b167798cfc84e&width=1472&height=828&smart=true";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+
+Descripción:
+Crash Team Racing Nitro-Fueled
+
+🏎️ Crash Team Racing Nitro-Fueled
+
+¡Prepárate para carreras llenas de velocidad, diversión y caos! 🏁🔥 Compite con Crash y sus amigos en pistas llenas de obstáculos, curvas y desafíos.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🏎️ Carreras rápidas y emocionantes. <br>
+🎮 Diferentes personajes de la saga Crash. <br>
+🏁 Gran variedad de pistas y circuitos. <br>
+💥 Usa potenciadores y armas para superar a tus rivales. <br>
+🏆 Modos de juego para competir y superar desafíos. <br>
+👥 Diversión para jugar con amigos. <br>
+🎨 Gráficos renovados y estilo clásico de Crash. <br>
+⚡ Mucha acción y diversión arcade. <br>
+</p>
+`;
+}
+
+
+function mostrarDetallesCallofDutyBlackOpsColdWar(){
+
+document.getElementById("detalleTitulo").innerText =
+"Call of Duty : Black Ops Cold War";
+
+document.getElementById("detalleImagen").src =
+"https://e00-marca.uecdn.es/assets/multimedia/imagenes/2020/08/26/15984683755633.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+Call of Duty : Black Ops Cold War
+
+Descripción:
+Call of Duty®: Black Ops Cold War
+
+Vive una intensa campaña ambientada en la Guerra Fría, con acción, espionaje y combates llenos de adrenalina. También disfruta de su competitivo modo Multijugador y enfrenta hordas de zombis en Zombies. 🎮🔥.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🔥 Campaña intensa de acción y espionaje. <br>
+🎯 Multijugador competitivo. <br>
+🧟 Modo Zombies con diferentes desafíos. <br>
+💥 Gran variedad de armas y equipamiento. <br>
+🌎 Ambientación inspirada en la Guerra Fría. <br>
+🕹️ Disponible para Xbox One y Xbox Series X|S. <br>
+⚡ Acción rápida y combates llenos de adrenalina. <br>
+🎮 Compatible con juego optimizado para Xbox Series X|S. <br>
+</p>
 `;
 }
 function actualizarCarrito() {
