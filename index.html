@@ -738,6 +738,164 @@ cursor:pointer;
 </div>
 
 
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReWMPfSZBRCxcw91WgHGRxrbffg5YjDnUcwZtTdvKZa0DDG7Oa9n9ZF9lt&s=10">
+<div class="info">
+<h3>Crash Bandicoot 4</h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego="Crash Bandicoot 4">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesCrashBandicoot4()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88; 
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://wallpapercave.com/wp/wp10558294.jpg">
+<div class="info">
+<h3>Grand Theft Auto V</h3>
+<div class="precio">$15.000</div>
+<button class="comprar"Grand Theft Auto V">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesGrandTheftAutoV()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://wallpapercave.com/wp/wp10470405.jpg">
+<div class="info">
+<h3>Riders Republic</h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego="Riders Republic">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesRidersRepublic()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88; 
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://www.psu.com/wp/wp-content/uploads/2020/10/Mortal-Kombat-11-PS4-Wallpapers-04.jpg">
+<div class="info">
+<h3>Mortal Kombat 11 Ultimate</h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego="Mortal Kombat 11 Ultimate">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMortalKombat11Ultimate()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://static.wikia.nocookie.net/outlast/images/5/50/Outlast_Whistleblower.png/revision/latest?cb=20140101210328&path-prefix=es">
+<div class="info">
+<h3>Outlast: Bundle of Terror</h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego="Outlast: Bundle of Terror">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesOutlastBundleofTerror()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88; 
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://images7.alphacoders.com/663/thumb-1920-663751.jpg">
+<div class="info">
+<h3>Outlast: Friday The 13TH </h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego="Friday The 13TH">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesFridayThe13TH()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88; 
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
 
 </section>
 
@@ -1655,6 +1813,387 @@ font-weight:bold;
 </p>
 `;
 }
+
+function mostrarDetallesCrashBandicoot4(){
+
+document.getElementById("detalleTitulo").innerText =
+"Crash Bandicoot 4";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReWMPfSZBRCxcw91WgHGRxrbffg5YjDnUcwZtTdvKZa0DDG7Oa9n9ZF9lt&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+
+Descripción:
+Crash Bandicoot™ 4: It’s About Time es un videojuego de plataformas y aventura protagonizado por Crash y sus amigos. El jugador debe recorrer diferentes mundos, superar obstáculos, derrotar enemigos y completar niveles llenos de desafíos.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Plataformas y aventura.<br>
+🦊 Protagonistas: Crash Bandicoot y sus amigos.<br>
+🌎 Mundos variados: Diferentes escenarios llenos de obstáculos y secretos.<br>
+💎 Coleccionables: Frutas Wumpa, cajas y otros objetos.<br>
+🌀 Máscaras especiales: Otorgan habilidades únicas para superar los niveles.<br>
+👾 Enemigos y jefes: Combates contra distintos enemigos y personajes.<br>
+🏃 Jugabilidad: Saltos, giros, carreras y desafíos de precisión.<br>
+⏱️ Historia: Los personajes deben enfrentarse a una nueva amenaza que afecta el espacio y el tiempo.<br>
+⭐ Dificultad: Algunos niveles requieren habilidad, precisión y paciencia. <br>
+</p>
+`;
+}
+
+function mostrarDetallesGrandTheftAutoV(){
+
+document.getElementById("detalleTitulo").innerText =
+"Grand Theft Auto V";
+
+document.getElementById("detalleImagen").src =
+"https://wallpapercave.com/wp/wp10558294.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+
+Descripción:
+🚗 Grand Theft Auto V
+
+Vive una aventura de acción y mundo abierto en Los Santos, donde podrás explorar la ciudad, realizar misiones, conducir vehículos y vivir la historia de tres protagonistas.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🌆 Gran mundo abierto para explorar. <br>
+🎭 Historia con tres protagonistas. <br>
+🔫 Misiones llenas de acción y aventura. <br>
+🚗 Gran variedad de vehículos. <br>
+🏙️ Explora libremente la ciudad y sus alrededores. <br>
+🎯 Amplia variedad de armas y actividades. <br>
+🌐 Incluye GTA Online para jugar con otros jugadores. <br>
+🎮 Una de las experiencias más populares de la saga GTA. <br>
+</p>
+`;
+}
+
+
+function mostrarDetallesRidersRepublic(){
+
+document.getElementById("detalleTitulo").innerText =
+"Riders Republic";
+
+document.getElementById("detalleImagen").src =
+"https://wallpapercave.com/wp/wp10470405.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+
+Descripción:
+Riders Republic es un videojuego deportivo de mundo abierto en el que los jugadores pueden practicar diferentes deportes extremos en grandes escenarios naturales. El juego combina velocidad, exploración y competencias con otros jugadores.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Deportes, carreras y mundo abierto.<br>
+🚴 Deportes: Bicicleta, snowboard, esquí, wingsuit y otros deportes extremos.<br>
+🏔️ Escenarios: Grandes paisajes inspirados en parques nacionales.<br>
+🏁 Competiciones: Carreras y desafíos contra otros jugadores.<br>
+🌎 Mundo abierto: Permite explorar libremente diferentes zonas.<br>
+👥 Multijugador: Puedes competir y jugar junto a otros usuarios.<br>
+🏆 Progresión: Completa desafíos para desbloquear nuevos equipos y opciones.<br>
+🎨 Personalización: Puedes personalizar la apariencia de tu personaje y su equipamiento.<br>
+⚡ Jugabilidad: Destaca por la velocidad, los saltos, las acrobacias y las maniobras.<br>
+</p>
+`;
+}
+
+function mostrarDetallesMortalKombat11Ultimate(){
+
+document.getElementById("detalleTitulo").innerText =
+"Mortal Kombat 11 Ultimate";
+
+document.getElementById("detalleImagen").src =
+"https://www.psu.com/wp/wp-content/uploads/2020/10/Mortal-Kombat-11-PS4-Wallpapers-04.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+
+Descripción:
+🥊 Mortal Kombat 11 Ultimate
+
+Vive combates intensos y brutales con los personajes más conocidos de Mortal Kombat. Mortal Kombat 11 Ultimate reúne gran cantidad de contenido para disfrutar de la experiencia completa..</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🥊 Combates rápidos y llenos de acción.<br>
+👊 Amplio elenco de luchadores.<br>
+💀 Fatalities y movimientos especiales.<br>
+🏆 Modo historia y diferentes modos de juego.<br>
+🔥 Incluye contenido adicional y personajes extra. <br>
+⚔️ Varias opciones de personalización para los luchadores.<br>
+🎮 Ideal para jugar en solitario o competir con amigos. <br>
+💥 Gran variedad de escenarios y estilos de combate.<br>
+
+</p>
+`;
+}
+
+function mostrarDetallesOutlastBundleofTerror(){
+
+document.getElementById("detalleTitulo").innerText =
+"Outlast: Bundle of Terror";
+
+document.getElementById("detalleImagen").src =
+"https://wallpapercave.com/wp/wp11357348.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+
+Descripción:
+Outlast: Bundle of Terror es una colección de juegos de terror y supervivencia en primera persona. El jugador debe explorar lugares oscuros y peligrosos, resolver situaciones y escapar de diferentes amenazas mientras intenta descubrir los secretos detrás de los acontecimientos.
+
+.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Terror, supervivencia y aventura.<br>
+👻 Ambientación: Escenarios oscuros, inquietantes y llenos de misterio.<br>
+📖 Historia: Misterios y acontecimientos perturbadores que el jugador debe investigar.<br>
+🔦 Supervivencia: El jugador debe esconderse, correr y evitar enfrentamientos directos.<br>
+📹 Cámara de video: Se utiliza para explorar lugares con poca iluminación.<br>
+🧩 Exploración: Hay documentos y pistas que ayudan a descubrir la historia.<br>
+😱 Terror psicológico: Utiliza tensión, persecuciones y sustos para generar miedo.<br>
+🏃 Jugabilidad: Se centra más en escapar y sobrevivir que en combatir enemigos..<br>
+</p>
+`;
+}
+
+function mostrarDetallesFridayThe13TH(){
+
+document.getElementById("detalleTitulo").innerText =
+"Friday The 13TH";
+
+document.getElementById("detalleImagen").src =
+"https://images7.alphacoders.com/663/thumb-1920-663751.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+
+Descripción:
+Friday the 13th: The Game es un videojuego de terror y supervivencia basado en la famosa franquicia de Viernes 13. Los jugadores pueden asumir el papel de Jason Voorhees o de uno de los consejeros que intentan sobrevivir y escapar del campamento.
+
+.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Terror, supervivencia y multijugador.<br>
+🔪 Jason Voorhees: Un jugador controla a Jason y debe encontrar a los demás.<br>
+🏕️ Campamento: Las partidas se desarrollan en diferentes escenarios inspirados en la saga.<br>
+👥 Multijugador: Varios jugadores pueden participar en una misma partida.<br>
+🏃 Supervivencia: Los consejeros deben esconderse, colaborar y buscar formas de escapar.<br>
+🧩 Objetivos: Reparar vehículos, encontrar objetos y completar tareas para conseguir escapar.<br>
+😱 Terror: Incluye persecuciones, tensión y momentos de suspenso.<br>
+🛠️ Estrategia: El trabajo en equipo y la toma de decisiones son importantes para sobrevivir.<br>
+</p>
+`;
+}
+
+
+
 function actualizarCarrito() {
 
   const lista = document.getElementById("juegosCarrito");
