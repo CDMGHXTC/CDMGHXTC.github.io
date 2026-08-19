@@ -895,6 +895,32 @@ cursor:pointer;
 </div>
 </div>
 
+<div class="card juego-card">
+<img src="https://wallpapers.com/images/featured/far-cry-new-dawn-siqyefonw4ftsng5.jpg">
+<div class="info">
+<h3>Outlast: Far Cry New Dawn </h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego="Far Cry New Dawn">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesFarCryNewDawn()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88; 
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
 
 
 </section>
@@ -2188,6 +2214,69 @@ font-weight:bold;
 🧩 Objetivos: Reparar vehículos, encontrar objetos y completar tareas para conseguir escapar.<br>
 😱 Terror: Incluye persecuciones, tensión y momentos de suspenso.<br>
 🛠️ Estrategia: El trabajo en equipo y la toma de decisiones son importantes para sobrevivir.<br>
+</p>
+`;
+}
+
+function mostrarDetallesFarCryNewDawn(){
+
+document.getElementById("detalleTitulo").innerText =
+"Far Cry New Dawn";
+
+document.getElementById("detalleImagen").src =
+"https://wallpapers.com/images/featured/far-cry-new-dawn-siqyefonw4ftsng5.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+
+Descripción:
+Far Cry New Dawn es un videojuego de acción y aventura en primera persona ambientado en un mundo postapocalíptico. El jugador debe explorar un territorio transformado después de una catástrofe, enfrentándose a enemigos y ayudando a los sobrevivientes.
+.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura y disparos en primera persona.<br>
+🌎 Ambientación: Mundo postapocalíptico con paisajes transformados.<br>
+🔫 Combate: Gran variedad de armas y herramientas para enfrentarse a los enemigos.<br>
+🏕️ Exploración: Se puede recorrer libremente el mundo y descubrir diferentes lugares.<br>
+👥 Aliados: Es posible contar con personajes que ayudan durante las misiones.<br>
+🏗️ Base: Puedes mejorar y desarrollar tu asentamiento.<br>
+🚗 Vehículos: Incluye diferentes vehículos para desplazarse por el mapa.<br>
+🧟 Enemigos: Hay grupos de enemigos y líderes que controlan distintas zonas.<br>
+📖 Historia: Continúa los acontecimientos de Far Cry 5 y presenta una nueva lucha por la supervivencia. <br>
 </p>
 `;
 }
