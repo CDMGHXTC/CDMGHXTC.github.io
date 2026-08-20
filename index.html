@@ -375,6 +375,67 @@ background:#00cc6a;
     font-size: 14px;
 }
 
+/* ===== BOLA FLOTANTE DE BÚSQUEDA ===== */
+
+.buscador-flotante-btn{
+position:fixed;
+bottom:20px;
+left:20px;
+width:55px;
+height:55px;
+background:#00ff88;
+color:black;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+cursor:pointer;
+box-shadow:0 0 15px #00ff88,0 0 30px #00ff88;
+z-index:1000;
+opacity:0;
+transform:translateY(20px) scale(.7);
+pointer-events:none;
+transition:opacity .3s ease, transform .3s ease;
+}
+
+.buscador-flotante-btn.visible{
+opacity:1;
+transform:translateY(0) scale(1);
+pointer-events:auto;
+}
+
+.buscador-flotante-btn:hover{
+transform:scale(1.1);
+}
+
+.caja-buscador-flotante{
+position:fixed;
+bottom:85px;
+left:20px;
+background:#161b22;
+border:2px solid #00ff88;
+border-radius:15px;
+padding:15px;
+z-index:1000;
+width:260px;
+max-width:80vw;
+display:none;
+box-shadow:0 0 20px rgba(0,255,136,.4);
+}
+
+.caja-buscador-flotante.visible{
+display:block;
+}
+
+.caja-buscador-flotante input{
+width:100%;
+padding:10px;
+border-radius:8px;
+border:none;
+outline:none;
+}
+
 </style>
 </head>
 
@@ -988,6 +1049,18 @@ cursor:pointer;
 </div>
 <div id="factura" style="display:none; margin-top:15px;"></div>
 
+<!-- ===== BOLA FLOTANTE DE BÚSQUEDA ===== -->
+<div class="buscador-flotante-btn" id="botonBuscadorFlotante" onclick="toggleBuscadorFlotante()">
+🔎
+</div>
+
+<div class="caja-buscador-flotante" id="cajaBuscadorFlotante">
+<input
+type="text"
+id="buscadorFlotante"
+placeholder="🔎 Buscar juego...">
+</div>
+
 <div id="overlay" style="
 display:none;
 position:fixed;
@@ -1100,9 +1173,9 @@ const botones = document.querySelectorAll(".comprar");
 
 const buscador = document.getElementById("buscador");
 
-buscador.addEventListener("keyup", function () {
+function filtrarJuegos(texto){
 
-    const texto = buscador.value.toLowerCase().trim();
+    texto = texto.toLowerCase().trim();
 
     // Si el buscador está vacío,
     // volvemos a la paginación normal
@@ -1150,6 +1223,45 @@ buscador.addEventListener("keyup", function () {
 
     // Ocultar los botones de páginas
     paginacion.style.display = "none";
+
+    document.getElementById("catalogo").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+buscador.addEventListener("keyup", function () {
+    filtrarJuegos(buscador.value);
+});
+
+// ===== BOLA FLOTANTE DE BÚSQUEDA =====
+
+const botonBuscadorFlotante = document.getElementById("botonBuscadorFlotante");
+const cajaBuscadorFlotante = document.getElementById("cajaBuscadorFlotante");
+const buscadorFlotante = document.getElementById("buscadorFlotante");
+
+buscadorFlotante.addEventListener("keyup", function () {
+    filtrarJuegos(buscadorFlotante.value);
+});
+
+function toggleBuscadorFlotante(){
+    cajaBuscadorFlotante.classList.toggle("visible");
+
+    if(cajaBuscadorFlotante.classList.contains("visible")){
+        buscadorFlotante.focus();
+    }
+}
+
+window.addEventListener("scroll", function(){
+
+    const heroAltura = document.getElementById("inicio").offsetHeight;
+
+    if(window.scrollY > heroAltura - 100){
+        botonBuscadorFlotante.classList.add("visible");
+    } else {
+        botonBuscadorFlotante.classList.remove("visible");
+        cajaBuscadorFlotante.classList.remove("visible");
+    }
 
 });
 
@@ -1805,7 +1917,7 @@ document.getElementById("detalleTexto").innerHTML = `
 
 
 Descripción:
-Crash Bandicoot™ 4: It’s About Time es un videojuego de plataformas y aventura protagonizado por Crash y sus amigos. El jugador debe recorrer diferentes mundos, superar obstáculos, derrotar enemigos y completar niveles llenos de desafíos.</p>
+Crash Bandicoot™ 4: It's About Time es un videojuego de plataformas y aventura protagonizado por Crash y sus amigos. El jugador debe recorrer diferentes mundos, superar obstáculos, derrotar enemigos y completar niveles llenos de desafíos.</p>
 
 <div style="
 display:flex;
