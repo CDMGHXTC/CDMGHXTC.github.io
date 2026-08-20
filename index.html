@@ -317,6 +317,54 @@ border-radius:10px;
 background:#00cc6a;
 }
 
+/* ===== PAGINACIÓN ===== */
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.paginacion button {
+    min-width: 42px;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #107C10;
+    border-radius: 8px;
+    background: #161b22;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.paginacion button:hover {
+    background: #107C10;
+    transform: translateY(-2px);
+}
+
+.paginacion button.activa {
+    background: #00ff88;
+    color: black;
+    box-shadow: 0 0 12px #00ff88;
+}
+
+.paginacion button:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.info-paginacion {
+    text-align: center;
+    margin-top: 25px;
+    color: #aaa;
+    font-size: 14px;
+}
+
 </style>
 </head>
 
@@ -336,7 +384,7 @@ background:#00cc6a;
 </div>
 
 <nav>
-<a href="#inicio">Inicio</a>
+<a href="#inicio" onclick="mostrarPagina(1)">Inicio</a>
 <a href="#catalogo">Catálogo</a>
 <a href="#estrenos">Estrenos</a>
 <a href="#contacto">Contacto</a>
@@ -419,15 +467,14 @@ VER CATÁLOGO
 <div class="grid">
 
 <div class="card juego-card">
-<img src="https://wallpaperaccess.com/full/22537619.jpg">
+<img src="https://www.desconsolados.com/wp-content/uploads/2016/04/dark_souls_3_logo.jpg">
 <div class="info">
-<h3>EA Sports FC 26</h3>
-<div class="precio">$30.000</div>
-<button class="comprar" data-juego="EA Sports FC 26">
+<h3>DARK SOULS III</h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego="DARK SOULS III">
 Agregar al carrito
 </button>
-
-<button onclick="mostrarDetallesFC26()"
+<button onclick="mostrarDetallesDARKSOULSIII()"
 style="
 width:100%;
 margin-top:8px;
@@ -445,71 +492,16 @@ cursor:pointer;
 </div>
 </div>
 
-<div class="card juego-card">
-<img src="https://newsd.in/wp-content/uploads/2025/06/Call-of-Duty-Black-Ops-7.jpg">
-<div class="info">
-<h3> Call of Duty Black Ops7 </h3>
-<div class="precio">$15.000</div>
-
-
-<button class="comprar" data-juego="Call of Duty Black Ops7">
-Agregar al carrito
-</button>
-
-<button onclick="mostrarDetallesCallOfDutyBlackOps7()"
-style="
-width:100%;
-margin-top:8px;
-padding:12px;
-background:#00ff88;
-border:none;
-color:black;
-font-weight:bold;
-border-radius:8px;
-cursor:pointer;
-">
-📖 Ver detalles
-</button>
-
-
-</div>
-</div>
 
 <div class="card juego-card">
-<img src="https://store-images.s-microsoft.com/image/apps.23625.13806078025361171.9723cf5e-1e29-4d9d-ad0a-cc37a95bb75d.e02f4ead-d89b-45cd-8eb5-5dcbf44ae91f">
+<img src="https://wallpapers.com/images/featured/far-cry-5-4k-rhmqptb97zxbdoz1.jpg">
 <div class="info">
-<h3>Forza Horizon 5</h3>
+<h3>Far Cry 5</h3>
 <div class="precio">$15.000</div>
-<button class="comprar" data-juego="Forza Horizon 5">
+<button class="comprar" data-juego="Far Cry 5">
 Agregar al carrito
 </button>
-<button onclick="mostrarDetallesorzaHorizon5()"
-style="
-width:100%;
-margin-top:8px;
-padding:12px;
-background:#00ff88;
-border:none;
-color:black;
-font-weight:bold;
-border-radius:8px;
-cursor:pointer;
-">
-📖 Ver detalles
-</button>
-
-</div>
-</div>
-
-<div class="card juego-card">
-<img src="https://th.bing.com/th/id/R.0d20f161c2c66d4ddc157e134aa67680?rik=EUZPPw31KD4urg&pid=ImgRaw&r=0">
-<div class="info">
-<h3>Minecraft</h3>
-<div class="precio">$15.000</div>
-<button class="comprar" data-juego="Minecraft">
-Agregar al carrito
-</button>
-<button onclick="mostrarDetallesMinecraft()"
+<button onclick="mostrarDetallesFarCry5()"
 style="
 width:100%;
 margin-top:8px;
@@ -553,6 +545,7 @@ cursor:pointer;
 </div>
 </div>
 
+
 <div class="card juego-card">
 <img src="https://xboxwire.thesourcemediaassets.com/sites/2/2020/10/OptimizedLegion_HERO.jpg">
 <div class="info">
@@ -578,6 +571,7 @@ cursor:pointer;
 
 </div>
 </div>
+
 
 <div class="card juego-card">
 <img src="https://image.api.playstation.com/vulcan/img/rnd/202105/1714/WHeOu95nW2SZQy6H5IKgE2Bg.png">
@@ -605,6 +599,7 @@ cursor:pointer;
 </div>
 </div>
 
+
 <div class="card juego-card">
 <img src="https://static.kinguin.net/media/catalog/category/cache/1/hi_image/9df78eab33525d08d6e5fb8d27136e95/888Legacy_1.jpg">
 <div class="info">
@@ -631,6 +626,7 @@ cursor:pointer;
 </div>
 </div>
 
+
 <div class="card juego-card">
 <img src="https://gaming-cdn.com/images/products/10501/orig/tiny-tina-s-wonderlands-xbox-one-juego-microsoft-store-europe-cover.jpg?v=1739378109">
 <div class="info">
@@ -656,6 +652,7 @@ cursor:pointer;
 
 </div>
 </div>
+
 
 <div class="card juego-card">
 <img src="https://images7.alphacoders.com/115/1151164.jpg">
@@ -791,6 +788,7 @@ cursor:pointer;
 </div>
 </div>
 
+
 <div class="card juego-card">
 <img src="https://wallpapercave.com/wp/wp10470405.jpg">
 <div class="info">
@@ -816,6 +814,7 @@ cursor:pointer;
 
 </div>
 </div>
+
 
 <div class="card juego-card">
 <img src="https://www.psu.com/wp/wp-content/uploads/2020/10/Mortal-Kombat-11-PS4-Wallpapers-04.jpg">
@@ -843,6 +842,7 @@ cursor:pointer;
 </div>
 </div>
 
+
 <div class="card juego-card">
 <img src="https://image.api.playstation.com/cdn/UP2113/CUSA00325_00/PmjaXkhZZhTsAq6OZYuZIK3TFOmvF6Wj.png">
 <div class="info">
@@ -868,6 +868,7 @@ cursor:pointer;
 
 </div>
 </div>
+
 
 <div class="card juego-card">
 <img src="https://images7.alphacoders.com/663/thumb-1920-663751.jpg">
@@ -895,6 +896,7 @@ cursor:pointer;
 </div>
 </div>
 
+
 <div class="card juego-card">
 <img src="https://wallpapers.com/images/featured/far-cry-new-dawn-siqyefonw4ftsng5.jpg">
 <div class="info">
@@ -920,6 +922,13 @@ cursor:pointer;
 
 </div>
 </div>
+
+
+
+
+<div class="info-paginacion" id="infoPaginacion"></div>
+
+<div class="paginacion" id="paginacion"></div>
 
 
 
@@ -1060,6 +1069,8 @@ if (cantidadGuardada) {
   cantidad = parseInt(cantidadGuardada);
 }
 
+
+
 const precios = {
   "EA Sports FC 26": 30000,
   "Call of Duty Black Ops7": 15000,
@@ -1070,33 +1081,75 @@ const precios = {
   
 };
 
+
+
+
+
 const carrito = document.querySelector(".carrito");
 const botones = document.querySelectorAll(".comprar");
 
 const buscador = document.getElementById("buscador");
-const cards = document.querySelectorAll(".juego-card");
 
 buscador.addEventListener("keyup", function () {
-  const texto = buscador.value.toLowerCase();
 
-  cards.forEach(card => {
-    const nombre = card.querySelector("h3").textContent.toLowerCase();
+    const texto = buscador.value.toLowerCase().trim();
 
-   if (nombre.includes(texto)) {
-  card.style.display = "";
-} else {
-  card.style.display = "none";
-}
-  });
+    // Si el buscador está vacío,
+    // volvemos a la paginación normal
+    if (texto === "") {
+
+        mostrarPagina(1);
+
+        return;
+    }
+
+
+    // Buscar entre TODOS los juegos
+    const resultados = productos.filter(producto => {
+
+        const nombre =
+            producto.querySelector("h3")
+            .textContent
+            .toLowerCase();
+
+        return nombre.includes(texto);
+
+    });
+
+
+    // Ocultar todos los productos
+    productos.forEach(producto => {
+
+        producto.style.display = "none";
+
+    });
+
+
+    // Mostrar solamente los resultados
+    resultados.forEach(producto => {
+
+        producto.style.display = "";
+
+    });
+
+
+    // Actualizar información
+    infoPaginacion.textContent =
+        `🔎 ${resultados.length} juego(s) encontrado(s)`;
+
+
+    // Ocultar los botones de páginas
+    paginacion.style.display = "none";
+
 });
 
-function mostrarDetallesFC26(){
+function mostrarDetallesDARKSOULSIII(){
 
 document.getElementById("detalleTitulo").innerText =
-"EA Sports FC 26";
+"DARK SOULS III";
 
 document.getElementById("detalleImagen").src =
-"https://wallpaperaccess.com/full/22537619.jpg";
+"https://www.desconsolados.com/wp-content/uploads/2016/04/dark_souls_3_logo.jpg";
 
 document.body.style.overflow = "hidden";
 
@@ -1106,8 +1159,11 @@ document.getElementById("modalDetalles").style.display = "block";
 
 document.getElementById("detalleTexto").innerHTML = `
 <p>
-Disfruta de EA Sports FC 26 con equipos y plantillas actualizadas.
-</p>
+
+
+⚔️ DARK SOULS III
+
+Adéntrate en un mundo oscuro y peligroso lleno de enemigos, jefes desafiantes y secretos por descubrir. Dark Souls III destaca por sus combates exigentes y su profunda ambientación de fantasía oscura..</p>
 
 <div style="
 display:flex;
@@ -1137,19 +1193,25 @@ font-weight:bold;
 </div>
 
 <p>
-⚽ Ultimate Team<br>
-🏆 Modo Carrera<br>
-🌐 Online y Offline
+⚔️ Combates intensos y estratégicos. <br>
+👹 Enfrentamientos contra jefes desafiantes. <br>
+🌑 Mundo de fantasía oscura lleno de secretos. <br>
+🛡️ Gran variedad de armas, armaduras y habilidades. <br>
+🔥 Sistema de progresión y personalización del personaje. <br>
+🗺️ Explora diferentes zonas y descubre caminos ocultos. <br>
+💀 La dificultad es uno de sus principales atractivos. <br>
+🎮 Ideal para jugadores que buscan un verdadero desafío. <br>
 </p>
 `;
 }
-function mostrarDetallesCallOfDutyBlackOps7(){
+
+function mostrarDetallesFarCry5(){
 
 document.getElementById("detalleTitulo").innerText =
-"Call of Duty Black Ops 7";
+"Far Cry 5";
 
 document.getElementById("detalleImagen").src =
-"https://tse2.mm.bing.net/th/id/OIP.LkhBBNiRz6JHdiAya1jm-gHaEK?rs=1&pid=ImgDetMain&o=7&rm=3";
+"https://wallpapers.com/images/featured/far-cry-5-4k-rhmqptb97zxbdoz1.jpg";
 
 document.body.style.overflow = "hidden";
 
@@ -1159,12 +1221,11 @@ document.getElementById("modalDetalles").style.display = "block";
 
 document.getElementById("detalleTexto").innerHTML = `
 <p>
-Disfruta de🎮 Call of Duty: Black Ops 7
 
-Black Ops 7 nos lleva al año 2035, en una guerra global donde la tecnología y la mente humana son el arma principal. Sigue a David Mason y su equipo en una misión secreta que revela una conspiración mundial.
 
-Incluye campaña cooperativa, multijugador intenso y el clásico modo Zombies, todo con combate futurista y una historia más oscura y estratégica..
-</p>
+🔥 Far Cry 5
+
+Adéntrate en Hope County, Montana, donde deberás enfrentarte a un peligroso culto que controla la región. Explora un enorme mundo abierto, consigue armas, vehículos y aliados mientras luchas por recuperar la libertad.</p>
 
 <div style="
 display:flex;
@@ -1194,146 +1255,19 @@ font-weight:bold;
 </div>
 
 <p>
-🧠 Campaña cooperativa innovadora (puedes jugar solo o en equipo) <br>
-🔫 Multijugador competitivo con mapas y modos variados<br>
-🧟 Modo Zombies con historia y supervivencia en el Éter Oscuro<br>
-</p>
-`;
-
-}
-
-function mostrarDetallesMinecraft(){
-
-document.getElementById("detalleTitulo").innerText =
-"Minecraft";
-
-document.getElementById("detalleImagen").src =
-"https://i.ytimg.com/vi/tKlwhWz5gHA/maxresdefault.jpg";
-
-document.body.style.overflow = "hidden";
-
-document.getElementById("overlay").style.display = "block";
-
-document.getElementById("modalDetalles").style.display = "block";
-
-document.getElementById("detalleTexto").innerHTML = `
-<p>
-Disfruta de🎮 Minecraft ⛏️ Minecraft
-
-Minecraft
-
-Minecraft es un juego de mundo abierto donde puedes explorar, construir y sobrevivir en un universo hecho completamente de bloques. Puedes jugar en modo creativo para construir sin límites o en modo supervivencia enfrentando enemigos y buscando recursos.
-
-Es uno de los juegos más populares del mundo gracias a su libertad total y su infinita creatividad..
-</p>
-
-<div style="
-display:flex;
-justify-content:center;
-gap:15px;
-margin:15px 0;
-">
-
-<div style="
-background:#c9dfb7;
-padding:8px 15px;
-border-radius:20px;
-font-weight:bold;
-">
-✅ XBOX ONE
-</div>
-
-<div style="
-background:#c9dfb7;
-padding:8px 15px;
-border-radius:20px;
-font-weight:bold;
-">
-✅ XBOX SERIES X|S
-</div>
-
-</div>
-
-<p>
-🧱 Mundo abierto infinito generado por bloques <br>
-🛠️ Modo supervivencia y creativo (construcción libre o desafío)<br>
-🧟 Enemigos icónicos como zombis, creepers y enderman <br>
-🌍 Exploración de biomas: bosques, desiertos, cuevas, océanos y más <br>
-⚒️ Crafteo de herramientas, armas y estructuras <br>
-🎮 Multijugador para jugar con amigos en servidores <br>
-🔄 Actualizaciones constantes con nuevos mobs y contenido <br>
-</p>
-`;
-
-}
-function mostrarDetallesorzaHorizon5(){
-
-document.getElementById("detalleTitulo").innerText =
-" Forza Horizon 5 ";
-
-document.getElementById("detalleImagen").src =
-"https://th.bing.com/th/id/R.27d9f59aff9f14d94146a2e21bd45b91?rik=qVcewZT2VO52aA&pid=ImgRaw&r=0";
-
-document.body.style.overflow = "hidden";
-
-document.getElementById("overlay").style.display = "block";
-
-document.getElementById("modalDetalles").style.display = "block";
-
-document.getElementById("detalleTexto").innerHTML = `
-<p>
-Forza Horizon 5
-
-Forza Horizon 5 te lleva a un mundo abierto espectacular ambientado en México, con paisajes variados como desiertos, selvas, ciudades y playas. Compite en carreras extremas y explora libremente con cientos de autos realistas.
-
-Incluye eventos dinámicos, clima cambiante y una experiencia de conducción arcade llena de velocidad y libertad..
-</p>
-
-<div style="
-display:flex;
-justify-content:center;
-gap:15px;
-margin:15px 0;
-">
-
-<div style="
-background:#c9dfb7;
-padding:8px 15px;
-border-radius:20px;
-font-weight:bold;
-">
-✅ XBOX ONE
-</div>
-
-<div style="
-background:#c9dfb7;
-padding:8px 15px;
-border-radius:20px;
-font-weight:bold;
-">
-✅ XBOX SERIES X|S
-</div>
-
-</div>
-
-<p>
-🌎 Mundo abierto ambientado en México<br>
-
-🏎️ Más de 500 autos para coleccionar y personalizar<br>
-
-🌦️ Clima dinámico (tormentas, lluvia, polvo)<br>
-
-🎮 Carreras en solitario y multijugador online<br>
-
-🏁 Eventos y desafíos constantes en el mapa<br>
-
-🎨 Gráficos realistas y gran nivel de detalle<br>
-
-🚀 Exploración libre sin límites<br>
-
+🌎 Gran mundo abierto para explorar.<br>
+🔫 Combates llenos de acción.<br>
+🚗 Gran variedad de vehículos.<br>
+🎯 Amplio arsenal de armas.<br>
+👥 Recluta aliados para ayudarte en combate.<br>
+🏕️ Explora diferentes zonas y completa misiones.<br>
+🐻 Encuentra animales y peligros en el mundo.<br>
+🎮 Modo cooperativo para jugar con un amigo.<br>
+🔥 Historia intensa con mucha acción y aventura.<br>
 </p>
 `;
 }
+
 function mostrarDetallesJumpForce(){
 
 document.getElementById("detalleTitulo").innerText =
@@ -1396,6 +1330,7 @@ font-weight:bold;
 </p>
 `;
 }
+
 function mostrarDetallesWatchDogsLegion(){
 
 document.getElementById("detalleTitulo").innerText =
@@ -1523,6 +1458,7 @@ font-weight:bold;
 </p>
 `;
 }
+
 function mostrarDetallesNARUTOSHIPPUDENUltimateNinjaSTORMLegacy(){
 
 document.getElementById("detalleTitulo").innerText =
@@ -1587,6 +1523,7 @@ font-weight:bold;
 </p>
 `;
 }
+
 function mostrarDetallesTinyTinasWonderlands(){
 
 document.getElementById("detalleTitulo").innerText =
@@ -1776,7 +1713,6 @@ font-weight:bold;
 `;
 }
 
-
 function mostrarDetallesCallofDutyBlackOpsColdWar(){
 
 document.getElementById("detalleTitulo").innerText =
@@ -1964,7 +1900,6 @@ font-weight:bold;
 </p>
 `;
 }
-
 
 function mostrarDetallesRidersRepublic(){
 
@@ -2283,6 +2218,8 @@ font-weight:bold;
 
 
 
+
+
 function actualizarCarrito() {
 
   const lista = document.getElementById("juegosCarrito");
@@ -2522,6 +2459,183 @@ document.body.style.overflow = "auto";
 }
 
 actualizarCarrito();
+
+// ========================================
+// PAGINACIÓN DEL CATÁLOGO
+// ========================================
+
+const productosPorPagina = 12;
+
+let paginaActual = 1;
+
+const productos = Array.from(
+    document.querySelectorAll("#catalogo .juego-card")
+);
+
+const paginacion = document.getElementById("paginacion");
+const infoPaginacion = document.getElementById("infoPaginacion");
+
+
+// ========================================
+// MOSTRAR UNA PÁGINA
+// ========================================
+
+function mostrarPagina(pagina) {
+    
+	paginacion.style.display = "flex";
+	
+	
+    const totalPaginas = Math.ceil(
+        productos.length / productosPorPagina
+    );
+
+    if (pagina < 1) {
+        pagina = 1;
+    }
+
+    if (pagina > totalPaginas) {
+        pagina = totalPaginas;
+    }
+
+    paginaActual = pagina;
+
+    const inicio =
+        (pagina - 1) * productosPorPagina;
+
+    const fin =
+        inicio + productosPorPagina;
+
+
+    productos.forEach((producto, index) => {
+
+        if (index >= inicio && index < fin) {
+
+            producto.style.display = "";
+
+        } else {
+
+            producto.style.display = "none";
+
+        }
+
+    });
+
+
+    crearBotonesPaginacion(totalPaginas);
+
+
+    const desde =
+        productos.length === 0 ? 0 : inicio + 1;
+
+    const hasta =
+        Math.min(fin, productos.length);
+
+
+    infoPaginacion.textContent =
+        `Mostrando ${desde} - ${hasta} de ${productos.length} juegos`;
+
+
+    document.getElementById("catalogo").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
+
+// ========================================
+// CREAR BOTONES
+// ========================================
+
+function crearBotonesPaginacion(totalPaginas) {
+
+    paginacion.innerHTML = "";
+
+
+    // ANTERIOR
+
+    const anterior =
+        document.createElement("button");
+
+    anterior.innerHTML = "‹ Anterior";
+
+    anterior.disabled =
+        paginaActual === 1;
+
+    anterior.onclick = function () {
+
+        mostrarPagina(
+            paginaActual - 1
+        );
+
+    };
+
+    paginacion.appendChild(anterior);
+
+
+
+    // NÚMEROS
+
+    for (
+        let i = 1;
+        i <= totalPaginas;
+        i++
+    ) {
+
+        const boton =
+            document.createElement("button");
+
+        boton.textContent = i;
+
+
+        if (i === paginaActual) {
+
+            boton.classList.add("activa");
+
+        }
+
+
+        boton.onclick = function () {
+
+            mostrarPagina(i);
+
+        };
+
+
+        paginacion.appendChild(boton);
+
+    }
+
+
+
+    // SIGUIENTE
+
+    const siguiente =
+        document.createElement("button");
+
+    siguiente.innerHTML = "Siguiente ›";
+
+    siguiente.disabled =
+        paginaActual === totalPaginas;
+
+    siguiente.onclick = function () {
+
+        mostrarPagina(
+            paginaActual + 1
+        );
+
+    };
+
+
+    paginacion.appendChild(siguiente);
+}
+
+
+
+// ========================================
+// INICIAR
+// ========================================
+
+mostrarPagina(1);
 
 
 </script>
