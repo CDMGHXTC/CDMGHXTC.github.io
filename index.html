@@ -546,6 +546,136 @@ VER CATÁLOGO
 <div class="grid"> 
 
 <div class="card juego-card">
+<img src="https://store-images.s-microsoft.com/image/apps.7603.13864960736509568.2a74f3a7-54a5-49f9-95d1-579d46380a7f.f0e7d46f-cd01-410a-9a33-c9fbb5f2aff8">
+<div class="info">
+<h3>Mafia II: Edición Definitiva</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Mafia II: Edición Definitiva">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMafia2Definitive()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://img.asmedia.epimg.net/resizer/v2/6KXE6TRR6JNUZFKFMG2OE24SUQ.jpg?auth=0b69e55adf3a1e24d01fd4a40738333b5afd0b0a042bcb9bbea101c3390ff586&width=1472&height=828&smart=true">
+<div class="info">
+<h3>RESIDENT EVIL 3</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="RESIDENT EVIL 3">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesResidentEvil3()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://wallpapercave.com/wp/wp6068847.jpg">
+<div class="info">
+<h3>Tom Clancy's Ghost Recon Breakpoint</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Tom Clancy's Ghost Recon Breakpoint">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesGhostReconBreakpoint()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Halo_MCC_banner.jpg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original">
+<div class="info">
+<h3>Halo: la colección Jefe Maestro</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Halo: la colección Jefe Maestro">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesHaloMCC()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch2/70010000095785/6d4b4b71d3d37828c3c9c02678c016c28c2989e5102f8378a82c65768a698f0a">
+<div class="info">
+<h3>Little Nightmares Enhanced Edition Complete Edition</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Little Nightmares Enhanced Edition Complete Edition">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesLittleNightmaresEnhanced()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
 <img src="https://image.api.playstation.com/vulcan/img/rnd/202102/2420/Ibn61N9z6pCqmo6RMr28K5Cl.jpg">
 <div class="info">
 <h3>Tony Hawk's™ Pro Skater™ 1 + 2 - Lote Multigeneración Deluxe</h3>
@@ -1951,6 +2081,322 @@ window.addEventListener("scroll", function(){
     }
 
 });
+
+function mostrarDetallesMafia2Definitive(){
+
+document.getElementById("detalleTitulo").innerText =
+"Mafia II: Edición Definitiva";
+
+document.getElementById("detalleImagen").src =
+"https://store-images.s-microsoft.com/image/apps.7603.13864960736509568.2a74f3a7-54a5-49f9-95d1-579d46380a7f.f0e7d46f-cd01-410a-9a33-c9fbb5f2aff8";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🔫 Mafia II: Edición Definitiva
+
+Sumérgete en el mundo del crimen organizado de Empire Bay y acompaña a Vito Scaletta en una historia de ambición, lealtad y traición. Vive una aventura de acción ambientada en una ciudad inspirada en la América de los años 40 y 50.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura y mundo abierto.<br>
+📖 Historia: Sigue a Vito Scaletta mientras intenta hacerse un nombre dentro del crimen organizado de Empire Bay, enfrentándose a peligros, rivales y decisiones que cambiarán su vida.<br>
+🔫 Jugabilidad: Utiliza pistolas, escopetas, rifles y otras armas mientras participas en tiroteos, persecuciones y enfrentamientos contra diferentes bandas.<br>
+🚗 Vehículos: Conduce diferentes automóviles de época por las calles de Empire Bay y participa en persecuciones y misiones.<br>
+🌆 Mundo abierto: Explora una ciudad inspirada en los Estados Unidos de mediados del siglo XX, con barrios, comercios y diferentes zonas para descubrir.<br>
+💰 Crimen organizado: Realiza trabajos para diferentes familias criminales mientras asciendes dentro de la organización y aumentas tu influencia.<br>
+👥 Personajes: Conoce a personajes como Joe Barbaro y otros miembros del mundo criminal que acompañarán a Vito durante su historia.<br>
+🎬 Ambientación: Una recreación de la década de 1940 y 1950 con vehículos, música, vestimenta y escenarios característicos de la época.<br>
+⭐ Edición Definitiva: Incluye Mafia II con mejoras visuales y el contenido adicional lanzado para el juego.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+function mostrarDetallesResidentEvil3(){
+
+document.getElementById("detalleTitulo").innerText =
+"RESIDENT EVIL 3";
+
+document.getElementById("detalleImagen").src =
+"https://img.asmedia.epimg.net/resizer/v2/6KXE6TRR6JNUZFKFMG2OE24SUQ.jpg?auth=0b69e55adf3a1e24d01fd4a40738333b5afd0b0a042bcb9bbea101c3390ff586&width=1472&height=828&smart=true";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🧟 RESIDENT EVIL 3
+
+Vive una intensa aventura de supervivencia en Raccoon City mientras Jill Valentine intenta escapar de una ciudad infestada de zombis y criaturas aterradoras. Enfréntate a uno de los enemigos más peligrosos de la saga: Nemesis.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Terror, supervivencia y acción.<br>
+📖 Historia: Acompaña a Jill Valentine durante el brote del virus T en Raccoon City mientras intenta sobrevivir y escapar de una ciudad completamente devastada.<br>
+🔫 Jugabilidad: Utiliza pistolas, escopetas, rifles y diferentes objetos para enfrentarte a los enemigos y avanzar por la ciudad.<br>
+🧟 Zombis: Enfréntate a numerosos zombis y criaturas mutadas que acechan las calles y edificios de Raccoon City.<br>
+👹 Nemesis: Sobrevive a los constantes ataques de Nemesis, una poderosa criatura que persigue a Jill durante la aventura.<br>
+🧩 Exploración: Recorre calles, estaciones, edificios y diferentes zonas de Raccoon City mientras buscas recursos y objetos importantes.<br>
+🎒 Supervivencia: Administra cuidadosamente munición, objetos curativos y recursos para poder superar las diferentes situaciones.<br>
+💥 Acción: Combina momentos de tensión y exploración con intensos enfrentamientos contra diferentes enemigos y jefes.<br>
+🌆 Ambientación: Una Raccoon City devastada por una epidemia, con calles oscuras, edificios abandonados y amenazas constantes.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+function mostrarDetallesGhostReconBreakpoint(){
+
+document.getElementById("detalleTitulo").innerText =
+"Tom Clancy's Ghost Recon Breakpoint";
+
+document.getElementById("detalleImagen").src =
+"https://wallpapercave.com/wp/wp6068847.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🎖️ Tom Clancy's Ghost Recon Breakpoint
+
+Conviértete en un Ghost y sobrevive detrás de las líneas enemigas en una enorme isla controlada por una fuerza militar hostil. Explora, utiliza el sigilo y trabaja en equipo para completar misiones en un entorno peligroso y abierto.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, disparos tácticos y mundo abierto.<br>
+📖 Historia: Los Ghosts quedan atrapados en Auroa, una isla controlada por los Wolves, un grupo de soldados altamente entrenados liderados por Cole D. Walker.<br>
+🔫 Jugabilidad: Utiliza rifles, pistolas, explosivos y diferentes herramientas tácticas para enfrentarte a tus enemigos.<br>
+🕵️ Sigilo: Aprovecha el entorno, ocúltate y elimina enemigos estratégicamente para completar tus objetivos.<br>
+🌍 Mundo abierto: Explora la enorme isla de Auroa, descubre lugares, bases enemigas y diferentes zonas de combate.<br>
+👥 Multijugador: Forma un escuadrón y juega con otros jugadores para completar misiones y enfrentarte a los enemigos.<br>
+🤝 Cooperativo: Trabaja en equipo con hasta cuatro jugadores para superar diferentes objetivos y desafíos.<br>
+🚙 Vehículos: Utiliza vehículos terrestres, helicópteros y diferentes medios de transporte para recorrer la isla.<br>
+🎯 Personalización: Personaliza las armas, equipamiento y apariencia de tu Ghost para adaptar tu estilo de juego.<br>
+🏔️ Supervivencia: Gestiona recursos, utiliza el entorno y adapta tus estrategias para sobrevivir en territorio enemigo.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+function mostrarDetallesHaloMCC(){
+
+document.getElementById("detalleTitulo").innerText =
+"Halo: la colección Jefe Maestro";
+
+document.getElementById("detalleImagen").src =
+"https://upload.wikimedia.org/wikipedia/commons/1/10/Halo_MCC_banner.jpg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🪖 Halo: la colección Jefe Maestro
+
+Vive algunas de las campañas más importantes de Halo en una colección que reúne las aventuras del legendario Jefe Maestro. Combate contra diferentes enemigos, descubre grandes historias de ciencia ficción y disfruta de intensas batallas en el universo de Halo.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción y disparos en primera persona.<br>
+📖 Historia: Sigue las aventuras del Jefe Maestro a través de diferentes conflictos que marcaron la historia del universo Halo.<br>
+🔫 Jugabilidad: Utiliza diferentes armas humanas y alienígenas, vehículos y habilidades de combate para superar cada misión.<br>
+👥 Multijugador: Disfruta de diferentes modos multijugador con mapas y experiencias clásicas de la saga Halo.<br>
+🤝 Cooperativo: Juega las campañas acompañado de otros jugadores y enfréntate juntos a los diferentes desafíos.<br>
+👽 Enemigos: Enfréntate a Covenant, Flood, Prometeos y otras amenazas del universo de Halo.<br>
+🚀 Vehículos: Utiliza Warthogs, tanques, aeronaves y diferentes vehículos durante las batallas.<br>
+🌌 Ambientación: Recorre diferentes mundos, instalaciones, naves y escenarios emblemáticos de la saga Halo.<br>
+⭐ Colección: Reúne varias de las entregas clásicas protagonizadas por el Jefe Maestro en una sola colección.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+function mostrarDetallesLittleNightmaresEnhanced(){
+
+document.getElementById("detalleTitulo").innerText =
+"Little Nightmares Enhanced Edition Complete Edition";
+
+document.getElementById("detalleImagen").src =
+"https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch2/70010000095785/6d4b4b71d3d37828c3c9c02678c016c28c2989e5102f8378a82c65768a698f0a";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+😱 Little Nightmares Enhanced Edition
+
+Adéntrate en un mundo oscuro y misterioso donde deberás ayudar a Six a escapar de una pesadilla llena de criaturas aterradoras. Explora lugares inquietantes, resuelve situaciones peligrosas y utiliza el entorno para sobrevivir.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Terror, aventura, plataformas y puzzle.<br>
+📖 Historia: Acompaña a Six en su intento por escapar de un misterioso lugar lleno de peligros y extrañas criaturas que intentarán detenerla.<br>
+🕯️ Exploración: Recorre escenarios oscuros y descubre caminos ocultos, secretos y diferentes peligros mientras avanzas.<br>
+🧩 Puzzles: Resuelve acertijos y utiliza objetos del entorno para encontrar la manera de continuar.<br>
+👹 Enemigos: Evita criaturas aterradoras mucho más grandes que el protagonista y utiliza el sigilo para sobrevivir.<br>
+🏃 Supervivencia: No cuentas con grandes armas, por lo que tendrás que esconderte, correr y utilizar el escenario a tu favor.<br>
+🌑 Ambientación: Un mundo oscuro, surrealista e inquietante con escenarios diseñados para generar tensión constantemente.<br>
+🎨 Enhanced Edition: Disfruta de una experiencia mejorada con mejoras visuales, iluminación y efectos que hacen que la aventura sea todavía más inmersiva.<br>
+📦 Complete Edition: Incluye la experiencia completa de Little Nightmares con su contenido adicional correspondiente.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
 
 function mostrarDetallesTonyHawkProSkater12(){
 
