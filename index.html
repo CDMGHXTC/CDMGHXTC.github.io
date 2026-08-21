@@ -309,21 +309,29 @@ display:inline-block;
 text-decoration:none;
 }
 
-#modalDetalles::-webkit-scrollbar{
+#modalDetalles::-webkit-scrollbar,
+#listaCarrito::-webkit-scrollbar,
+#juegosCarrito::-webkit-scrollbar{
 width:8px;
 }
 
-#modalDetalles::-webkit-scrollbar-track{
+#modalDetalles::-webkit-scrollbar-track,
+#listaCarrito::-webkit-scrollbar-track,
+#juegosCarrito::-webkit-scrollbar-track{
 background:#111827;
 border-radius:10px;
 }
 
-#modalDetalles::-webkit-scrollbar-thumb{
+#modalDetalles::-webkit-scrollbar-thumb,
+#listaCarrito::-webkit-scrollbar-thumb,
+#juegosCarrito::-webkit-scrollbar-thumb{
 background:#00ff88;
 border-radius:10px;
 }
 
-#modalDetalles::-webkit-scrollbar-thumb:hover{
+#modalDetalles::-webkit-scrollbar-thumb:hover,
+#listaCarrito::-webkit-scrollbar-thumb:hover,
+#juegosCarrito::-webkit-scrollbar-thumb:hover{
 background:#00cc6a;
 }
 
@@ -538,6 +546,234 @@ VER CATÁLOGO
 <div class="grid">
 
 <div class="card juego-card">
+<img src="https://img.asmedia.epimg.net/resizer/v2/EXUVFLYO6NIFXDPUSSXZZO6FGI.jpg?auth=0d16bfa00bae6664dff8ade8c690efaf4c5e66361d67c8c7336716b6ba7a329c&width=1472&height=828&smart=true">
+
+<div class="info">
+<h3>Ancestors: The Humankind Odyssey</h3>
+
+<div class="precio">$20.000</div>
+
+<button class="comprar" data-juego="Ancestors: The Humankind Odyssey">
+Agregar al carrito
+</button>
+
+<button onclick="mostrarDetallesAncestors()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://image.api.playstation.com/cdn/EP1018/CUSA10688_00/HgBAMfrVmOvzWGzcI2fxqOOcfI17pYHN.png">
+
+<div class="info">
+<h3>Injustice 2 - Legendary Edition</h3>
+
+<div class="precio">$20.000</div>
+
+<button class="comprar" data-juego="Injustice 2 - Legendary Edition">
+Agregar al carrito
+</button>
+
+<button onclick="mostrarDetallesInjustice2Legendary()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://image.api.playstation.com/vulcan/ap/rnd/202203/2500/CIBQLYOsKyYS1RA6niyVWLbV.jpg">
+
+<div class="info">
+<h3>MX vs ATV Legends</h3>
+
+<div class="precio">$20.000</div>
+
+<button class="comprar" data-juego="MX vs ATV Legends">
+Agregar al carrito
+</button>
+
+<button onclick="mostrarDetallesMXvsATVLegends()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://www.psu.com/wp/wp-content/uploads/2021/07/Tales-of-Arise-PS5-wallpapers-13.jpg">
+
+<div class="info">
+<h3>Tales of Arise</h3>
+
+<div class="precio">$20.000</div>
+
+<button class="comprar" data-juego="Tales of Arise">
+Agregar al carrito
+</button>
+
+<button onclick="mostrarDetallesTalesOfArise()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://cloudfront-eu-central-1.images.arcpublishing.com/diarioas/U3DCYLN7AJLRXA6FHCXVRKG444.jpg">
+<div class="info">
+<h3>Battlefield 4</h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego="Battlefield 4">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesBattlefield4()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA06623_00/3/i_f1a95fa052fd0e9b97c176be3a2ecdb3ee16b97203f7c5aaba5edf173b320328/i/icon0.png">
+<div class="info">
+<h3>Outlast 2</h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego="Outlast 2">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesOutlast2()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWp4K6YJd8dOQ-E_VmO-waY-qGGwqHFGcUwTzO57qulO_KXap9K5e98Pw&s=10">
+<div class="info">
+<h3>Devil May Cry HD Collection</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Devil May Cry HD Collection">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesDevilMayCryHDCollection()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/store/software/switch/70070000016597/0a33bcaba879403460afe2ff2aafaaefeede964e0fc11a430f71077867cc87f1">
+<div class="info">
+<h3>Minecraft</h3>
+<div class="precio">$15.000</div>
+<button class="comprar" data-juego="Minecraft">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMinecraft()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
 <img src="https://alexgame.by/storage/products/December2024/owJSSkEwXOQ2dzje9K0O.webp">
 <div class="info">
 <h3> Metro Saga Bundle </h3>
@@ -562,6 +798,7 @@ cursor:pointer;
 
 </div>
 </div>
+
 
 <div class="card juego-card">
 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiEum1AwqgjFQKJ_gNSuCPJYZZWfn6XOrvKF_-_QqTwWwK0lCNonBg9O8mAdfQh6G8SfFmA9fGfU27jHtWfSV86-8YdPPo5NdoZ9zeOZZiW5zMwmQnNdZXD-2j0JSoclcPkJnQJHSFafKti/w919/mafia-3-definitive-edition-poster-uhdpaper.com-8K-5.1958-wp.thumbnail.jpg">
@@ -649,7 +886,7 @@ cursor:pointer;
 <div class="info">
 <h3> F1 2021 </h3>
 <div class="precio">$15.000</div>
-<button class="comprar" data-juego="Cuphead">
+<button class="comprar" data-juego="F1 2021">
 Agregar al carrito
 </button>
 <button onclick="mostrarDetallesF12021()"
@@ -973,7 +1210,7 @@ cursor:pointer;
 <div class="info">
 <h3>Crash Team Racing Nitro-Fueled</h3>
 <div class="precio">$15.000</div>
-<button class="comprar"Crash Team Racing Nitro-Fueled">
+<button class="comprar" data-juego=Crash Team Racing Nitro-Fueled">
 Agregar al carrito
 </button>
 <button onclick="mostrarDetallesCrashTeamRacingNitroFueled()"
@@ -1054,7 +1291,7 @@ cursor:pointer;
 <div class="info">
 <h3>Grand Theft Auto V</h3>
 <div class="precio">$15.000</div>
-<button class="comprar"Grand Theft Auto V">
+<button class="comprar" data-juego=Grand Theft Auto V">
 Agregar al carrito
 </button>
 <button onclick="mostrarDetallesGrandTheftAutoV()"
@@ -1267,7 +1504,7 @@ cursor:pointer;
 
 <!-- ===== BOLA FLOTANTE DE BÚSQUEDA ===== -->
 <div class="buscador-flotante-btn" id="botonBuscadorFlotante" onclick="toggleBuscadorFlotante()">
-🔎
+🔎 
 </div>
 
 <div class="caja-buscador-flotante" id="cajaBuscadorFlotante">
@@ -1302,11 +1539,17 @@ border:2px solid #00ff88;
 z-index:9999;
 max-width:300px;
 width:90%;
+max-height:85vh;
+overflow-y:auto;
 ">
 
 <h3>🛒 Tu carrito</h3>
 
-<ul id="juegosCarrito"></ul>
+<ul id="juegosCarrito" style="
+max-height:40vh;
+overflow-y:auto;
+padding-right:5px;
+"></ul>
 
 <button onclick="pagarAhora()" style="
 margin-top:10px;
@@ -1481,13 +1724,381 @@ window.addEventListener("scroll", function(){
 
 });
 
-function mostrarDetallesMetroSagaBundle(){
+function mostrarDetallesAncestors(){
 
 document.getElementById("detalleTitulo").innerText =
-"Metro Saga Bundle";
+"Ancestors: The Humankind Odyssey";
 
 document.getElementById("detalleImagen").src =
-"https://alexgame.by/storage/products/December2024/owJSSkEwXOQ2dzje9K0O.webp";
+"https://img.asmedia.epimg.net/resizer/v2/EXUVFLYO6NIFXDPUSSXZZO6FGI.jpg?auth=0d16bfa00bae6664dff8ade8c690efaf4c5e66361d67c8c7336716b6ba7a329c&width=1472&height=828&smart=true";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🦍 Ancestors: The Humankind Odyssey
+
+Viaja millones de años al pasado y lidera un clan de nuestros primeros antepasados. Explora un África prehistórica peligrosa, aprende nuevas habilidades y evoluciona generación tras generación para asegurar la supervivencia de tu especie.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Supervivencia, aventura y mundo abierto.<br>
+📖 Historia: Comienza hace 10 millones de años y guía a tu clan durante las primeras etapas de la evolución humana.<br>
+🌿 Exploración: Recorre selvas, sabanas y diferentes zonas del África prehistórica mientras descubres nuevos territorios.<br>
+🧠 Evolución: Aprende nuevas habilidades y transmite los conocimientos a las siguientes generaciones.<br>
+🛠️ Supervivencia: Fabrica herramientas, consigue alimentos, bebe y descansa para mantener con vida a tu clan.<br>
+🦁 Peligros: Enfréntate a depredadores y otros peligros naturales mientras exploras territorios desconocidos.<br>
+👥 Clan: Controla diferentes miembros, forma familias y aumenta las posibilidades de supervivencia trabajando juntos.<br>
+🌍 Ambientación: África del Neógeno, entre 10 y 2 millones de años atrás, durante los primeros pasos de la evolución humana.<br>
+⭐ Progresión: Tus decisiones determinan qué habilidades desarrolla tu clan y cómo evoluciona a través de múltiples generaciones.<br>
+🎮 Jugadores: Experiencia para un jugador.
+</p>
+`;
+}
+
+function mostrarDetallesInjustice2Legendary(){
+
+document.getElementById("detalleTitulo").innerText =
+"Injustice 2 - Legendary Edition";
+
+document.getElementById("detalleImagen").src =
+"https://media.hrkgame.com/games/.thumbnails/46506_full.jpg/46506_full-460x215.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🦸 Injustice 2 - Legendary Edition
+
+Enfrenta a los héroes y villanos más poderosos de DC en intensos combates. Personaliza a tus personajes, consigue equipamiento y lucha en una historia donde Batman se enfrenta al régimen de Superman y a una nueva amenaza.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Juego de lucha.<br>
+📖 Historia: Batman lucha contra el régimen de Superman mientras una nueva amenaza pone en peligro el futuro de la Tierra.<br>
+🥊 Jugabilidad: Combates intensos con superhéroes y villanos de DC, utilizando ataques especiales, combos y habilidades únicas.<br>
+🦸 Personajes: Juega con una gran selección de personajes del Universo DC y personajes adicionales incluidos en la Legendary Edition.<br>
+⚙️ Personalización: Consigue equipamiento durante los combates para modificar la apariencia y características de tus luchadores.<br>
+👥 Multijugador: Compite contra otros jugadores en combates locales y partidas online.<br>
+💥 Habilidades: Utiliza poderes especiales y ataques característicos de cada personaje para derrotar a tus oponentes.<br>
+🌍 Ambientación: El Universo DC con escenarios inspirados en lugares icónicos de héroes y villanos.<br>
+⭐ Legendary Edition: Incluye personajes adicionales como Darkseid, Sub-Zero, Hellboy, Raiden, Atom, Starfire, Capucha Roja, Black Manta, Enchantress y Las Tortugas Ninja.
+</p>
+`;
+}
+
+function mostrarDetallesMXvsATVLegends(){
+
+document.getElementById("detalleTitulo").innerText =
+"MX vs ATV Legends";
+
+document.getElementById("detalleImagen").src =
+"https://image.api.playstation.com/vulcan/ap/rnd/202203/2500/CIBQLYOsKyYS1RA6niyVWLbV.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🏁 MX vs ATV Legends
+
+Vive la emoción de las carreras todoterreno con motos, vehículos ATV y UTV. Compite en diferentes circuitos y terrenos mientras mejoras tus habilidades y personalizas tus vehículos.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Carreras y deportes todoterreno.<br>
+🏍️ Jugabilidad: Compite utilizando motos, ATV y UTV en diferentes tipos de terrenos y circuitos.<br>
+🏁 Carreras: Participa en competiciones llenas de saltos, curvas, obstáculos y diferentes condiciones del terreno.<br>
+🛠️ Personalización: Personaliza tu piloto y mejora el rendimiento y apariencia de tus vehículos.<br>
+👥 Multijugador: Compite online contra otros jugadores en intensas carreras todoterreno.<br>
+🤝 Cooperativo: Disfruta de diferentes modalidades junto a otros jugadores.<br>
+🌍 Ambientación: Grandes escenarios abiertos, circuitos de motocross y terrenos naturales diseñados para explorar y competir.<br>
+🏆 Progresión: Participa en eventos y competiciones para avanzar y convertirte en un piloto destacado.
+</p>
+`;
+}
+
+function mostrarDetallesTalesOfArise(){
+
+document.getElementById("detalleTitulo").innerText =
+"Tales of Arise";
+
+document.getElementById("detalleImagen").src =
+"https://www.psu.com/wp/wp-content/uploads/2021/07/Tales-of-Arise-PS5-wallpapers-13.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🔥 Tales of Arise
+
+Embárcate en una aventura épica de acción y fantasía en un mundo dividido entre dos planetas. Acompaña a Alphen y Shionne mientras luchan por liberar Dahna y descubrir la verdad detrás de su conflicto.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: RPG de acción.<br>
+📖 Historia: Alphen y Shionne unen sus fuerzas para enfrentarse al dominio de Rena y luchar por la libertad de Dahna.<br>
+⚔️ Jugabilidad: Combates rápidos en tiempo real utilizando ataques, habilidades y Artes Astrales para crear poderosas combinaciones.<br>
+👥 Personajes: Forma un equipo con diferentes personajes, cada uno con habilidades y estilos de combate únicos.<br>
+🤝 Combate: Combina las habilidades de los miembros del grupo para realizar ataques especiales y aprovechar las debilidades de los enemigos.<br>
+🌍 Ambientación: Un mundo de fantasía dividido entre Dahna y Rena, con ciudades, paisajes naturales, ruinas y diferentes regiones para explorar.<br>
+✨ Progresión: Mejora las habilidades de los personajes, consigue nuevo equipamiento y desarrolla diferentes estilos de combate.<br>
+🐉 Enemigos: Enfréntate a criaturas, soldados y poderosos enemigos durante tu aventura.<br>
+</p>
+`;
+}
+
+function mostrarDetallesBattlefield4(){
+
+document.getElementById("detalleTitulo").innerText =
+"Battlefield 4";
+
+document.getElementById("detalleImagen").src =
+"https://cloudfront-eu-central-1.images.arcpublishing.com/diarioas/U3DCYLN7AJLRXA6FHCXVRKG444.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+💥 Battlefield 4
+
+Vive intensos combates militares en escenarios llenos de acción y destrucción. Battlefield 4 combina una campaña cinematográfica con grandes batallas multijugador donde el trabajo en equipo es clave.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción y disparos en primera persona.<br>
+📖 Historia: Acompaña al escuadrón Tombstone en una misión militar marcada por conflictos internacionales y una creciente amenaza.<br>
+🔫 Jugabilidad: Combates con diferentes armas, vehículos, explosivos y un sistema de destrucción que permite modificar el entorno durante las batallas.<br>
+👥 Multijugador: Grandes partidas online con diferentes modos, clases y mapas para enfrentarte a otros jugadores.<br>
+🤝 Cooperativo: El multijugador fomenta el trabajo en equipo entre diferentes clases y roles.<br>
+🌍 Ambientación: Conflictos militares modernos en diferentes lugares del mundo, con ciudades, zonas rurales y escenarios de guerra.<br>
+🚁 Vehículos: Utiliza tanques, helicópteros, vehículos blindados, barcos y otros medios de combate.<br>
+💥 Destrucción: Los escenarios pueden sufrir grandes cambios durante los enfrentamientos, ofreciendo nuevas posibilidades estratégicas.<br>
+</p>
+`;
+}
+
+function mostrarDetallesOutlast2(){
+
+document.getElementById("detalleTitulo").innerText =
+"Outlast 2";
+
+document.getElementById("detalleImagen").src =
+"https://cdn.wccftech.com/wp-content/uploads/2017/04/Outlast-2-Logo.png";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🩸 Outlast 2
+
+Adéntrate en una aterradora experiencia de survival horror donde cada decisión puede significar la diferencia entre escapar o ser atrapado. En Outlast 2 tendrás que investigar una misteriosa desaparición mientras sobrevives a una comunidad peligrosa.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Survival horror, terror psicológico y aventura.<br>
+📖 Historia: Blake Langermann investiga la desaparición de una mujer mientras descubre los oscuros secretos de una comunidad aislada.<br>
+📹 Jugabilidad: Explora, investiga y escapa de los enemigos utilizando una cámara con visión nocturna, mientras administras recursos y buscas lugares donde esconderte.<br>
+👥 Multijugador: No cuenta con modo multijugador.
+🤝 Cooperativo: La campaña es exclusivamente para un jugador.<br>
+🌑 Ambientación: Entornos oscuros y perturbadores, con pueblos abandonados, bosques y lugares llenos de peligros.<br>
+😱 Terror: Se enfoca en la tensión, persecuciones, sustos y terror psicológico más que en el combate directo.<br>
+</p>
+`;
+}
+
+function mostrarDetallesDevilMayCryHDCollection(){
+
+document.getElementById("detalleTitulo").innerText =
+"Devil May Cry HD Collection";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWp4K6YJd8dOQ-E_VmO-waY-qGGwqHFGcUwTzO57qulO_KXap9K5e98Pw&s=10";
 
 document.body.style.overflow = "hidden";
 
@@ -1499,7 +2110,131 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+⚔️ Devil May Cry HD Collection
+
+Vive una legendaria saga de acción protagonizada por Dante, un cazador de demonios que deberá enfrentarse a criaturas sobrenaturales y poderosos enemigos. Devil May Cry HD Collection reúne tres aventuras clásicas con gráficos mejorados.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, hack and slash y aventura.<br>
+📖 Historia: Sigue a Dante en diferentes aventuras mientras enfrenta demonios, descubre secretos de su pasado y lucha contra poderosas amenazas sobrenaturales.<br>
+⚔️ Jugabilidad: Combates rápidos y espectaculares con espadas, armas de fuego, combos y habilidades especiales.<br>
+👥 Multijugador: No cuenta con modo multijugador.
+🤝 Cooperativo: Las campañas son para un solo jugador.<br>
+🌍 Ambientación: Mundos oscuros y sobrenaturales llenos de demonios, castillos, ruinas y escenarios misteriosos.<br>
+📦 Contenido: Incluye Devil May Cry, Devil May Cry 2 y Devil May Cry 3: Special Edition.<br>
+🔥 Combate: Sistema de combos y diferentes estilos de lucha para derrotar enemigos y conseguir mejores rangos.<br>
+</p>
+`;
+}
+
+function mostrarDetallesMinecraft(){
+
+document.getElementById("detalleTitulo").innerText =
+"Minecraft";
+
+document.getElementById("detalleImagen").src =
+"https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/store/software/switch/70070000016597/0a33bcaba879403460afe2ff2aafaaefeede964e0fc11a430f71077867cc87f1";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+
+⛏️ Minecraft
+
+Construye, explora y crea tu propia aventura en un mundo abierto generado de forma diferente en cada partida. Minecraft te permite recolectar recursos, construir estructuras y enfrentarte a criaturas mientras decides cómo jugar.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Sandbox, aventura y supervivencia.<br>
+📖 Historia: No cuenta con una historia lineal; tú decides qué hacer y cómo desarrollar tu aventura.<br>
+⛏️ Jugabilidad: Recolecta recursos, fabrica herramientas, construye, explora y sobrevive a diferentes peligros.<br>
+👥 Multijugador: Permite jugar online con otros jugadores y explorar mundos juntos.<br>
+🤝 Cooperativo: Construye, explora y sobrevive junto a tus amigos.<br>
+🌍 Ambientación: Un enorme mundo de bloques con diferentes biomas, aldeas, cuevas, océanos y dimensiones.<br>
+🧟 Enemigos: Enfréntate a criaturas como zombis, esqueletos, creepers y otros peligros.<br>
+🏗️ Creatividad: Puedes construir desde pequeñas casas hasta enormes ciudades y estructuras.<br>
+</p>
+`;
+}
+
+function mostrarDetallesMetroSagaBundle(){
+
+document.getElementById("detalleTitulo").innerText =
+"Metro Saga Bundle";
+
+document.getElementById("detalleImagen").src =
+"https://store-images.s-microsoft.com/image/apps.52933.13527977782474486.a372844e-a162-4ec0-8cec-cf2a519ace10.bc3c214c-db43-445b-be30-5a3686893016";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+
+
 Vive una intensa experiencia de acción, supervivencia y terror en un mundo devastado por una guerra nuclear. Metro Saga Bundle reúne la trilogía principal de Metro, permitiéndote recorrer la historia de Artyom desde los túneles del metro hasta las tierras devastadas de Rusia.</p>
 
 <div style="
@@ -1621,7 +2356,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+
 Vuelve a vivir el clásico survival horror con una experiencia completamente renovada. Resident Evil 2 Deluxe Edition te lleva a Raccoon City, donde deberás sobrevivir a una terrible epidemia mientras descubres qué ocurrió en la ciudad.</p>
 
 <div style="
@@ -1681,7 +2416,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+
 Vive la experiencia del baloncesto con NBA 2K22, disfruta de partidos intensos, diferentes modos de juego y una gran variedad de opciones para competir y desarrollar a tu jugador.
 </p>
 
@@ -1742,7 +2477,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+
 Vive la emoción de la Fórmula 1 con F1 2021, un juego de carreras que combina competición, estrategia y velocidad. Disfruta de circuitos oficiales y compite para convertirte en campeón.
 </p>
 
@@ -1803,7 +2538,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+
 Una aventura de acción y plataformas con un estilo visual inspirado en las caricaturas clásicas. Cuphead combina niveles desafiantes, jefes únicos y una gran variedad de armas y habilidades. Esta versión incluye el DLC The Delicious Last Course.
 .</p>
 
@@ -1864,7 +2599,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+
 Sekiro Shadows Die Twice es un videojuego de acción y aventura ambientado en el Japón del período Sengoku. El jugador controla a un guerrero shinobi conocido como Lobo, quien busca rescatar a su joven señor y vengarse de sus enemigos. El juego se caracteriza por sus combates rápidos y difíciles, el uso de una espada, habilidades ninja y la posibilidad de revivir después de ser derrotado. Es conocido por su alto nivel de dificultad y por exigir precisión para bloquear y contraatacar.
 .</p>
 
@@ -1924,7 +2659,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+
 Gears 5 es un videojuego de acción y disparos en tercera persona. La historia sigue a Kait Díaz, quien busca descubrir la verdad sobre su pasado mientras enfrenta a una peligrosa amenaza que pone en riesgo a la humanidad. El juego combina combates intensos, exploración y una campaña que puede jugarse en solitario o en cooperativo.
 .</p>
 
@@ -2426,7 +3161,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+
 Battlefield™ 2042 es un videojuego de disparos en primera persona ambientado en un futuro cercano. Ofrece grandes batallas multijugador con vehículos, armas modernas y mapas enormes. Los jugadores pueden elegir diferentes especialistas y participar en combates dinámicos, donde el trabajo en equipo y la estrategia son importantes</p>
 
 <div style="
@@ -2489,7 +3224,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+
 Crash Team Racing Nitro-Fueled
 
 🏎️ Crash Team Racing Nitro-Fueled
@@ -2554,7 +3289,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 Call of Duty : Black Ops Cold War
 
-Descripción:
+
 Call of Duty®: Black Ops Cold War
 
 Vive una intensa campaña ambientada en la Guerra Fría, con acción, espionaje y combates llenos de adrenalina. También disfruta de su competitivo modo Multijugador y enfrenta hordas de zombis en Zombies. 🎮🔥.</p>
@@ -2617,7 +3352,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+
 Crash Bandicoot™ 4: It's About Time es un videojuego de plataformas y aventura protagonizado por Crash y sus amigos. El jugador debe recorrer diferentes mundos, superar obstáculos, derrotar enemigos y completar niveles llenos de desafíos.</p>
 
 <div style="
@@ -2679,7 +3414,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+
 🚗 Grand Theft Auto V
 
 Vive una aventura de acción y mundo abierto en Los Santos, donde podrás explorar la ciudad, realizar misiones, conducir vehículos y vivir la historia de tres protagonistas.</p>
@@ -2742,7 +3477,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+
 Riders Republic es un videojuego deportivo de mundo abierto en el que los jugadores pueden practicar diferentes deportes extremos en grandes escenarios naturales. El juego combina velocidad, exploración y competencias con otros jugadores.</p>
 
 <div style="
@@ -2804,7 +3539,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+
 🥊 Mortal Kombat 11 Ultimate
 
 Vive combates intensos y brutales con los personajes más conocidos de Mortal Kombat. Mortal Kombat 11 Ultimate reúne gran cantidad de contenido para disfrutar de la experiencia completa..</p>
@@ -2868,7 +3603,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+
 Outlast: Bundle of Terror es una colección de juegos de terror y supervivencia en primera persona. El jugador debe explorar lugares oscuros y peligrosos, resolver situaciones y escapar de diferentes amenazas mientras intenta descubrir los secretos detrás de los acontecimientos.
 
 .</p>
@@ -2931,7 +3666,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+
 Friday the 13th: The Game es un videojuego de terror y supervivencia basado en la famosa franquicia de Viernes 13. Los jugadores pueden asumir el papel de Jason Voorhees o de uno de los consejeros que intentan sobrevivir y escapar del campamento.
 
 .</p>
@@ -2994,7 +3729,7 @@ document.getElementById("detalleTexto").innerHTML = `
 <p>
 
 
-Descripción:
+
 Far Cry New Dawn es un videojuego de acción y aventura en primera persona ambientado en un mundo postapocalíptico. El jugador debe explorar un territorio transformado después de una catástrofe, enfrentándose a enemigos y ayudando a los sobrevivientes.
 .</p>
 
@@ -3085,7 +3820,8 @@ function actualizarCarrito() {
       <span>${juego} x${juegos[juego].cantidad}</span>
 
       <button
-      onclick="eliminarJuego('${juego}')"
+      class="btn-eliminar-juego"
+      data-juego="${juego.replace(/"/g, '&quot;')}"
       style="
       background:red;
       border:none;
@@ -3099,6 +3835,14 @@ function actualizarCarrito() {
     </li>
     `;
   }
+
+  // Usamos data-attribute + listener en vez de onclick inline,
+  // así los nombres con apóstrofes (ej: Tiny Tina's Wonderlands) no rompen el HTML
+  lista.querySelectorAll(".btn-eliminar-juego").forEach(btn => {
+    btn.addEventListener("click", () => {
+      eliminarJuego(btn.dataset.juego);
+    });
+  });
 
   carrito.innerHTML = `🛒 Carrito (${cantidad})`;
   localStorage.setItem(
