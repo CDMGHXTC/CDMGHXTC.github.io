@@ -545,6 +545,32 @@ VER CATÁLOGO
 <div class="grid">
 
 <div class="card juego-card">
+<img src="https://i.blogs.es/707ca5/wd0/1366_2000.png">
+<div class="info">
+<h3>Watch Dogs 2 Edición Gold</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Watch Dogs 2 Edición Gold">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesWatchDogs2Gold()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
 <img src="https://image.api.playstation.com/cdn/UP0002/CUSA00803_00/BnDaswzqOa4UfwWwgfKWesgCuwvD6QX5.png?w=440">
 <div class="info">
 <h3>Call of Duty Advanced Warfare</h3>
@@ -2374,6 +2400,69 @@ font-weight:bold;
 🎯 Personalización: Mejora y configura tu equipamiento para adaptarlo a diferentes estilos de combate.<br>
 🚁 Vehículos: Participa en grandes enfrentamientos utilizando vehículos y tecnología militar avanzada.<br>
 💥 Acción: Disfruta de intensos combates con explosiones, persecuciones y secuencias cinematográficas.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+function mostrarDetallesWatchDogs2Gold(){
+
+document.getElementById("detalleTitulo").innerText =
+"Watch Dogs 2 Edición Gold";
+
+document.getElementById("detalleImagen").src =
+"https://cdn1.epicgames.com/angelonia/offer/WD2-gold-Capsule-1920x1080-cbd24776f4e0d305dab327fb98304e52d5740323.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+💻 Watch Dogs 2 Edición Gold
+
+Conviértete en Marcus Holloway y únete al grupo de hackers DedSec para luchar contra un sistema de vigilancia que controla la ciudad. Hackea dispositivos, vehículos y sistemas mientras exploras un enorme mundo abierto lleno de posibilidades.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura y mundo abierto.<br>
+📖 Historia: Sigue a Marcus Holloway y DedSec en su lucha contra ctOS 2.0, un sistema de vigilancia utilizado para controlar a los habitantes de San Francisco.<br>
+💻 Hackeo: Manipula cámaras, teléfonos, sistemas de seguridad, semáforos, vehículos y otros dispositivos conectados para superar diferentes situaciones.<br>
+🚗 Vehículos: Conduce coches, motos, barcos y diferentes medios de transporte para recorrer la ciudad.<br>
+🎯 Jugabilidad: Combina sigilo, combate, hackeo y diferentes herramientas para completar las misiones de varias maneras.<br>
+🌉 Mundo abierto: Explora San Francisco, Oakland y diferentes zonas llenas de actividades, secretos y lugares para descubrir.<br>
+👥 Multijugador: Participa en actividades cooperativas y enfrentamientos online junto a otros jugadores.<br>
+🤝 Cooperativo: Únete a otro jugador para completar misiones y actividades dentro del mundo abierto.<br>
+⭐ Edición Gold: Incluye el juego y contenido adicional de la edición Gold, con expansiones, misiones y elementos adicionales según el contenido de la edición.<br>
 🎮 Compatibilidad: Xbox One y Xbox Series X|S.
 </p>
 `;
