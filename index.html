@@ -8529,6 +8529,16 @@ document.body.style.overflow = "auto";
 
 }
 
+// Cada ficha de juego comienza desde la parte superior del modal.
+document.addEventListener("click", (event) => {
+  const botonDetalles = event.target.closest(
+    'button[onclick^="mostrarDetalles"]'
+  );
+
+  if (botonDetalles) {
+    document.getElementById("modalDetalles").scrollTop = 0;
+  }
+});
 actualizarCarrito();
 
 // ========================================
