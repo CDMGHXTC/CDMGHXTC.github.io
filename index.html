@@ -6,46 +6,278 @@
 <title>MYMGAMERV2</title>
 
 <style>
-
-@media (max-width:768px){
-section{
-scroll-margin-top: 150px;
+/* ===== DISEÑO GAMER MEJORADO ===== */
+:root{
+    --verde:#00ff88;
+    --verde-xbox:#107c10;
+    --fondo:#070b0f;
+    --panel:#101820;
+    --panel-2:#161b22;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+        radial-gradient(circle at 15% 10%,rgba(0,255,136,.08),transparent 28%),
+        radial-gradient(circle at 85% 30%,rgba(16,124,16,.10),transparent 30%),
+        var(--fondo);
+}
+
+/* Encabezado */
 header{
-flex-direction:column;
-gap:15px;
-}
-
-.logo-container{
-flex-direction:column;
-text-align:center;
-}
-
-nav{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+    background:rgba(7,11,15,.88);
+    border-bottom:1px solid rgba(0,255,136,.18);
+    box-shadow:0 5px 30px rgba(0,0,0,.35);
 }
 
 nav a{
-margin:5px 10px;
+    position:relative;
+    transition:.3s ease;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:var(--verde);
+    box-shadow:0 0 8px var(--verde);
+    transition:.3s ease;
+}
+
+nav a:hover{
+    color:var(--verde);
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* Hero */
+.hero{
+    min-height:80vh;
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(135deg,rgba(16,124,16,.75),rgba(7,11,15,.96) 45%,rgba(0,255,136,.16)),
+        radial-gradient(circle at center,rgba(0,255,136,.12),transparent 55%);
+}
+
+.hero::before,
+.hero::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    filter:blur(2px);
+    pointer-events:none;
+}
+
+.hero::before{
+    width:320px;
+    height:320px;
+    background:rgba(0,255,136,.08);
+    top:-120px;
+    left:-100px;
+}
+
+.hero::after{
+    width:420px;
+    height:420px;
+    background:rgba(16,124,16,.12);
+    bottom:-220px;
+    right:-120px;
 }
 
 .hero h1{
-font-size:2.2rem;
+    letter-spacing:2px;
+    font-weight:900;
+    text-transform:uppercase;
 }
 
-.hero-logo{
-width:120px;
-height:120px;
+.hero p{
+    color:#d7e6df;
+}
+
+/* Botones */
+.btn{
+    border:1px solid var(--verde);
+    box-shadow:0 0 15px rgba(0,255,136,.35);
+    transition:.3s ease;
+}
+
+.btn:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 0 20px var(--verde),0 0 40px rgba(0,255,136,.25);
+}
+
+/* Buscador */
+#buscador{
+    background:#111820;
+    color:white;
+    border:1px solid rgba(0,255,136,.35) !important;
+    box-shadow:0 0 15px rgba(0,255,136,.08);
+    transition:.3s ease;
+}
+
+#buscador:focus{
+    border-color:var(--verde) !important;
+    box-shadow:0 0 15px rgba(0,255,136,.3);
+}
+
+#buscador::placeholder{
+    color:#8b9a94;
+}
+
+/* Títulos */
+.titulo{
+    font-weight:900;
+    text-shadow:0 0 12px rgba(0,255,136,.25);
+}
+
+/* Tarjetas */
+.card{
+    background:linear-gradient(145deg,#151c23,#0d1319);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:18px;
+    overflow:hidden;
+    position:relative;
+    transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;
+    box-shadow:0 8px 25px rgba(0,0,0,.35);
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(120deg,transparent,rgba(0,255,136,.08),transparent);
+    transform:translateX(-100%);
+    transition:.6s ease;
+    pointer-events:none;
+    z-index:1;
+}
+
+.card:hover::before{
+    transform:translateX(100%);
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.015);
+    border-color:rgba(0,255,136,.65);
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.55),
+        0 0 18px rgba(0,255,136,.38),
+        0 0 45px rgba(0,255,136,.12);
 }
 
 .card img{
-height:220px;
+    transition:transform .55s ease,filter .35s ease;
 }
 
+.card:hover img{
+    transform:scale(1.07);
+    filter:saturate(1.12);
 }
+
+.info{
+    background:linear-gradient(180deg,rgba(22,27,34,.75),#10161c);
+}
+
+.info h3{
+    min-height:42px;
+}
+
+.precio{
+    text-shadow:0 0 10px rgba(0,255,136,.35);
+}
+
+/* Etiquetas */
+.tag{
+    display:inline-block;
+    box-shadow:0 0 12px rgba(255,0,0,.25);
+    font-weight:800;
+}
+
+/* Botón comprar */
+.comprar{
+    border:1px solid rgba(0,255,136,.25);
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+}
+
+.comprar:hover{
+    box-shadow:0 0 16px rgba(0,255,136,.55);
+}
+
+/* Paginación */
+.paginacion button{
+    border-color:rgba(0,255,136,.35);
+    transition:.25s ease;
+}
+
+.paginacion button:hover{
+    border-color:var(--verde);
+    box-shadow:0 0 12px rgba(0,255,136,.25);
+}
+
+.paginacion button.activa{
+    box-shadow:0 0 15px rgba(0,255,136,.55);
+}
+
+/* Carrito */
+.carrito{
+    border:1px solid rgba(0,255,136,.55);
+    box-shadow:0 0 18px rgba(0,255,136,.35);
+    transition:.3s ease;
+}
+
+.carrito:hover{
+    transform:scale(1.06);
+    box-shadow:0 0 22px var(--verde),0 0 40px rgba(0,255,136,.25);
+}
+
+/* Scrollbar general */
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#070b0f;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(var(--verde-xbox),var(--verde));
+    border-radius:20px;
+}
+
+/* Móvil */
+@media (max-width:768px){
+    .hero{
+        min-height:70vh;
+        padding:40px 15px;
+    }
+
+    .hero h1{
+        letter-spacing:1px;
+    }
+
+    .card{
+        border-radius:12px;
+    }
+
+    .card:hover{
+        transform:translateY(-5px) scale(1.01);
+    }
+
+    .info h3{
+        min-height:30px;
+    }
+}
+
+
 
 .logo-container{
 display:flex;
@@ -342,7 +574,14 @@ background:#00cc6a;
     align-items: center;
     gap: 8px;
     margin-top: 35px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+}
+
+.paginacion::-webkit-scrollbar{
+    height: 6px;
 }
 
 .paginacion button {
@@ -356,6 +595,7 @@ background:#00cc6a;
     font-weight: bold;
     cursor: pointer;
     transition: .3s;
+    flex-shrink: 0;
 }
 
 .paginacion button:hover {
@@ -373,6 +613,14 @@ background:#00cc6a;
     opacity: .4;
     cursor: not-allowed;
     transform: none;
+}
+
+.puntos-paginacion {
+    color: #aaa;
+    font-weight: bold;
+    padding: 0 4px;
+    flex-shrink: 0;
+    user-select: none;
 }
 
 .info-paginacion {
@@ -441,6 +689,178 @@ padding:10px;
 border-radius:8px;
 border:none;
 outline:none;
+}
+
+@media (max-width:768px){
+section{
+scroll-margin-top: 150px;
+}
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+.logo-container{
+flex-direction:column;
+text-align:center;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+nav a{
+margin:5px 10px;
+}
+
+.hero h1{
+font-size:2.2rem;
+}
+
+.hero-logo{
+width:120px;
+height:120px;
+}
+
+.card img{
+height:110px;
+}
+
+.grid{
+grid-template-columns:repeat(3, 1fr);
+gap:8px;
+}
+
+.info{
+padding:8px;
+}
+
+.info h3{
+font-size:11.5px;
+line-height:1.25;
+margin-bottom:4px;
+}
+
+.precio{
+font-size:13px;
+margin:4px 0;
+}
+
+.info button{
+padding:6px 4px !important;
+margin-top:6px !important;
+font-size:10.5px !important;
+border-radius:6px;
+}
+
+}
+
+
+/* ===== EFECTOS AVANZADOS AL HACER SCROLL ===== */
+
+/* Las tarjetas empiezan ligeramente abajo y transparentes */
+.card{
+    opacity:0;
+    transform:translateY(55px) scale(.96);
+    filter:blur(2px);
+    transition:
+        opacity .7s ease,
+        transform .7s cubic-bezier(.2,.8,.2,1),
+        filter .7s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+    will-change:transform,opacity;
+}
+
+/* JavaScript añade esta clase cuando la tarjeta entra en pantalla */
+.card.visible{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0);
+}
+
+/* Efecto escalonado: cada tarjeta aparece un poquito después */
+.card:nth-child(2){transition-delay:.08s}
+.card:nth-child(3){transition-delay:.16s}
+.card:nth-child(4){transition-delay:.24s}
+.card:nth-child(5){transition-delay:.32s}
+.card:nth-child(6){transition-delay:.40s}
+.card:nth-child(7){transition-delay:.48s}
+.card:nth-child(8){transition-delay:.56s}
+
+/* Línea luminosa que recorre la tarjeta */
+.card::after{
+    content:"";
+    position:absolute;
+    left:-120%;
+    top:0;
+    width:70%;
+    height:100%;
+    background:linear-gradient(
+        100deg,
+        transparent,
+        rgba(255,255,255,.10),
+        rgba(0,255,136,.18),
+        transparent
+    );
+    transform:skewX(-18deg);
+    pointer-events:none;
+    z-index:3;
+}
+
+.card.visible::after{
+    animation:pasoLuz 1.2s ease-out .15s 1;
+}
+
+@keyframes pasoLuz{
+    from{left:-120%}
+    to{left:150%}
+}
+
+/* Pequeño efecto de profundidad mientras se desplaza */
+.card.visible:hover{
+    transform:translateY(-12px) scale(1.025);
+}
+
+/* Animación suave para las secciones */
+.titulo{
+    opacity:0;
+    transform:translateX(-25px);
+    transition:opacity .7s ease, transform .7s ease;
+}
+
+.titulo.visible{
+    opacity:1;
+    transform:translateX(0);
+}
+
+/* En celulares reducimos el movimiento para que sea más fluido */
+@media (max-width:768px){
+    .card{
+        transform:translateY(35px) scale(.98);
+    }
+
+    .card.visible:hover{
+        transform:translateY(-5px) scale(1.01);
+    }
+}
+
+/* Respeta la configuración de reducir movimiento del dispositivo */
+@media (prefers-reduced-motion:reduce){
+    .card,
+    .titulo{
+        opacity:1;
+        transform:none;
+        filter:none;
+        transition:none;
+    }
+
+    .card::after{
+        display:none;
+    }
 }
 
 </style>
@@ -2714,8 +3134,7 @@ cursor:pointer;
 </div>
 </div>
 
-
-
+</div>
 
 <div class="info-paginacion" id="infoPaginacion"></div>
 
@@ -2899,6 +3318,8 @@ const botones = document.querySelectorAll(".comprar");
 
 const buscador = document.getElementById("buscador");
 
+let busquedaActiva = false;
+
 function filtrarJuegos(texto){
 
     texto = texto.toLowerCase().trim();
@@ -2907,10 +3328,14 @@ function filtrarJuegos(texto){
     // volvemos a la paginación normal
     if (texto === "") {
 
+        busquedaActiva = false;
+
         mostrarPagina(1);
 
         return;
     }
+
+    busquedaActiva = true;
 
 
     // Buscar entre TODOS los juegos
@@ -8646,6 +9071,12 @@ window.addEventListener("popstate", function(event) {
         cerrarDetallesSinHistorial();
     }
 
+    // Si hay una búsqueda activa, no tocamos la paginación:
+    // dejamos los resultados de búsqueda tal como estaban.
+    if (busquedaActiva) {
+        return;
+    }
+
     if (event.state && event.state.pagina) {
         mostrarPaginaSinHistorial(event.state.pagina);
     } else {
@@ -8686,36 +9117,46 @@ function crearBotonesPaginacion(totalPaginas) {
 
 
 
-    // NÚMEROS
+    // NÚMEROS (ventana deslizante de 4: la página actual queda centrada)
 
-    for (
-        let i = 1;
-        i <= totalPaginas;
-        i++
-    ) {
+    const crearBotonNumero = (numero) => {
+        const boton = document.createElement("button");
+        boton.textContent = numero;
 
-        const boton =
-            document.createElement("button");
-
-        boton.textContent = i;
-
-
-        if (i === paginaActual) {
-
+        if (numero === paginaActual) {
             boton.classList.add("activa");
-
         }
 
-
         boton.onclick = function () {
-
-            mostrarPagina(i);
-
+            mostrarPagina(numero);
         };
 
-
         paginacion.appendChild(boton);
+    };
 
+    const tamanoBloque = 4;
+
+    // Páginas antes de la actual (redondeando hacia abajo)
+    // y después de la actual, para que quede centrada
+    const antes = Math.floor((tamanoBloque - 1) / 2);
+
+    let inicioBloque = paginaActual - antes;
+
+    if (inicioBloque < 1) {
+        inicioBloque = 1;
+    }
+
+    if (inicioBloque + tamanoBloque - 1 > totalPaginas) {
+        inicioBloque = Math.max(1, totalPaginas - tamanoBloque + 1);
+    }
+
+    const finBloque = Math.min(
+        inicioBloque + tamanoBloque - 1,
+        totalPaginas
+    );
+
+    for (let i = inicioBloque; i <= finBloque; i++) {
+        crearBotonNumero(i);
     }
 
 
@@ -8825,6 +9266,28 @@ Cerrar
 </button>
 
 </div>
+
+<script>
+/* ===== ANIMACIONES AL BAJAR POR LA PÁGINA ===== */
+document.addEventListener("DOMContentLoaded", () => {
+    const elementos = document.querySelectorAll(".card, .titulo");
+
+    const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+            if (entrada.isIntersecting) {
+                entrada.target.classList.add("visible");
+                observador.unobserve(entrada.target);
+            }
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -45px 0px"
+    });
+
+    elementos.forEach((elemento) => observador.observe(elemento));
+});
+</script>
+
 </body>
 
 
