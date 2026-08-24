@@ -965,6 +965,32 @@ VER CATÁLOGO
 <div class="grid">  
 
 <div class="card juego-card">
+<img src="https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/store/software/switch/70050000050183/9299a6e40c27da88faceb6cda1d394746c3ca6c2dade2f0c9464dceeae810374">
+<div class="info">
+<h3>ACE COMBAT 7: SKIES UNKNOWN</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="ACE COMBAT 7: SKIES UNKNOWN">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesAceCombat7SkiesUnknown()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
 <img src="https://wallpapers.com/images/featured/code-vein-7i85huu1xraqftih.jpg">
 <div class="info">
 <h3>CODE VEIN</h3>
@@ -4574,6 +4600,73 @@ window.addEventListener("scroll", function(){
     }
 
 });  
+
+function mostrarDetallesAceCombat7SkiesUnknown(){
+
+document.getElementById("detalleTitulo").innerText =
+"ACE COMBAT 7: SKIES UNKNOWN";
+
+document.getElementById("detalleImagen").src =
+"https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/store/software/switch/70050000050183/9299a6e40c27da88faceb6cda1d394746c3ca6c2dade2f0c9464dceeae810374";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+✈️ ACE COMBAT 7: SKIES UNKNOWN
+
+Ponte al mando de modernos cazas de combate y participa en intensas batallas aéreas. Realiza maniobras, esquiva misiles y domina diferentes aviones mientras enfrentas grandes amenazas en una guerra llena de acción.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, simulación y combate aéreo.<br>
+📖 Historia: Únete a la fuerza aérea de Osea y participa en un conflicto militar donde tendrás que completar diferentes operaciones para cambiar el rumbo de la guerra.<br>
+✈️ Aviones: Pilota una gran variedad de cazas de combate inspirados en aeronaves reales y adapta cada uno a diferentes situaciones.<br>
+🎯 Combate aéreo: Enfréntate a escuadrones enemigos, bloquea objetivos y lanza misiles mientras realizas maniobras a gran velocidad.<br>
+🚀 Misiles: Utiliza diferentes tipos de misiles y armas especiales para derribar aeronaves enemigas y completar tus objetivos.<br>
+🌩️ Clima: Las condiciones meteorológicas pueden cambiar durante las misiones y afectar la forma de combatir y pilotar.<br>
+☁️ Maniobras: Realiza giros cerrados, ascensos, descensos y otras maniobras para evitar ataques y colocarte detrás de tus enemigos.<br>
+🏆 Campaña: Completa diferentes operaciones y misiones mientras avanzas por una historia militar llena de combates aéreos.<br>
+👥 Multijugador: Compite contra otros pilotos en enfrentamientos online y demuestra tus habilidades en el cielo.<br>
+🔧 Personalización: Mejora y configura tus aeronaves utilizando diferentes piezas y equipamientos.<br>
+🌍 Ambientación: Grandes escenarios aéreos con ciudades, océanos, montañas y zonas de combate inspiradas en conflictos modernos.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
 
 function mostrarDetallesCodeVein(){
 
