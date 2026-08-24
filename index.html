@@ -965,6 +965,167 @@ VER CATÁLOGO
 <div class="grid">  
 
 <div class="card juego-card">
+<img src="https://wallpapers.com/images/featured/code-vein-7i85huu1xraqftih.jpg">
+<div class="info">
+<h3>CODE VEIN</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="CODE VEIN">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesCodeVein()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://i0.wp.com/www.madboxpc.com/wp-content/uploads/2016/11/BF1.jpg?fit=1200%2C675&ssl=1">
+<div class="info">
+<h3>Battlefield 1</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Battlefield 1">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesBattlefield1()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/63380/capsule_616x353.jpg?t=1601483610">
+<div class="info">
+<h3>Sniper Elite V2 Remastered</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Sniper Elite V2 Remastered">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesSniperEliteV2Remastered()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://puregaming.es/wp-content/uploads/2015/01/saints-row2.jpg">
+<div class="info">
+<h3>Saints Row IV Re-Elected & Gat out of Hell</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Saints Row IV Re-Elected & Gat out of Hell">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesSaintsRow4ReElectedGatOutOfHell()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://gaming-cdn.com/images/products/371/orig/battlefield-hardline-pc-juego-origin-cover.jpg?v=1652187561">
+<div class="info">
+<h3>Battlefield Hardline</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Battlefield Hardline">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesBattlefieldHardline()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://image.api.playstation.com/vulcan/ap/rnd/202602/2319/610e0da330e145d2b14a82febaaf8a909470aa0ca6ff0df5.jpg">
+<div class="info">
+<h3>Tom Clancy's The Division 2</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Tom Clancy's The Division 2">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesTheDivision2()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div> 
+
+<div class="card juego-card">
 <img src="https://cloudfront-us-east-1.images.arcpublishing.com/copesa/H42QKAMCQVB3NAFFV3QCHYYYEQ.jpg">
 <div class="info">
 <h3>LEGO Star Wars: La Saga De Skywalker</h3>
@@ -4413,6 +4574,413 @@ window.addEventListener("scroll", function(){
     }
 
 });  
+
+function mostrarDetallesCodeVein(){
+
+document.getElementById("detalleTitulo").innerText =
+"CODE VEIN";
+
+document.getElementById("detalleImagen").src =
+"https://wallpapers.com/images/featured/code-vein-7i85huu1xraqftih.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🧛 CODE VEIN
+
+Adéntrate en un mundo postapocalíptico donde los humanos se han convertido en Revenants. Explora ruinas devastadas, domina diferentes poderes sobrenaturales y lucha contra enemigos aterradores mientras descubres los secretos de Vein.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, RPG y exploración.<br>
+📖 Historia: Despierta en un mundo devastado y descubre la verdad detrás de los Revenants, la sociedad de Vein y el misterioso fenómeno que destruyó el mundo.<br>
+⚔️ Combate: Utiliza espadas, lanzas, martillos, bayonetas y diferentes armas para enfrentarte a los enemigos.<br>
+🩸 Blood Codes: Cambia de estilo de combate mediante diferentes Blood Codes y adapta tus habilidades a cada situación.<br>
+✨ Habilidades: Aprende dones especiales, poderes sobrenaturales y técnicas de combate para mejorar a tu personaje.<br>
+👹 Enemigos: Enfréntate a Lost, criaturas mutadas y poderosos jefes que pondrán a prueba tus habilidades.<br>
+🗺️ Exploración: Recorre ruinas, ciudades destruidas, zonas subterráneas y diferentes regiones llenas de secretos.<br>
+🤝 Compañeros: Viaja acompañado de diferentes personajes que pueden ayudarte durante los combates y la exploración.<br>
+🧩 Puzzles: Resuelve diferentes situaciones y descubre caminos ocultos mientras exploras las mazmorras.<br>
+🎨 Personalización: Personaliza la apariencia y equipamiento de tu personaje para crear tu propio estilo.<br>
+🌑 Ambientación: Un mundo oscuro y postapocalíptico con una fuerte estética de fantasía oscura.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesBattlefield1(){
+
+document.getElementById("detalleTitulo").innerText =
+"Battlefield 1";
+
+document.getElementById("detalleImagen").src =
+"https://i0.wp.com/www.madboxpc.com/wp-content/uploads/2016/11/BF1.jpg?fit=1200%2C675&ssl=1";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+💥 Battlefield 1
+
+Viaja hasta la Primera Guerra Mundial y participa en grandes batallas históricas a través de diferentes campañas. Combate en tierra, mar y aire utilizando armas y vehículos de la época mientras formas parte de intensos enfrentamientos militares.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción y disparos en primera persona.<br>
+📖 Historia: Vive diferentes historias de soldados durante la Primera Guerra Mundial y participa en grandes acontecimientos militares.<br>
+🔫 Jugabilidad: Utiliza rifles, ametralladoras, pistolas, escopetas y diferentes armas inspiradas en la época.<br>
+🪖 Primera Guerra Mundial: Combate en escenarios históricos y descubre distintas perspectivas del conflicto.<br>
+🚁 Vehículos: Utiliza tanques, aviones, caballos, barcos y vehículos blindados durante las batallas.<br>
+🏜️ Escenarios: Combate en desiertos, ciudades, bosques, campos y zonas devastadas por la guerra.<br>
+👥 Multijugador: Participa en grandes batallas online con equipos y diferentes modos de juego.<br>
+🤝 Trabajo en equipo: Utiliza diferentes clases y coordina tus acciones con tu escuadrón para conseguir objetivos.<br>
+🔥 Destrucción: Los escenarios pueden cambiar durante los combates gracias al sistema de destrucción y los enfrentamientos a gran escala.<br>
+🏆 Operaciones: Participa en grandes operaciones que conectan diferentes mapas y objetivos en una sola experiencia.<br>
+🌍 Ambientación: Una representación de la Primera Guerra Mundial con armas, vehículos y escenarios inspirados en el conflicto.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesSniperEliteV2Remastered(){
+
+document.getElementById("detalleTitulo").innerText =
+"Sniper Elite V2 Remastered";
+
+document.getElementById("detalleImagen").src =
+"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/63380/capsule_616x353.jpg?t=1601483610";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🎯 Sniper Elite V2 Remastered
+
+Ponte en la piel de Karl Fairburne durante los últimos días de la Segunda Guerra Mundial. Utiliza tu rifle de francotirador, estudia cuidadosamente cada objetivo y ayuda a evitar que tecnología militar peligrosa caiga en las manos equivocadas.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, francotirador y sigilo.<br>
+📖 Historia: Karl Fairburne recibe la misión de impedir que científicos y tecnología alemana terminen en manos de las potencias enemigas durante los últimos días de la guerra.<br>
+🎯 Francotirador: Calcula distancia, trayectoria y movimiento para realizar disparos precisos desde largas distancias.<br>
+🔫 Arsenal: Utiliza rifles de francotirador, pistolas, metralletas, explosivos y diferentes herramientas.<br>
+🕵️ Sigilo: Muévete cuidadosamente, utiliza coberturas y elimina enemigos sin revelar tu posición.<br>
+💥 Kill Cam: Observa en detalle los disparos más precisos mediante la famosa cámara de impacto que muestra la trayectoria de la bala.<br>
+🌍 Escenarios: Recorre Berlín y diferentes zonas devastadas durante los últimos días de la Segunda Guerra Mundial.<br>
+👥 Cooperativo: Juega diferentes misiones junto a otro jugador y coordina disparos y movimientos.<br>
+🎯 Táctica: Marca enemigos, estudia sus posiciones y planifica cuidadosamente cada ataque.<br>
+🏆 Desafíos: Completa objetivos y mejora tu precisión para superar diferentes desafíos.<br>
+⭐ Remastered: Incluye mejoras visuales, mayor resolución y mejoras en modelos y efectos respecto a la versión original.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesSaintsRow4ReElectedGatOutOfHell(){
+
+document.getElementById("detalleTitulo").innerText =
+"Saints Row IV Re-Elected & Gat out of Hell";
+
+document.getElementById("detalleImagen").src =
+"https://puregaming.es/wp-content/uploads/2015/01/saints-row2.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+😈 Saints Row IV Re-Elected & Gat out of Hell
+
+Vive una aventura completamente alocada en la que los Saints llegan hasta la Casa Blanca y después terminan luchando en el mismísimo Infierno. Disfruta de una enorme cantidad de armas, poderes y situaciones absurdas llenas de humor y acción.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura y mundo abierto.<br>
+📖 Historia: El líder de los Saints se convierte en Presidente de los Estados Unidos y debe enfrentarse a una invasión alienígena antes de terminar atrapado en una realidad virtual y posteriormente en el Infierno.<br>
+💥 Poderes: Utiliza superpoderes como correr a gran velocidad, saltar enormes distancias, lanzar ataques de energía y manipular objetos.<br>
+🔫 Armas: Utiliza armas extravagantes y diferentes herramientas de destrucción para enfrentarte a enemigos.<br>
+😈 Gat out of Hell: Viaja al Infierno junto a Johnny Gat y Kinzie Kensington para enfrentarte a Satanás y salvar el alma del líder de los Saints.<br>
+👹 Enemigos: Combate contra alienígenas, demonios, criaturas sobrenaturales y diferentes enemigos especiales.<br>
+🌆 Mundo abierto: Explora Steelport y posteriormente el mundo infernal de New Hades lleno de actividades y secretos.<br>
+👥 Cooperativo: Juega junto a otro jugador y disfruta de diferentes misiones en compañía.<br>
+🚗 Vehículos: Utiliza coches, motos, vehículos especiales y diferentes medios de transporte.<br>
+😂 Humor: Disfruta de una experiencia completamente irreverente con situaciones absurdas y mucho humor.<br>
+⭐ Collection: Incluye Saints Row IV Re-Elected y la expansión independiente Gat out of Hell.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesBattlefieldHardline(){
+
+document.getElementById("detalleTitulo").innerText =
+"Battlefield Hardline";
+
+document.getElementById("detalleImagen").src =
+"https://gaming-cdn.com/images/products/371/orig/battlefield-hardline-pc-juego-origin-cover.jpg?v=1652187561";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🚓 Battlefield Hardline
+
+Vive una campaña inspirada en el mundo del crimen y la policía mientras juegas como Nick Mendoza, un detective que debe enfrentarse a compañeros corruptos y organizaciones criminales. Combina persecuciones, tiroteos y operaciones tácticas en una experiencia diferente dentro de Battlefield.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción y disparos en primera persona.<br>
+📖 Historia: Sigue a Nick Mendoza durante una investigación criminal que lo lleva a enfrentarse contra delincuentes y policías corruptos en diferentes ciudades de Estados Unidos.<br>
+🔫 Jugabilidad: Utiliza pistolas, escopetas, rifles y armas policiales mientras completas diferentes operaciones.<br>
+🚓 Policía: Utiliza herramientas de la policía como esposas, escáner y distintivos para detener enemigos y resolver situaciones.<br>
+🕵️ Investigaciones: Escanea zonas, encuentra pruebas y utiliza el entorno para obtener información durante las misiones.<br>
+🚗 Persecuciones: Participa en persecuciones a alta velocidad utilizando coches policiales y vehículos enemigos.<br>
+👥 Multijugador: Disfruta de diferentes modos competitivos online con mapas y equipos.<br>
+💥 Destrucción: Utiliza el sistema de destrucción de Battlefield para modificar el entorno durante los enfrentamientos.<br>
+🏆 Modos: Participa en modos como Heist, Hotwire y otros enfrentamientos inspirados en el mundo criminal.<br>
+🌆 Ambientación: Ciudades y escenarios urbanos inspirados en conflictos entre fuerzas policiales y organizaciones criminales.<br>
+🎯 Estrategia: Combina enfrentamientos directos, sigilo y herramientas policiales para completar tus objetivos.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesTheDivision2(){
+
+document.getElementById("detalleTitulo").innerText =
+"Tom Clancy's The Division 2";
+
+document.getElementById("detalleImagen").src =
+"https://image.api.playstation.com/vulcan/ap/rnd/202602/2319/610e0da330e145d2b14a82febaaf8a909470aa0ca6ff0df5.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🎖️ Tom Clancy's The Division 2
+
+Viaja a una versión devastada de Washington D.C. donde diferentes facciones luchan por el control de la ciudad. Como agente de The Division, tendrás que recuperar zonas, proteger a civiles y enfrentarte a amenazas mientras reconstruyes la nación.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, RPG y disparos en tercera persona.<br>
+📖 Historia: Después de un colapso nacional, los agentes de The Division son enviados a Washington D.C. para proteger a los supervivientes y recuperar el control de la ciudad.<br>
+🔫 Arsenal: Utiliza rifles de asalto, subfusiles, rifles de francotirador, escopetas y diferentes armas especializadas.<br>
+🎯 Habilidades: Desbloquea torretas, drones, escudos y otras habilidades tecnológicas para apoyar tus estrategias de combate.<br>
+🛡️ Coberturas: Utiliza el entorno para cubrirte, avanzar y enfrentarte tácticamente a diferentes enemigos.<br>
+🏙️ Mundo abierto: Explora Washington D.C., sus barrios, monumentos, instalaciones y diferentes zonas controladas por enemigos.<br>
+👥 Cooperativo: Forma un equipo de hasta cuatro jugadores para completar misiones y enfrentarte a diferentes amenazas.<br>
+🤝 Multijugador: Participa en actividades cooperativas y diferentes experiencias competitivas online.<br>
+🏰 Asentamientos: Ayuda a los supervivientes, recupera zonas y mejora comunidades para fortalecer tu presencia en la ciudad.<br>
+🎒 Equipamiento: Consigue armas, armaduras y piezas de equipo con diferentes estadísticas y niveles de calidad.<br>
+🏆 Progresión: Mejora a tu agente, desbloquea nuevas habilidades y desarrolla diferentes especializaciones.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
 
 function mostrarDetallesLegoStarWarsSagaSkywalker(){
 
