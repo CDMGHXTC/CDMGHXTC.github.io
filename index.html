@@ -965,6 +965,58 @@ VER CATÁLOGO
 <div class="grid">
 
 <div class="card juego-card">
+<img src="https://image.api.playstation.com/vulcan/ap/rnd/202501/3116/9e735b93c83d7a59a688754c7ada586c23234b5f0243c8b5.jpg">
+<div class="info">
+<h3>Dying Light 2 Stay Human Digital Extras Edition</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Dying Light 2 Stay Human Digital Extras Edition">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesDyingLight2StayHumanDigitalExtras()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://www.mkaugaming.com/wp-content/uploads/2022/02/2022-02-17_00031-1024x576.jpg">
+<div class="info">
+<h3>Monster Energy Supercross - The Official Videogame 5</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Monster Energy Supercross - The Official Videogame 5">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMonsterEnergySupercross5()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
 <img src="https://images8.alphacoders.com/566/566159.jpg">
 <div class="info">
 <h3>Assassin's Creed Unity</h3>
@@ -3545,6 +3597,141 @@ window.addEventListener("scroll", function(){
     }
 
 }); 
+
+function mostrarDetallesDyingLight2StayHumanDigitalExtras(){
+
+document.getElementById("detalleTitulo").innerText =
+"Dying Light 2 Stay Human Digital Extras Edition";
+
+document.getElementById("detalleImagen").src =
+"https://image.api.playstation.com/vulcan/ap/rnd/202501/3116/9e735b93c83d7a59a688754c7ada586c23234b5f0243c8b5.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🧟 Dying Light 2 Stay Human Digital Extras Edition
+
+Sobrevive en una ciudad devastada por una epidemia y conviértete en Aiden Caldwell, un superviviente con habilidades de parkour que busca respuestas mientras recorre un mundo abierto lleno de facciones, infectados y decisiones que pueden cambiar el destino de la ciudad.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, supervivencia, terror y mundo abierto.<br>
+📖 Historia: Sigue a Aiden mientras busca a su hermana perdida en una ciudad donde diferentes facciones luchan por el control mientras una infección transforma a gran parte de la población.<br>
+🏃 Parkour: Corre, salta, escala edificios, utiliza tirolinas y aprovecha el entorno para desplazarte rápidamente por la ciudad.<br>
+⚔️ Combate: Utiliza armas cuerpo a cuerpo, arcos, herramientas y diferentes habilidades para enfrentarte a humanos e infectados.<br>
+🧟 Infectados: Enfréntate a distintos tipos de infectados que se vuelven más peligrosos durante la noche.<br>
+🌙 Noche: Cuando cae la noche, los infectados más peligrosos salen a las calles y explorar se convierte en un verdadero desafío.<br>
+🗺️ Mundo abierto: Explora una enorme ciudad llena de edificios, zonas abandonadas, refugios, misiones y secretos.<br>
+🤝 Decisiones: Tus decisiones pueden afectar a diferentes personajes, facciones y zonas de la ciudad, modificando el desarrollo de la aventura.<br>
+🏰 Facciones: Interactúa con diferentes grupos y decide a quién apoyar mientras intentas sobrevivir y recuperar el control de la ciudad.<br>
+👥 Cooperativo: Forma equipo con otros jugadores y disfruta de la campaña mediante experiencias cooperativas online.<br>
+⭐ Digital Extras Edition: Incluye el juego completo junto con contenido digital adicional correspondiente a esta edición.<br>
+🌆 Ambientación: Una ciudad postapocalíptica donde la humanidad intenta reconstruirse mientras los infectados dominan las calles.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+function mostrarDetallesMonsterEnergySupercross5(){
+
+document.getElementById("detalleTitulo").innerText =
+"Monster Energy Supercross - The Official Videogame 5";
+
+document.getElementById("detalleImagen").src =
+"https://www.mkaugaming.com/wp-content/uploads/2022/02/2022-02-17_00031-1024x576.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🏍️ Monster Energy Supercross - The Official Videogame 5
+
+Vive la emoción del campeonato oficial de Supercross y compite en pistas llenas de saltos, curvas y obstáculos. Personaliza tu piloto y motocicleta, mejora tus habilidades y lucha por convertirte en campeón.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Carreras, motocross y deportes.<br>
+🏁 Campeonato: Compite en las categorías oficiales de Supercross y recorre circuitos inspirados en las pistas reales.<br>
+🏍️ Motocicletas: Conduce motos oficiales y ajusta diferentes elementos de su configuración para mejorar el rendimiento.<br>
+👤 Piloto: Crea y personaliza a tu propio piloto, modificando su apariencia y equipamiento.<br>
+🔧 Personalización: Mejora las prestaciones de tu moto y adapta diferentes configuraciones para conseguir mejores resultados en pista.<br>
+💨 Jugabilidad: Domina los saltos, curvas, aterrizajes y adelantamientos para mantener el control durante las carreras.<br>
+🏆 Carrera: Progresa a través de una carrera completa, consigue resultados y conviértete en una estrella del Supercross.<br>
+👥 Multijugador: Compite contra otros jugadores y demuestra tus habilidades en diferentes eventos y carreras.<br>
+🌎 Pistas: Disfruta de circuitos oficiales con diferentes trazados, obstáculos y condiciones de carrera.<br>
+🎯 Desafíos: Completa objetivos y mejora tus tiempos para conseguir mejores resultados y recompensas.<br>
+🔥 Velocidad: Combina aceleración, equilibrio y precisión para superar a tus rivales en cada circuito.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
 
 function mostrarDetallesAssassinsCreedUnity(){
 
