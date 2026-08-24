@@ -965,7 +965,85 @@ VER CATÁLOGO
 <div class="grid">
 
 <div class="card juego-card">
-<img src="https://juegosdigitalesargentina.com/files/images/productos/1738358285-dying-light-2-stay-human-digital-extras-edition-ps4-0.webp">
+<img src="https://i.blogs.es/1801de/e37iy8ex0akua0a/1366_2000.jpeg">
+<div class="info">
+<h3>STRANGER OF PARADISE FINAL FANTASY ORIGIN</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="STRANGER OF PARADISE FINAL FANTASY ORIGIN">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesStrangerOfParadiseFinalFantasyOrigin()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://gaming-cdn.com/images/products/10467/orig/wwe-2k22-nwo-4-life-edition-nwo-4-life-edition-pc-game-steam-europe-cover.jpg?v=1745917279">
+<div class="info">
+<h3>WWE 2K22 nWo 4-Life Edition</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="WWE 2K22 nWo 4-Life Edition">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesWWE2K22Nwo4Life()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://images8.alphacoders.com/116/1160193.jpg">
+<div class="info">
+<h3>GRID Legends</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="GRID Legends">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesGridLegends()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://image.api.playstation.com/vulcan/ap/rnd/202501/3116/9e735b93c83d7a59a688754c7ada586c23234b5f0243c8b5.jpg">
 <div class="info">
 <h3>Dying Light 2 Stay Human Digital Extras Edition</h3>
 <div class="precio">$20.000</div>
@@ -3597,6 +3675,206 @@ window.addEventListener("scroll", function(){
     }
 
 }); 
+
+function mostrarDetallesStrangerOfParadiseFinalFantasyOrigin(){
+
+document.getElementById("detalleTitulo").innerText =
+"STRANGER OF PARADISE FINAL FANTASY ORIGIN";
+
+document.getElementById("detalleImagen").src =
+"https://i.blogs.es/1801de/e37iy8ex0akua0a/1366_2000.jpeg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+⚔️ STRANGER OF PARADISE FINAL FANTASY ORIGIN
+
+Adéntrate en una versión oscura y alternativa del universo de FINAL FANTASY. Acompaña a Jack Garland y sus compañeros en una misión para derrotar al Caos mientras exploras mazmorras, utilizas diferentes trabajos y participas en combates rápidos y estratégicos.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, RPG y combate.<br>
+📖 Historia: Jack Garland y sus aliados Ash y Jed están obsesionados con derrotar al Caos. Su viaje los lleva a descubrir la verdad detrás de Garland y de los acontecimientos que conectan esta historia con el origen de FINAL FANTASY.<br>
+⚔️ Combate: Enfréntate a enemigos en combates rápidos utilizando armas, habilidades, magia y diferentes técnicas.<br>
+🧑‍🤝‍🧑 Personajes: Forma equipo con Ash y Jed, además de otros personajes que podrás encontrar durante la aventura.<br>
+🛡️ Trabajos: Cambia entre diferentes trabajos y combina habilidades para crear estilos de combate adaptados a cada situación.<br>
+✨ Magia: Utiliza diferentes hechizos y habilidades mágicas para explotar las debilidades de tus enemigos.<br>
+💥 Soul Burst: Ejecuta enemigos debilitados con ataques especiales para recuperar energía y continuar la batalla.<br>
+🏰 Mazmorras: Explora escenarios inspirados en diferentes entregas de FINAL FANTASY, llenos de enemigos, secretos y jefes.<br>
+👹 Jefes: Enfréntate a criaturas y enemigos poderosos inspirados en el universo de FINAL FANTASY.<br>
+🎒 Equipamiento: Consigue armas, armaduras y objetos con diferentes características para mejorar a tus personajes.<br>
+🤝 Cooperativo: Juega junto a otros jugadores y forma un equipo de hasta tres personas para superar las diferentes misiones.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+function mostrarDetallesWWE2K22Nwo4Life(){
+
+document.getElementById("detalleTitulo").innerText =
+"WWE 2K22 nWo 4-Life Edition";
+
+document.getElementById("detalleImagen").src =
+"https://gaming-cdn.com/images/products/10467/orig/wwe-2k22-nwo-4-life-edition-nwo-4-life-edition-pc-game-steam-europe-cover.jpg?v=1745917279";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🤼 WWE 2K22 nWo 4-Life Edition
+
+Vuelve al cuadrilátero con WWE 2K22 y disfruta de combates llenos de acción, luchadores legendarios y diferentes modos de juego. La edición nWo 4-Life celebra a uno de los grupos más icónicos de la historia de la lucha libre.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Lucha libre y deportes.<br>
+🥊 Combate: Disfruta de combates WWE con golpes, llaves, agarres, movimientos especiales y finales característicos de cada luchador.<br>
+👤 Luchadores: Juega con una enorme selección de superestrellas actuales y leyendas de WWE.<br>
+🏆 Modos: Disfruta de MyRISE, MyGM, MyFACTION, Universe y diferentes tipos de combates.<br>
+🎬 Showcase: Revive momentos importantes de la carrera de Rey Mysterio mediante combates y escenas especiales.<br>
+👥 Multijugador: Compite contra otros jugadores en combates locales y diferentes experiencias online.<br>
+🤼 Tag Team: Forma equipos y utiliza relevos, combinaciones y estrategias para conseguir la victoria.<br>
+💥 Combates: Disfruta de Royal Rumble, Hell in a Cell, Money in the Bank, Elimination Chamber y muchos más.<br>
+⭐ nWo 4-Life Edition: Edición especial centrada en la New World Order, con contenido y personajes adicionales relacionados con la nWo.<br>
+🎨 Personalización: Crea y personaliza luchadores, entradas, arenas y diferentes elementos de tu experiencia WWE.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+function mostrarDetallesGridLegends(){
+
+document.getElementById("detalleTitulo").innerText =
+"GRID Legends";
+
+document.getElementById("detalleImagen").src =
+"https://images8.alphacoders.com/116/1160193.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🏁 GRID Legends
+
+Vive intensas carreras con una gran variedad de vehículos y disciplinas en escenarios de todo el mundo. Compite a toda velocidad, personaliza tus coches y disfruta de una campaña con una historia centrada en el mundo del automovilismo competitivo.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Carreras y conducción.<br>
+📖 Historia: Sigue una historia de rivalidad, ambición y competición dentro del mundo de las carreras profesionales mientras intentas convertirte en una de sus grandes figuras.<br>
+🚗 Vehículos: Conduce coches de diferentes categorías, desde vehículos de competición hasta máquinas modificadas para distintos tipos de carreras.<br>
+🏎️ Carreras: Participa en carreras de circuito, pruebas de velocidad, carreras urbanas y diferentes eventos con estilos de conducción variados.<br>
+🔥 Jugabilidad: Combina velocidad, precisión y control para superar a tus rivales y conseguir la victoria.<br>
+🌍 Circuitos: Compite en pistas y escenarios inspirados en diferentes lugares del mundo, con trazados variados y condiciones de carrera diferentes.<br>
+🔧 Personalización: Modifica y mejora tus vehículos para adaptarlos a diferentes tipos de pruebas y estilos de conducción.<br>
+👥 Multijugador: Compite online con otros jugadores en carreras para demostrar tus habilidades al volante.<br>
+🤝 Cooperativo: Forma equipo con otros jugadores y participa en diferentes eventos y experiencias multijugador.<br>
+🎯 Eventos: Completa diferentes pruebas y desafíos para progresar, conseguir recompensas y desbloquear contenido.<br>
+💨 Velocidad: Disfruta de carreras rápidas con derrapes, adelantamientos y duelos intensos por la posición.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
 
 function mostrarDetallesDyingLight2StayHumanDigitalExtras(){
 
