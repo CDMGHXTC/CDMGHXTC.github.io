@@ -964,6 +964,140 @@ VER CATÁLOGO
 
 <div class="grid">  
 
+<div class="card juego-card">
+<img src="https://cloudfront-us-east-1.images.arcpublishing.com/copesa/H42QKAMCQVB3NAFFV3QCHYYYEQ.jpg">
+<div class="info">
+<h3>LEGO Star Wars: La Saga De Skywalker</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="LEGO Star Wars: La Saga De Skywalker">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesLegoStarWarsSagaSkywalker()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://hype.games/_next/image?url=https%3A%2F%2Fimg.hype.games%2Fcdn%2Fd5f6c392-5053-4777-bc1e-30466cfa4b4cCover.jpg&w=3840&q=75">
+<div class="info">
+<h3>Yu-Gi-Oh! Legacy of the Duelist: Link Evolution</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Yu-Gi-Oh! Legacy of the Duelist: Link Evolution">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesYuGiOhLegacyLinkEvolution()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://imagenes.hobbyconsolas.com/files/image_640_360/uploads/imagenes/2023/04/25/6902ac7c10276.jpeg">
+<div class="info">
+<h3>Dead Island Definitive Collection</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Dead Island Definitive Collection">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesDeadIslandDefinitiveCollection()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://altarofgaming.com/wp-content/uploads/2023/03/gears-of-war-4-game-cover-altar-of-gaming.png">
+<div class="info">
+<h3>Gears of War 4</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Gears of War 4">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesGearsOfWar4()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://img.asmedia.epimg.net/resizer/v2/3UTHH66BQFJVLHAOBP3THBWNII.jpg?auth=6459b9cfd23cf10115f0a294956f960828a643a0465d3db6ccf11c548a7eb395&width=375">
+<div class="info">
+<h3>Grand Theft Auto: The Trilogy</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Grand Theft Auto: The Trilogy">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesGrandTheftAutoTrilogy()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
  <div class="card juego-card">
 <img src="https://i.blogs.es/f260f9/motogp-22-2022/1366_521.jpeg">
 <div class="info">
@@ -4279,6 +4413,346 @@ window.addEventListener("scroll", function(){
     }
 
 });  
+
+function mostrarDetallesLegoStarWarsSagaSkywalker(){
+
+document.getElementById("detalleTitulo").innerText =
+"LEGO Star Wars: La Saga De Skywalker";
+
+document.getElementById("detalleImagen").src =
+"https://cloudfront-us-east-1.images.arcpublishing.com/copesa/H42QKAMCQVB3NAFFV3QCHYYYEQ.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🌌 LEGO Star Wars: La Saga De Skywalker
+
+Vive las nueve películas de la saga Skywalker en una enorme aventura LEGO llena de humor, acción y exploración. Recorre la galaxia, utiliza la Fuerza, combate con sables de luz y juega con cientos de personajes de Star Wars.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura, plataformas y puzzles.<br>
+📖 Historia: Recorre las nueve películas principales de Star Wars desde La Amenaza Fantasma hasta El Ascenso de Skywalker.<br>
+⚔️ Combate: Utiliza sables de luz, blásters, poderes de la Fuerza y diferentes habilidades según el personaje.<br>
+🪄 La Fuerza: Utiliza poderes de la Fuerza para mover objetos, resolver puzzles y enfrentarte a enemigos.<br>
+👥 Personajes: Juega con cientos de personajes conocidos de la saga, incluyendo héroes, villanos, droides y criaturas.<br>
+🚀 Vehículos: Pilota naves y vehículos emblemáticos como el Halcón Milenario, X-Wings, TIE Fighters y muchos más.<br>
+🌍 Exploración: Viaja por diferentes planetas de la galaxia y descubre lugares llenos de secretos, misiones y coleccionables.<br>
+🧩 Puzzles: Utiliza habilidades especiales de diferentes personajes para resolver acertijos y desbloquear nuevas zonas.<br>
+😂 Humor LEGO: Disfruta de los acontecimientos de Star Wars con el característico humor y estilo de los juegos LEGO.<br>
+👥 Cooperativo: Juega la aventura acompañado y combina las habilidades de diferentes personajes.<br>
+⭐ Saga completa: Incluye las nueve películas de la saga Skywalker en una sola experiencia.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesYuGiOhLegacyLinkEvolution(){
+
+document.getElementById("detalleTitulo").innerText =
+"Yu-Gi-Oh! Legacy of the Duelist: Link Evolution";
+
+document.getElementById("detalleImagen").src =
+"https://hype.games/_next/image?url=https%3A%2F%2Fimg.hype.games%2Fcdn%2Fd5f6c392-5053-4777-bc1e-30466cfa4b4cCover.jpg&w=3840&q=75";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🃏 Yu-Gi-Oh! Legacy of the Duelist: Link Evolution
+
+Prepárate para enfrentarte a duelistas de diferentes generaciones de Yu-Gi-Oh! Construye tu propio mazo, domina las invocaciones y revive duelos clásicos mientras avanzas en una enorme colección de batallas y cartas.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Estrategia, cartas y duelos.<br>
+📖 Historia: Revive historias y duelos inspirados en diferentes generaciones de Yu-Gi-Oh! y enfréntate a personajes conocidos de la franquicia.<br>
+🃏 Cartas: Construye y personaliza tus mazos utilizando una enorme colección de cartas.<br>
+⚔️ Duelos: Enfréntate a otros duelistas utilizando monstruos, hechizos, trampas y diferentes estrategias.<br>
+✨ Invocaciones: Utiliza Invocaciones por Fusión, Sincronía, Xyz, Péndulo y Link según las reglas y cartas disponibles.<br>
+🏆 Campaña: Completa duelos y capítulos inspirados en diferentes series de Yu-Gi-Oh!.<br>
+👥 Multijugador: Compite contra otros jugadores en diferentes modalidades de duelo.<br>
+🎯 Estrategia: Construye un mazo equilibrado y desarrolla combinaciones para superar a tus rivales.<br>
+🎴 Desafíos: Completa diferentes duelos y consigue nuevas cartas para ampliar tus posibilidades.<br>
+🌌 Universo Yu-Gi-Oh!: Encuentra personajes, cartas y momentos reconocibles de varias generaciones de la franquicia.<br>
+🛠️ Personalización: Configura tus mazos según tu estrategia y estilo de juego.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesDeadIslandDefinitiveCollection(){
+
+document.getElementById("detalleTitulo").innerText =
+"Dead Island Definitive Collection";
+
+document.getElementById("detalleImagen").src =
+"https://imagenes.hobbyconsolas.com/files/image_640_360/uploads/imagenes/2023/04/25/6902ac7c10276.jpeg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🧟 Dead Island Definitive Collection
+
+Sobrevive a un apocalipsis zombi en una isla tropical devastada por una infección. Explora, fabrica armas, completa misiones y lucha junto a otros supervivientes en una experiencia llena de acción y supervivencia.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, supervivencia y terror.<br>
+📦 Contenido: Incluye Dead Island Definitive Edition y Dead Island: Riptide Definitive Edition, junto con el contenido correspondiente de ambas experiencias.<br>
+🧟 Zombis: Enfréntate a diferentes tipos de infectados y utiliza estrategias distintas para sobrevivir a las hordas.<br>
+🔨 Combate: Utiliza armas cuerpo a cuerpo, armas de fuego y objetos improvisados para acabar con los enemigos.<br>
+🛠️ Fabricación: Reúne materiales y fabrica diferentes armas y objetos para mejorar tu capacidad de supervivencia.<br>
+🌴 Exploración: Recorre islas tropicales, hoteles, pueblos, carreteras y diferentes zonas infestadas.<br>
+👥 Cooperativo: Forma equipo con otros jugadores y completa misiones mientras luchas contra los infectados.<br>
+🤝 Multijugador: Disfruta de experiencias cooperativas online con otros supervivientes.<br>
+🎒 Recursos: Administra armas, objetos curativos y materiales para superar las zonas más peligrosas.<br>
+🏆 Misiones: Completa objetivos principales y secundarios mientras descubres la historia del brote.<br>
+🌅 Ambientación: Islas tropicales convertidas en zonas de supervivencia llenas de zombis y peligros.<br>
+⭐ Definitive Collection: Reúne dos experiencias completas de Dead Island en una sola colección con mejoras visuales.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesGearsOfWar4(){
+
+document.getElementById("detalleTitulo").innerText =
+"Gears of War 4";
+
+document.getElementById("detalleImagen").src =
+"https://altarofgaming.com/wp-content/uploads/2023/03/gears-of-war-4-game-cover-altar-of-gaming.png";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+⚔️ Gears of War 4
+
+Años después de los acontecimientos de la trilogía original, una nueva generación de soldados debe enfrentarse a una amenaza desconocida. Acompaña a JD Fenix y sus compañeros mientras luchan por proteger a la humanidad.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción y disparos en tercera persona.<br>
+📖 Historia: JD Fenix y sus amigos Kait Diaz y Del Walker se enfrentan a una nueva amenaza que aparece durante una serie de acontecimientos que afectan a las comunidades humanas.<br>
+🔫 Jugabilidad: Utiliza rifles, escopetas, explosivos y armas especiales mientras combates utilizando el sistema de cobertura.<br>
+🧱 Coberturas: Muévete entre coberturas y utiliza el entorno para atacar estratégicamente a tus enemigos.<br>
+👹 Enemigos: Enfréntate a Swarm, DeeBees y diferentes criaturas que amenazan a la humanidad.<br>
+🤝 Cooperativo: Juega la campaña acompañado de otro jugador y coordina tus acciones durante las misiones.<br>
+👥 Multijugador: Compite en diferentes modos online con equipos y mapas diseñados para enfrentamientos intensos.<br>
+🧟 Horda: Sobrevive a oleadas de enemigos en Horde 3.0 junto a otros jugadores y utiliza diferentes clases y habilidades.<br>
+🌧️ Ambientación: Recorre ciudades, bosques y zonas devastadas mientras descubres el nuevo conflicto de Sera.<br>
+⚙️ Arsenal: Utiliza armas clásicas de Gears y nuevas herramientas de combate para enfrentarte a las amenazas.<br>
+🏆 Progresión: Mejora tus habilidades y desarrolla diferentes clases para los modos cooperativos.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesGrandTheftAutoTrilogy(){
+
+document.getElementById("detalleTitulo").innerText =
+"Grand Theft Auto: The Trilogy";
+
+document.getElementById("detalleImagen").src =
+"https://img.asmedia.epimg.net/resizer/v2/3UTHH66BQFJVLHAOBP3THBWNII.jpg?auth=6459b9cfd23cf10115f0a294956f960828a643a0465d3db6ccf11c548a7eb395&width=375";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🌆 Grand Theft Auto: The Trilogy
+
+Revive tres grandes clásicos de Grand Theft Auto en una colección que reúne historias, personajes y ciudades emblemáticas. Explora enormes mundos abiertos, completa misiones, conduce vehículos y vive las aventuras de Liberty City, Vice City y San Andreas.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura y mundo abierto.<br>
+📦 Contenido: Incluye Grand Theft Auto III, Grand Theft Auto: Vice City y Grand Theft Auto: San Andreas.<br>
+🚗 Vehículos: Conduce coches, motos, barcos, helicópteros y diferentes vehículos según cada juego.<br>
+🔫 Combate: Utiliza pistolas, escopetas, rifles y diferentes armas para superar misiones y enfrentarte a enemigos.<br>
+🏙️ Liberty City: Vive la historia de GTA III y sigue a Claude mientras asciende dentro del mundo criminal de la ciudad.<br>
+🌴 Vice City: Sumérgete en los años 80 con Tommy Vercetti y conquista el mundo criminal de Vice City.<br>
+🌴 San Andreas: Acompaña a Carl "CJ" Johnson por las calles de Los Santos, San Fierro y Las Venturas.<br>
+🗺️ Mundo abierto: Explora tres grandes ciudades con numerosas misiones, actividades y secretos.<br>
+🚓 Policía: Evita a las fuerzas del orden y supera persecuciones mientras completas diferentes objetivos.<br>
+🎵 Ambientación: Disfruta de diferentes épocas, ciudades, personajes y bandas sonoras características de cada entrega.<br>
+⭐ Trilogy: Tres aventuras completas reunidas en una sola colección con mejoras visuales y controles adaptados.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
 
 function mostrarDetallesMotoGP22(){
 
