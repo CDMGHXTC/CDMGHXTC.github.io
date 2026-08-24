@@ -965,6 +965,162 @@ VER CATÁLOGO
 <div class="grid">
 
 <div class="card juego-card">
+<img src="https://i0.wp.com/www.madboxpc.com/wp-content/uploads/2017/04/ghost-recon-1.jpg?fit=1280%2C720&ssl=1">
+<div class="info">
+<h3>Tom Clancy's Ghost Recon Wildlands</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Tom Clancy's Ghost Recon Wildlands">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesGhostReconWildlands()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://www.muycomputer.com/wp-content/uploads/2017/01/Sniper-Ghost-Warrior-3.jpg">
+<div class="info">
+<h3>Sniper Ghost Warrior 3</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Sniper Ghost Warrior 3">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesSniperGhostWarrior3()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://media.contentapi.ea.com/content/dam/eacom/pvz/pvz-bfn/images/2019/08/pvz-share-image.jpg.adapt.crop16x9.1023w.jpg">
+<div class="info">
+<h3>Plants vs. Zombies: La Batalla de Neighborville</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Plants vs. Zombies: La Batalla de Neighborville">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesPlantsVsZombiesBattleForNeighborville()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://gepig.com/game_cover_460w/3951.jpg">
+<div class="info">
+<h3>Call of Duty: Modern Warfare Remastered</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Call of Duty: Modern Warfare Remastered">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesCallOfDutyModernWarfareRemastered()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://i.blogs.es/89cdab/infinite/1366_2000.png">
+<div class="info">
+<h3>Call of Duty: Infinite Warfare</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Call of Duty: Infinite Warfare">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesCallOfDutyInfiniteWarfare()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1259980/capsule_616x353.jpg">
+<div class="info">
+<h3>RIDE 4</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="RIDE 4">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesRide4()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
+
+<div class="card juego-card">
 <img src="https://image.api.playstation.com/vulcan/ap/rnd/202303/1609/cf9047cfc249a9d072e2542fee7b81ebc12f19cacad745ed.png">
 <div class="info">
 <h3>STRANGER OF PARADISE FINAL FANTASY ORIGIN</h3>
@@ -3675,6 +3831,406 @@ window.addEventListener("scroll", function(){
     }
 
 }); 
+
+function mostrarDetallesGhostReconWildlands(){
+
+document.getElementById("detalleTitulo").innerText =
+"Tom Clancy's Ghost Recon Wildlands";
+
+document.getElementById("detalleImagen").src =
+"https://i0.wp.com/www.madboxpc.com/wp-content/uploads/2017/04/ghost-recon-1.jpg?fit=1280%2C720&ssl=1";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🎖️ Tom Clancy's Ghost Recon Wildlands
+
+Forma parte de un equipo de Ghosts enviado a Bolivia para acabar con el poderoso cartel de Santa Blanca. Explora un enorme mundo abierto, utiliza sigilo y estrategia y decide cómo afrontar cada misión junto a tu escuadrón.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, disparos tácticos y mundo abierto.<br>
+📖 Historia: Los Ghosts llegan a Bolivia para desmantelar el cartel de Santa Blanca y eliminar progresivamente a sus líderes.<br>
+🔫 Jugabilidad: Utiliza rifles, pistolas, explosivos, drones y diferentes herramientas tácticas para completar las misiones.<br>
+🕵️ Sigilo: Infiltra bases enemigas, utiliza coberturas, elimina objetivos silenciosamente y coordina tus ataques.<br>
+🌍 Mundo abierto: Explora un enorme territorio con montañas, bosques, carreteras, ciudades, pueblos y zonas militares.<br>
+👥 Multijugador: Juega online con otros jugadores y forma un escuadrón para completar las misiones.<br>
+🤝 Cooperativo: Juega la campaña completa en cooperativo con hasta cuatro jugadores y coordina diferentes estrategias.<br>
+🚗 Vehículos: Utiliza coches, motos, helicópteros, aviones, barcos y vehículos militares para desplazarte por el mapa.<br>
+🛰️ Drones: Utiliza drones para localizar enemigos, marcar objetivos y obtener información del terreno.<br>
+🎯 Estrategia: Decide cómo afrontar cada misión utilizando sigilo, ataques directos, francotiradores o vehículos.<br>
+🏆 Progresión: Desbloquea habilidades, mejoras y nuevo equipamiento para fortalecer a tu Ghost y a tu escuadrón.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+function mostrarDetallesSniperGhostWarrior3(){
+
+document.getElementById("detalleTitulo").innerText =
+"Sniper Ghost Warrior 3";
+
+document.getElementById("detalleImagen").src =
+"https://www.muycomputer.com/wp-content/uploads/2017/01/Sniper-Ghost-Warrior-3.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🎯 Sniper Ghost Warrior 3
+
+Ponte en la piel de Jon North, un francotirador de élite enviado a Georgia para detener una peligrosa conspiración. Explora grandes zonas abiertas, utiliza el sigilo y planifica cuidadosamente cada misión para alcanzar tus objetivos.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, disparos tácticos y sigilo.<br>
+📖 Historia: Jon North viaja a Georgia para enfrentarse a una amenaza militar mientras intenta descubrir qué ocurrió con su hermano desaparecido.<br>
+🎯 Francotirador: Utiliza rifles de precisión y calcula distancia, viento y trayectoria para realizar disparos efectivos.<br>
+🔫 Arsenal: Utiliza rifles de francotirador, armas secundarias, pistolas y diferentes herramientas tácticas.<br>
+🕵️ Sigilo: Infiltra bases enemigas, utiliza coberturas y elimina enemigos sin ser detectado.<br>
+🗺️ Mundo abierto: Explora grandes zonas con diferentes rutas, bases, pueblos y posiciones enemigas.<br>
+🚁 Dron: Utiliza un dron para explorar el entorno, detectar enemigos y obtener información táctica.<br>
+🎒 Equipamiento: Fabrica y mejora armas y equipamiento para adaptar tu estilo de juego.<br>
+💥 Combate: Puedes afrontar las misiones utilizando sigilo, francotirador o enfrentamientos directos.<br>
+🏆 Misiones: Completa objetivos principales y secundarios para avanzar en la historia y conseguir nuevas mejoras.<br>
+🌄 Ambientación: Recorre paisajes montañosos, bosques, pueblos y zonas militares de Georgia.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+function mostrarDetallesPlantsVsZombiesBattleForNeighborville(){
+
+document.getElementById("detalleTitulo").innerText =
+"Plants vs. Zombies: La Batalla de Neighborville";
+
+document.getElementById("detalleImagen").src =
+"https://media.contentapi.ea.com/content/dam/eacom/pvz/pvz-bfn/images/2019/08/pvz-share-image.jpg.adapt.crop16x9.1023w.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🌻 Plants vs. Zombies: La Batalla de Neighborville
+
+Prepárate para una divertida batalla entre plantas y zombis en Neighborville. Elige entre diferentes personajes, utiliza habilidades únicas y participa en combates llenos de acción, humor y caos.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, disparos y multijugador.<br>
+🌱 Plantas: Elige entre diferentes clases de plantas con habilidades, armas y estilos de combate únicos.<br>
+🧟 Zombis: Controla diferentes tipos de zombis con habilidades especiales y distintas funciones dentro del equipo.<br>
+🔫 Combate: Participa en batallas llenas de disparos, habilidades especiales y ataques en equipo.<br>
+👥 Multijugador: Compite online en diferentes modos y mapas junto a otros jugadores.<br>
+🤝 Cooperativo: Forma equipos con otros jugadores y combina las habilidades de tus personajes para conseguir la victoria.<br>
+🌳 Neighborville: Explora diferentes zonas de la ciudad y participa en actividades, eventos y combates.<br>
+🎨 Personalización: Personaliza la apariencia de tus plantas y zombis con diferentes accesorios y elementos cosméticos.<br>
+🏆 Modos: Disfruta de diferentes modos de juego competitivos y cooperativos.<br>
+🔥 Habilidades: Cada clase cuenta con habilidades propias que permiten crear diferentes estrategias de combate.<br>
+😂 Humor: Mantiene el estilo divertido y caricaturesco característico de Plants vs. Zombies.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+function mostrarDetallesCallOfDutyModernWarfareRemastered(){
+
+document.getElementById("detalleTitulo").innerText =
+"Call of Duty: Modern Warfare Remastered";
+
+document.getElementById("detalleImagen").src =
+"https://gepig.com/game_cover_460w/3951.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🎖️ Call of Duty: Modern Warfare Remastered
+
+Revive una de las campañas más recordadas de Call of Duty con gráficos y efectos visuales mejorados. Acompaña al sargento John "Soap" MacTavish y al capitán Price en una serie de operaciones militares que marcaron la historia de los shooters.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción y disparos en primera persona.<br>
+📖 Historia: Sigue al sargento John "Soap" MacTavish y al capitán John Price durante operaciones militares en diferentes zonas de conflicto alrededor del mundo.<br>
+🔫 Jugabilidad: Utiliza rifles de asalto, pistolas, escopetas, rifles de francotirador, explosivos y diferentes armas militares.<br>
+🎯 Campaña: Disfruta de una campaña cinematográfica con misiones memorables como Todos camuflados, Charlie no hace surf y Tripulación prescindible.<br>
+🕵️ Sigilo: Participa en operaciones de infiltración y utiliza el sigilo para eliminar enemigos y completar objetivos.<br>
+💥 Acción: Combina tiroteos intensos, ataques aéreos, persecuciones y grandes enfrentamientos militares.<br>
+🌍 Ambientación: Recorre Europa del Este, Rusia y Oriente Medio en diferentes operaciones de combate.<br>
+👥 Multijugador: Compite online en los clásicos modos multijugador de Call of Duty y utiliza rachas de bajas, experiencia y diferentes equipamientos.<br>
+🏆 Mapas: Incluye mapas multijugador clásicos como Crash, Backlot y Crossfire.<br>
+⭐ Remastered: Presenta texturas, iluminación, renderizado y efectos visuales mejorados respecto al Call of Duty 4: Modern Warfare original.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S. ([xbox.com](https://www.xbox.com/es-co/games/store/call-of-duty-modern-warfare-remastered/bqlmfll88bsw?utm_source=chatgpt.com))
+</p>
+`;
+}
+
+function mostrarDetallesCallOfDutyInfiniteWarfare(){
+
+document.getElementById("detalleTitulo").innerText =
+"Call of Duty: Infinite Warfare";
+
+document.getElementById("detalleImagen").src =
+"https://i.blogs.es/89cdab/infinite/1366_2000.png";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🚀 Call of Duty: Infinite Warfare
+
+Viaja a un futuro donde la humanidad se ha expandido por todo el sistema solar. Ponte en la piel del capitán Nick Reyes y lidera a tus tropas en una guerra espacial contra el Settlement Defense Front.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción y disparos en primera persona.<br>
+📖 Historia: El capitán Nick Reyes y su tripulación deben enfrentarse al Settlement Defense Front, una poderosa fuerza militar que amenaza a la Tierra y sus colonias.<br>
+🔫 Jugabilidad: Utiliza armas futuristas, explosivos, equipamiento avanzado y diferentes herramientas durante las misiones.<br>
+🚀 Combate espacial: Pilota cazas Jackal y participa en intensos combates espaciales mientras persigues naves enemigas.<br>
+🤖 Tecnología: Utiliza drones, robots, armas avanzadas y diferentes sistemas tecnológicos durante las operaciones.<br>
+🌌 Exploración: Viaja entre diferentes planetas, lunas y estaciones espaciales mientras completas las misiones de la campaña.<br>
+👥 Multijugador: Compite online en diferentes modos, mapas y sistemas de progresión con habilidades y equipamientos personalizables.<br>
+🧟 Zombies: Disfruta del modo Zombies in Spaceland y sobrevive a hordas de enemigos mientras descubres secretos y completas desafíos.<br>
+🤝 Cooperativo: Juega Zombies junto a otros jugadores y trabaja en equipo para sobrevivir.<br>
+💥 Acción: Combina combates terrestres, persecuciones, explosiones y batallas espaciales en una campaña cinematográfica.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+function mostrarDetallesRide4(){
+
+document.getElementById("detalleTitulo").innerText =
+"RIDE 4";
+
+document.getElementById("detalleImagen").src =
+"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1259980/capsule_616x353.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🏍️ RIDE 4
+
+Disfruta de una experiencia de motociclismo enfocada en el realismo, con cientos de motos oficiales, numerosos circuitos y diferentes competiciones. Mejora tus habilidades, personaliza tu moto y avanza desde los eventos regionales hasta las ligas profesionales.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Carreras, simulación y deportes.<br>
+🏍️ Motocicletas: Conduce cientos de motos con licencia oficial y diferentes características de rendimiento.<br>
+🏁 Circuitos: Compite en decenas de circuitos de todo el mundo recreados con gran nivel de detalle.<br>
+🏆 Carrera: Comienza en eventos regionales y progresa hacia competiciones y ligas profesionales.<br>
+🌦️ Clima dinámico: Compite con diferentes condiciones meteorológicas y ciclos de día y noche que modifican las carreras.<br>
+⏱️ Resistencia: Participa en carreras de larga duración donde las paradas en boxes y la estrategia son fundamentales.<br>
+🤖 Inteligencia artificial: Enfréntate a pilotos controlados por A.N.N.A., diseñada para ofrecer rivales más rápidos, precisos y competitivos.<br>
+🔧 Personalización: Modifica la estética y la mecánica de tus motos, además de personalizar casco, traje y decoración.<br>
+👥 Multijugador: Compite online contra otros jugadores en carreras y competiciones de hasta 21 participantes.<br>
+🎯 Realismo: Disfruta de una conducción más exigente y detallada pensada para los aficionados a las motocicletas.<br>
+🌍 Ambientación: Circuitos y escenarios inspirados en diferentes lugares del mundo con recreaciones detalladas.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
 
 function mostrarDetallesStrangerOfParadiseFinalFantasyOrigin(){
 
