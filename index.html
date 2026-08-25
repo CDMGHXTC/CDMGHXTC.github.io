@@ -965,6 +965,161 @@ VER CATÁLOGO
 <div class="grid"> 
 
 <div class="card juego-card">
+<img src="https://i.blogs.es/eb860d/e0yli-_wyaqtpg9/1366_521.jpeg">
+<div class="info">
+<h3>Lost Judgment</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Lost Judgment">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesLostJudgment()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Bayonetta1.jpg">
+<div class="info">
+<h3>Bayonetta</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Bayonetta">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesBayonetta()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://image.api.playstation.com/cdn/UP0001/CUSA00010_00/eOkyTpg503WqggEywSQcaD3TgXlscZ1f.png">
+<div class="info">
+<h3>Assassin's Creed IV Black Flag</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Assassin's Creed IV Black Flag">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesAssassinsCreedIVBlackFlag()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://cdn5.idcgames.com/storage/image/1158/game_home_bg_section_2/default.jpg">
+<div class="info">
+<h3>PAYDAY 2</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="PAYDAY 2">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesPayday2()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000044436/b840531e6ac440f533d3f4ab7e43efb53ddd2926c00e7aefbbcdad7c6f189717">
+<div class="info">
+<h3>MLB The Show 22</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="MLB The Show 22">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMLBTheShow22()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://imagenes.hobbyconsolas.com/files/image_640_auto/uploads/imagenes/2023/04/25/6902bcfddd8d5.jpeg">
+<div class="info">
+<h3>MADiSON</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="MADiSON">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMadison()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+<div class="card juego-card">
 <img src="https://sm.ign.com/t/ign_es/cover/d/darksiders/darksiders-iii_wamu.1200.jpg">
 <div class="info">
 <h3>Darksiders III</h3>
@@ -1382,6 +1537,31 @@ cursor:pointer;
 </div>
 </div>
 
+<div class="card juego-card">
+<img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/646910/capsule_616x353.jpg?t=1787130932">
+<div class="info">
+<h3>The Crew 2</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="The Crew 2">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesTheCrew2()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+
+</div>
+</div>
 
 <div class="card juego-card">
 <img src="https://i.blogs.es/c9232c/gta2/450_1000.webp">
@@ -5181,6 +5361,413 @@ window.addEventListener("scroll", function(){
 
 });  
 
+function mostrarDetallesLostJudgment(){
+
+document.getElementById("detalleTitulo").innerText =
+"Lost Judgment";
+
+document.getElementById("detalleImagen").src =
+"https://i.blogs.es/eb860d/e0yli-_wyaqtpg9/1366_521.jpeg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🕵️ Lost Judgment
+
+Acompaña al detective Takayuki Yagami en una investigación que comienza con un caso aparentemente sencillo y termina revelando una peligrosa red de secretos, venganza y crímenes. Combina investigación, combate y exploración por las calles de Japón.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura, investigación y combate.<br>
+📖 Historia: Takayuki Yagami investiga un caso relacionado con un cadáver y una misteriosa acusación mientras descubre conexiones mucho más profundas.<br>
+🥊 Combate: Utiliza diferentes estilos de lucha para enfrentarte a grupos de enemigos.<br>
+🕵️ Investigación: Busca pistas, sigue sospechosos, analiza escenas y utiliza diferentes herramientas para avanzar en los casos.<br>
+🏙️ Exploración: Recorre Kamurocho e Isezaki Ijincho, descubre actividades, tiendas y diferentes secretos.<br>
+🎯 Sigilo: Sigue objetivos, utiliza disfraces y aprovecha el entorno para investigar sin llamar la atención.<br>
+🛹 Movilidad: Utiliza diferentes medios de transporte y herramientas para desplazarte por la ciudad.<br>
+🎮 Actividades: Disfruta de minijuegos, clubes, carreras y numerosas actividades secundarias.<br>
+🥋 Habilidades: Desbloquea nuevas técnicas y mejora las capacidades de Yagami.<br>
+👥 Personajes: Conoce a una gran variedad de personajes relacionados con la investigación y la historia principal.<br>
+🌆 Ambientación: Ciudades japonesas llenas de vida, luces, comercios y escenarios urbanos detallados.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesBayonetta(){
+
+document.getElementById("detalleTitulo").innerText =
+"Bayonetta";
+
+document.getElementById("detalleImagen").src =
+"https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Bayonetta1.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🧙‍♀️ Bayonetta
+
+Ponte en la piel de la misteriosa bruja Bayonetta y enfréntate a hordas de ángeles en combates espectaculares. Utiliza armas, magia, transformaciones y habilidades especiales mientras descubres los secretos de su pasado.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción y hack and slash.<br>
+📖 Historia: Bayonetta despierta después de un largo período sin recuerdos y comienza una aventura para descubrir su pasado y el origen de sus poderes.<br>
+⚔️ Combate: Combina ataques con armas de fuego, golpes, patadas y poderes mágicos para crear combos devastadores.<br>
+🔫 Armas: Utiliza pistolas, espadas, armas especiales y diferentes equipamientos durante los combates.<br>
+👼 Enemigos: Enfréntate a ángeles y otras criaturas sobrenaturales con diferentes habilidades.<br>
+⏱️ Witch Time: Esquiva ataques en el momento preciso para ralentizar temporalmente el tiempo y contraatacar.<br>
+🔥 Infernal: Utiliza transformaciones y técnicas especiales para invocar enormes criaturas durante los enfrentamientos.<br>
+👑 Jefes: Enfréntate a poderosos enemigos y espectaculares combates contra grandes jefes.<br>
+🌍 Exploración: Recorre ciudades, ruinas y diferentes escenarios llenos de enemigos y secretos.<br>
+🎯 Combos: Encadena ataques y técnicas para conseguir puntuaciones más altas y superar combates con estilo.<br>
+🌑 Ambientación: Un mundo fantástico con una mezcla de acción sobrenatural, humor y escenarios espectaculares.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesAssassinsCreedIVBlackFlag(){
+
+document.getElementById("detalleTitulo").innerText =
+"Assassin's Creed IV Black Flag";
+
+document.getElementById("detalleImagen").src =
+"https://image.api.playstation.com/cdn/UP0001/CUSA00010_00/eOkyTpg503WqggEywSQcaD3TgXlscZ1f.png";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🏴‍☠️ Assassin's Creed IV Black Flag
+
+Ponte en la piel de Edward Kenway, un pirata convertido en Assassin, y explora el Caribe durante la Edad de Oro de la piratería. Navega, saquea barcos, explora islas y descubre una historia llena de conspiraciones y aventuras.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura y mundo abierto.<br>
+📖 Historia: Edward Kenway busca riquezas y fama como pirata, pero termina involucrado en el conflicto entre Assassins y Templarios.<br>
+🗡️ Combate: Utiliza espadas, pistolas, cuchillos y diferentes armas para enfrentarte a enemigos.<br>
+🕵️ Sigilo: Aprovecha las habilidades Assassin para infiltrarte, eliminar objetivos y escapar sin ser detectado.<br>
+🚢 Navegación: Controla el Jackdaw y participa en intensos combates navales contra otros barcos.<br>
+🌊 Mundo abierto: Explora islas, ciudades, fortalezas y diferentes regiones del Caribe.<br>
+💰 Saqueos: Aborda barcos enemigos y consigue recursos para mejorar tu nave y equipamiento.<br>
+🐋 Caza: Encuentra animales marinos y terrestres para conseguir materiales y fabricar mejoras.<br>
+🏰 Fortalezas: Ataca y conquista fortalezas enemigas para ampliar tu control del territorio.<br>
+👥 Personajes: Conoce a Edward Kenway, Barbanegra, Mary Read y otros personajes históricos y ficticios.<br>
+🌅 Ambientación: El Caribe durante la Edad de Oro de la piratería, con océanos, islas, puertos y ciudades.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesPayday2(){
+
+document.getElementById("detalleTitulo").innerText =
+"PAYDAY 2";
+
+document.getElementById("detalleImagen").src =
+"https://cdn5.idcgames.com/storage/image/1158/game_home_bg_section_2/default.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+💰 PAYDAY 2
+
+Forma parte de una banda de criminales profesionales y participa en grandes golpes por diferentes ciudades. Planifica tus robos, elige entre sigilo o acción directa y trabaja en equipo para conseguir grandes recompensas.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, disparos y cooperativo.<br>
+📖 Historia: Únete a la banda PAYDAY y participa en una gran cantidad de golpes y operaciones criminales.<br>
+💰 Atracos: Roba bancos, tiendas, vehículos y diferentes objetivos para conseguir dinero y recompensas.<br>
+🔫 Arsenal: Utiliza rifles, escopetas, pistolas, subfusiles y diferentes armas.<br>
+🎭 Máscaras: Personaliza tu máscara y apariencia para crear un estilo propio.<br>
+🕵️ Sigilo: Completa determinados golpes sin ser detectado utilizando cámaras, guardias y sistemas de seguridad.<br>
+💥 Acción: Cuando el plan falla, prepárate para intensos tiroteos contra las fuerzas policiales.<br>
+👥 Cooperativo: Forma un equipo de hasta cuatro jugadores y coordina cada golpe.<br>
+🤝 Trabajo en equipo: Cada jugador puede cumplir diferentes funciones durante una operación.<br>
+🎯 Habilidades: Desarrolla diferentes árboles de habilidades para especializar a tu personaje.<br>
+🚓 Policía: Enfréntate a diferentes fuerzas policiales y unidades especiales durante los atracos.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesMLBTheShow22(){
+
+document.getElementById("detalleTitulo").innerText =
+"MLB The Show 22";
+
+document.getElementById("detalleImagen").src =
+"https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000044436/b840531e6ac440f533d3f4ab7e43efb53ddd2926c00e7aefbbcdad7c6f189717";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+⚾ MLB The Show 22
+
+Vive toda la emoción del béisbol profesional con jugadores y equipos de la MLB. Batea, lanza, corre las bases y construye tu propio camino hasta convertirte en una estrella del béisbol.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Deportes y béisbol.<br>
+⚾ MLB: Juega con equipos y jugadores de las Grandes Ligas de Béisbol.<br>
+🥎 Bateo: Controla tus golpes, calcula el momento y dirige la pelota para conseguir carreras.<br>
+🎯 Lanzamiento: Domina diferentes tipos de lanzamientos y estudia a los bateadores rivales.<br>
+🏃 Bases: Corre y roba bases para generar oportunidades de anotación.<br>
+🏆 Modos: Disfruta de diferentes modos de juego, temporadas y experiencias de carrera.<br>
+👤 Road to the Show: Crea a tu propio jugador y desarrolla su carrera hasta llegar a las Grandes Ligas.<br>
+💰 Diamond Dynasty: Forma un equipo utilizando cartas de diferentes jugadores y compite contra otros equipos.<br>
+👥 Multijugador: Compite online contra otros jugadores en diferentes modos.<br>
+📊 Estrategia: Gestiona tu equipo y toma decisiones durante cada partido.<br>
+🏟️ Estadios: Juega en diferentes estadios inspirados en los escenarios oficiales de la MLB.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesMadison(){
+
+document.getElementById("detalleTitulo").innerText =
+"MADiSON";
+
+document.getElementById("detalleImagen").src =
+"https://imagenes.hobbyconsolas.com/files/image_640_auto/uploads/imagenes/2023/04/25/6902bcfddd8d5.jpeg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+📷 MADiSON
+
+Adéntrate en una aterradora experiencia de terror psicológico en primera persona. Utiliza una cámara instantánea para investigar una casa llena de secretos mientras descubres una historia marcada por rituales, desapariciones y presencias sobrenaturales.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Terror psicológico, aventura y supervivencia.<br>
+📖 Historia: Luca queda atrapado en una experiencia sobrenatural relacionada con una antigua familia y deberá descubrir la verdad detrás de acontecimientos aterradores.<br>
+📷 Cámara instantánea: Utiliza la cámara para revelar pistas, fotografiar fenómenos sobrenaturales y descubrir secretos.<br>
+🏚️ Exploración: Recorre una casa misteriosa y diferentes escenarios llenos de objetos, habitaciones y pasadizos ocultos.<br>
+👻 Espíritus: Enfréntate a presencias sobrenaturales y fenómenos paranormales que pueden aparecer inesperadamente.<br>
+🧩 Puzzles: Resuelve acertijos y encuentra objetos para desbloquear nuevos caminos y avanzar en la historia.<br>
+😱 Terror: Utiliza sonidos, oscuridad, apariciones y cambios en el entorno para crear una experiencia de tensión constante.<br>
+🔍 Investigación: Reúne fotografías, documentos y pistas para descubrir los acontecimientos del pasado.<br>
+🕯️ Ritual: Descubre los secretos detrás de diferentes rituales y acontecimientos sobrenaturales.<br>
+🌑 Ambientación: Lugares oscuros y claustrofóbicos donde el entorno puede cambiar de manera inesperada.<br>
+🎒 Recursos: Busca objetos y elementos necesarios para resolver situaciones y continuar la investigación.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
 function mostrarDetallesDarksiders3(){
 
 document.getElementById("detalleTitulo").innerText =
@@ -5391,7 +5978,7 @@ document.getElementById("detalleTitulo").innerText =
 "WRC 10";
 
 document.getElementById("detalleImagen").src =
-"https://www.nintendo.com/es-co/store/products/wrc-10-the-official-game-switch/?srsltid=AfmBOooqTDcPp_gwTYK0L1ze872hcqrzydTwGz9WT32O2gm88MryXT9y";
+"https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000040133/7c4e4d1280e468170ecb4d156e96ce9d0b81d494a178bae43841ef7a256aee47";
 
 document.body.style.overflow = "hidden";
 
@@ -6199,6 +6786,72 @@ font-weight:bold;
 `;
 }
 
+function mostrarDetallesTheCrew2(){
+
+document.getElementById("detalleTitulo").innerText =
+"The Crew 2";
+
+document.getElementById("detalleImagen").src =
+"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/646910/capsule_616x353.jpg?t=1787130932";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🏎️ The Crew 2
+
+Recorre un enorme Estados Unidos virtual y compite en diferentes disciplinas de motor. Conduce coches, motos, barcos y aviones mientras exploras un mundo abierto lleno de carreras, desafíos y actividades.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Carreras, conducción y mundo abierto.<br>
+🚗 Coches: Conduce vehículos deportivos, superdeportivos, muscle cars y diferentes coches de competición.<br>
+🏍️ Motos: Participa en carreras y desafíos utilizando diferentes motocicletas.<br>
+🚤 Barcos: Compite sobre el agua en carreras de lanchas y diferentes pruebas acuáticas.<br>
+✈️ Aviones: Surca los cielos y participa en carreras aéreas y desafíos de precisión.<br>
+🌎 Mundo abierto: Explora un enorme mapa inspirado en Estados Unidos con ciudades, carreteras, montañas, ríos y zonas rurales.<br>
+🏆 Disciplinas: Participa en carreras de Street Racing, Pro Racing, Offroad y Freestyle.<br>
+👥 Multijugador: Compite online contra otros jugadores y participa en diferentes eventos.<br>
+🤝 Cooperativo: Forma equipo con amigos y disfruta de diferentes actividades dentro del mundo abierto.<br>
+🔧 Personalización: Modifica la apariencia y el rendimiento de tus vehículos para adaptarlos a diferentes competiciones.<br>
+🎯 Eventos: Completa carreras, desafíos y actividades para conseguir seguidores, dinero y nuevos vehículos.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
 
 function mostrarDetallesResidentEvil7Biohazard(){
 
@@ -15563,3 +16216,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 </html>
+
