@@ -965,6 +965,31 @@ VER CATÁLOGO
 <div class="grid">
 
 <div class="card juego-card">
+<img src="https://i0.wp.com/www.qualbert.com/wp-content/uploads/2024/09/DDR.jpg?resize=1170%2C680&ssl=1">
+<div class="info">
+<h3>Dead Rising Deluxe Remaster</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Dead Rising Deluxe Remaster">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesDeadRisingDeluxeRemaster()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+<div class="card juego-card">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUNjyqmU8M_xYIVtPsRsyfjsbyWr6WeFCmA_sWUY2jwAgJGbjyJgO_jFYD&s=10">
 <div class="info">
 <h3>Ship Graveyard Simulator Collection</h3>
@@ -10967,6 +10992,74 @@ window.addEventListener("scroll", function(){
     }
 
 });   
+
+function mostrarDetallesDeadRisingDeluxeRemaster(){
+
+document.getElementById("detalleTitulo").innerText =
+"Dead Rising Deluxe Remaster";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuFqQ6iDYZR61iTXg_3lqF-dom-JZf7IF24fD3QKIzrEJAiA7Jn_Sq1o9z&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🧟 Dead Rising Deluxe Remaster
+
+Ponte en la piel de Frank West y sobrevive a una invasión zombi dentro del centro comercial de Willamette. Utiliza todo lo que encuentres a tu alrededor como arma, rescata supervivientes y descubre la verdad detrás del brote.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, terror y supervivencia.<br>
+📖 Historia: Frank West llega a Willamette para investigar extraños acontecimientos y termina atrapado en medio de un enorme brote zombi.<br>
+🧟 Zombis: Enfréntate a grandes cantidades de muertos vivientes dentro y alrededor del centro comercial.<br>
+🔨 Armas: Utiliza prácticamente cualquier objeto del entorno como arma improvisada.<br>
+📸 Fotografía: Usa tu cámara para tomar fotografías y conseguir puntos según el contenido de las imágenes.<br>
+👥 Supervivientes: Rescata y escolta supervivientes que hayan quedado atrapados durante el brote.<br>
+🕵️ Investigación: Descubre pistas y sigue diferentes acontecimientos para averiguar qué está provocando la infección.<br>
+⏱️ Tiempo: Administra cuidadosamente el tiempo para completar casos, rescates y otras actividades.<br>
+👹 Psicópatas: Enfréntate a supervivientes hostiles y enemigos especiales conocidos como psicópatas.<br>
+🎒 Inventario: Gestiona armas, alimentos y diferentes objetos para sobrevivir.<br>
+🏃 Exploración: Recorre tiendas, pasillos, zonas exteriores y diferentes áreas del centro comercial.<br>
+⭐ Deluxe Remaster: Incluye gráficos renovados, mejoras de rendimiento, voces y diferentes ajustes modernos.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
 
 function mostrarDetallesShipGraveyardSimulatorCollection(){
 
