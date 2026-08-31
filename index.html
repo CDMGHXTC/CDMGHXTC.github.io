@@ -965,6 +965,187 @@ VER CATÁLOGO
 <div class="grid">
 
 <div class="card juego-card">
+<img src="https://sun9-68.userapi.com/9osMlm98301kmCIXOooPvvxV_Zpp_ZZ4rtYKHw/f7aB8ZvtVnE.jpg">
+<div class="info">
+<h3>Alien Isolation</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Alien Isolation">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesAlienIsolation()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://www.centrumher.eu/uploads/2023/may/medium/Bum-Simulator-Wallpaper-124829.webp">
+<div class="info">
+<h3>Bum Simulator</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Bum Simulator">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesBumSimulator()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://image.api.playstation.com/vulcan/ap/rnd/202411/1313/3cfb220241c2e5d37b0971355c121ef494901e558f62b2a3.jpg?w=440">
+<div class="info">
+<h3>DayZ Cool Edition</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="DayZ Cool Edition">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesDayZCoolEdition()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://i.ytimg.com/vi/4t8AWeo5Pjc/maxresdefault.jpg">
+<div class="info">
+<h3>Five Nights at Freddy's Help Wanted 2</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Five Nights at Freddy's Help Wanted 2">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesFiveNightsAtFreddysHelpWanted2()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://sm.ign.com/ign_es/cover/n/nine-sols/nine-sols_tsb9.jpg">
+<div class="info">
+<h3>Nine Sols</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Nine Sols">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesNineSols()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2565550/c9193c8ba6516706b403f7756e1b372d2ddd623f/capsule_616x353.jpg?t=1728122350">
+<div class="info">
+<h3>Beyond Hanwell</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Beyond Hanwell">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesBeyondHanwell()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1343240/capsule_616x353.jpg?t=1778528381">
+<div class="info">
+<h3>Thymesia</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Thymesia">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesThymesia()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+<div class="card juego-card">
 <img src="https://hardzone.es/app/uploads-hardzone.es/2022/11/raft1-1.jpg">
 <div class="info">
 <h3>Raft</h3>
@@ -11819,7 +12000,455 @@ window.addEventListener("scroll", function(){
         cajaBuscadorFlotante.classList.remove("visible");
     }
 
-});
+}); 
+
+function mostrarDetallesAlienIsolation(){
+
+document.getElementById("detalleTitulo").innerText =
+"Alien Isolation";
+
+document.getElementById("detalleImagen").src =
+"https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_AlienIsolation_image1600w.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+👽 Alien: Isolation
+
+Ponte en la piel de Amanda Ripley y sobrevive a bordo de una estación espacial donde un Alien impredecible te persigue constantemente. Utiliza el sigilo, reúne recursos y evita hacer ruido mientras intentas descubrir la verdad sobre la desaparición de tu madre.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Terror, supervivencia y sigilo.<br>
+📖 Historia: Amanda Ripley investiga la desaparición de su madre Ellen mientras intenta sobrevivir a una estación espacial infestada por una amenaza desconocida.<br>
+👽 Alien: Enfréntate a un depredador impredecible que aprende de tus movimientos.<br>
+🕵️ Sigilo: Muévete con cuidado, escóndete y evita llamar la atención.<br>
+🔦 Exploración: Recorre Sevastopol y sus diferentes instalaciones.<br>
+🔧 Recursos: Busca materiales y fabrica herramientas necesarias para sobrevivir.<br>
+📡 Detector de movimiento: Utiliza diferentes dispositivos para localizar amenazas cercanas.<br>
+🔫 Arsenal: Utiliza armas y herramientas cuando no exista otra alternativa.<br>
+🚪 Supervivencia: Decide cuándo correr, esconderte o enfrentarte al peligro.<br>
+🧩 Puzzles: Encuentra códigos, accesos y formas de avanzar por la estación.<br>
+😱 Terror: La tensión depende de la presencia constante del Alien y del peligro del entorno.<br>
+🎯 Estrategia: La paciencia y el uso inteligente del entorno son fundamentales.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesBumSimulator(){
+
+document.getElementById("detalleTitulo").innerText =
+"Bum Simulator";
+
+document.getElementById("detalleImagen").src =
+"https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000078887/3bbc9a84ab4f8f30092fb148896bd5f0b7a05a56604a2ca37f013e1ac611cc7a";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🍻 Bum Simulator
+
+Sobrevive en las calles, consigue recursos y construye tu propio refugio mientras haces todo lo posible por mejorar tus condiciones de vida. Explora un sandbox lleno de situaciones absurdas, personajes extraños y humor irreverente.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Simulación, sandbox, acción y RPG.<br>
+🏙️ Ciudad: Explora un entorno urbano lleno de personajes y situaciones inesperadas.<br>
+🛒 Supervivencia: Busca comida, materiales y diferentes recursos.<br>
+🏕️ Base: Construye y mejora tu propio refugio.<br>
+🛠️ Fabricación: Reúne materiales y crea objetos para facilitar tu supervivencia.<br>
+🕊️ Palomas: Utiliza palomas de diferentes formas durante las situaciones del juego.<br>
+💰 Economía: Consigue dinero y recursos para mejorar tus condiciones.<br>
+👥 Personajes: Interactúa con diferentes habitantes y recluta aliados.<br>
+🌱 Cultivo: Construye recipientes y cultiva determinados alimentos.<br>
+🎯 Habilidades: Mejora diferentes capacidades para facilitar la supervivencia.<br>
+😂 Humor: Una experiencia cargada de situaciones absurdas y humor irreverente.<br>
+🏆 Progresión: Expande tu base y desbloquea nuevas posibilidades.<br>
+🧠 Decisiones: Experimenta con diferentes formas de superar los obstáculos.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesDayZCoolEdition(){
+
+document.getElementById("detalleTitulo").innerText =
+"DayZ Cool Edition";
+
+document.getElementById("detalleImagen").src =
+"https://image.api.playstation.com/vulcan/ap/rnd/202411/1313/3cfb220241c2e5d37b0971355c121ef494901e558f62b2a3.jpg?w=440";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🧟 DayZ Cool Edition
+
+Sobrevive en un mundo postapocalíptico donde conseguir agua, comida y equipo puede ser tan importante como enfrentarte a otros supervivientes. Explora enormes mapas, busca recursos y lucha por mantenerte con vida durante el mayor tiempo posible.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Supervivencia, acción y multijugador.<br>
+🌍 Mundo abierto: Explora grandes mapas llenos de pueblos, bosques y zonas abandonadas.<br>
+🍖 Supervivencia: Gestiona comida, agua, salud y recursos.<br>
+🔫 Arsenal: Encuentra armas y munición para defenderte de amenazas.<br>
+🧟 Infectados: Enfréntate a los infectados que habitan diferentes zonas.<br>
+👥 Supervivientes: Otros jugadores pueden ayudarte, ignorarte o convertirse en una amenaza.<br>
+🏕️ Refugios: Busca lugares seguros y organiza tus recursos.<br>
+🎣 Pesca: Consigue alimentos mediante diferentes métodos de supervivencia.<br>
+🏹 Caza: Obtén comida y recursos explorando el entorno.<br>
+🗺️ Livonia: La edición incluye el mapa de Livonia.<br>
+❄️ Frostline: También incluye el contenido relacionado con la expansión DayZ Frostline.<br>
+🌋 Sajal: Explora el archipiélago volcánico de la expansión.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesFiveNightsAtFreddysHelpWanted2(){
+
+document.getElementById("detalleTitulo").innerText =
+"Five Nights at Freddy's Help Wanted 2";
+
+document.getElementById("detalleImagen").src =
+"https://i.ytimg.com/vi/4t8AWeo5Pjc/maxresdefault.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🐻 Five Nights at Freddy's: Help Wanted 2
+
+Trabaja como nuevo empleado de Fazbear Entertainment y demuestra que puedes desempeñarte en diferentes tareas dentro del Pizzaplex. Completa minijuegos y actividades mientras intentas sobrevivir a los animatrónicos que acechan en cada rincón.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Terror, realidad virtual y minijuegos.<br>
+🐻 Animatrónicos: Enfréntate a diferentes personajes y amenazas del universo de Five Nights at Freddy's.<br>
+🏢 Pizzaplex: Explora diferentes áreas del enorme complejo de Fazbear.<br>
+🛠️ Mantenimiento: Realiza tareas de reparación, diagnóstico y mantenimiento.<br>
+🍔 Cocina: Completa diferentes minijuegos relacionados con la preparación de alimentos.<br>
+🎟️ Atracciones: Participa en diferentes actividades y minijuegos del Pizzaplex.<br>
+🧸 Sister Location: Revive experiencias inspiradas en Five Nights at Freddy's: Sister Location.<br>
+🎯 Desafíos: Completa tareas variadas que ponen a prueba tus habilidades.<br>
+😱 Terror: Supera situaciones inesperadas con animatrónicos peligrosos.<br>
+🏆 Puntuaciones: Busca mejorar tus resultados en los diferentes minijuegos.<br>
+🔍 Exploración: Descubre diferentes áreas y secretos del Pizzaplex.<br>
+🌑 Ambientación: Terror y suspense dentro del universo de Five Nights at Freddy's.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesNineSols(){
+
+document.getElementById("detalleTitulo").innerText =
+"Nine Sols";
+
+document.getElementById("detalleImagen").src =
+"https://www.nintendo.com/eu/media/images/assets/nintendo_switch_games/ninesols/2x1_NineSols_image1600w.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+⚔️ Nine Sols
+
+Adéntrate en New Kunlun, un mundo de fantasía oriental y tecnología en el que un héroe busca venganza contra los nueve gobernantes conocidos como Sols. Domina el combate basado en desvíos y explora un mundo lleno de secretos.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, plataformas y metroidvania.<br>
+⚔️ Combate: Utiliza un sistema basado en desvíos, esquivas y ataques precisos.<br>
+🛡️ Desvíos: Aprende a bloquear y devolver los ataques enemigos en el momento adecuado.<br>
+🗡️ Armas: Utiliza diferentes técnicas y habilidades de combate.<br>
+🌌 New Kunlun: Explora un mundo que combina mitología oriental con tecnología avanzada.<br>
+👹 Enemigos: Enfréntate a diferentes criaturas y enemigos mecánicos.<br>
+🏆 Nine Sols: Enfréntate a los nueve gobernantes del reino.<br>
+🧩 Exploración: Descubre caminos ocultos, secretos y zonas alternativas.<br>
+✨ Habilidades: Desbloquea nuevas capacidades para el combate y la exploración.<br>
+📖 Historia: Sigue la venganza de Yi mientras descubre los secretos de New Kunlun.<br>
+🎨 Estilo: Presenta arte dibujado a mano inspirado en manga y anime.<br>
+🎯 Estrategia: El dominio del tiempo de los ataques y los desvíos es fundamental.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesBeyondHanwell(){
+
+document.getElementById("detalleTitulo").innerText =
+"Beyond Hanwell";
+
+document.getElementById("detalleImagen").src =
+"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2565550/c9193c8ba6516706b403f7756e1b372d2ddd623f/capsule_616x353.jpg?t=1728122350";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+👻 Beyond Hanwell
+
+Regresa a Hanwell y explora una versión oscura de Westminster llena de anomalías. Sobrevive utilizando armas escasas, combate cuerpo a cuerpo y el propio entorno mientras descubres los secretos de este inquietante lugar.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Terror, acción y aventura.<br>
+🏙️ Westminster: Explora una recreación oscura y atmosférica de Westminster.<br>
+👻 Anomalías: Enfréntate a criaturas sobrenaturales conocidas como Anomalías.<br>
+⚔️ Combate: Utiliza un sistema de combate cuerpo a cuerpo con diferentes ataques.<br>
+🔫 Armas: Encuentra armas y munición limitadas para defenderte.<br>
+🔥 Entorno: Utiliza fuego, electricidad y objetos del escenario para derrotar amenazas.<br>
+🔍 Investigación: Descubre secretos y elementos de la historia mientras exploras.<br>
+🗺️ Mundo abierto: Recorre diferentes lugares y decide qué investigar primero.<br>
+🎒 Recursos: Busca cuidadosamente los objetos necesarios para sobrevivir.<br>
+🎯 Estrategia: Decide cómo utilizar el entorno contra las criaturas.<br>
+📖 Historia: Descubre la verdad sobre Hanwell y sobre el propio protagonista.<br>
+🌑 Ambientación: Terror atmosférico con una ciudad oscura y abandonada.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesThymesia(){
+
+document.getElementById("detalleTitulo").innerText =
+"Thymesia";
+
+document.getElementById("detalleImagen").src =
+"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1343240/capsule_616x353.jpg?t=1778528381";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+☣️ Thymesia
+
+Ponte en la piel de Corvus, el último rayo de esperanza del reino de Hermes. Utiliza armas de peste, transformaciones y movimientos rápidos para enfrentarte a criaturas corrompidas y descubrir los recuerdos perdidos del protagonista.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, RPG y Soulslike.<br>
+☣️ Plaga: Roba las enfermedades de los enemigos y conviértelas en armas.<br>
+⚔️ Combate: Utiliza ataques rápidos, esquivas y diferentes movimientos.<br>
+🦅 Cuervo: Cambia a forma de cuervo para lanzar plumas e interrumpir ataques.<br>
+🗡️ Armas: Utiliza armas tradicionales y armas de peste obtenidas de los enemigos.<br>
+👹 Enemigos: Enfréntate a criaturas infectadas y monstruos mutados.<br>
+🏆 Jefes: Combate contra poderosos enemigos y jefes con habilidades especiales.<br>
+🧠 Memorias: Recupera recuerdos de Corvus para descubrir la verdad sobre Hermes.<br>
+🧪 Alquimia: Investiga el origen de la calamidad y el uso de la alquimia.<br>
+🎒 Recursos: Gestiona diferentes objetos y recursos para mejorar tus posibilidades.<br>
+📈 Mejoras: Personaliza movimientos, habilidades y armas según tu estilo.<br>
+🎯 Estrategia: Aprende los patrones de los enemigos y aprovecha sus debilidades.<br>
+🌑 Ambientación: Un reino decadente consumido por una plaga misteriosa.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
 
 function mostrarDetallesRaft(){
 
