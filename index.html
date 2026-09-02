@@ -863,6 +863,70 @@ border-radius:6px;
     }
 }
 
+/* Fondo del Inicio con las fotos de Estrenos (slideshow tipo Ken Burns) */
+.hero-fondo-estrenos{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    overflow:hidden;
+}
+
+.hero-fondo-img{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    animation:heroFondoCiclo 18s infinite;
+}
+
+.hero-fondo-img:nth-child(1){ animation-delay:0s; }
+.hero-fondo-img:nth-child(2){ animation-delay:-6s; }
+.hero-fondo-img:nth-child(3){ animation-delay:-12s; }
+
+@keyframes heroFondoCiclo{
+    0%{ opacity:0; transform:scale(1.05); }
+    5%{ opacity:1; }
+    28%{ opacity:1; transform:scale(1.15); }
+    33%{ opacity:0; transform:scale(1.15); }
+    100%{ opacity:0; }
+}
+
+.hero-fondo-overlay{
+    position:absolute;
+    inset:0;
+    z-index:1;
+    background:
+        linear-gradient(135deg,rgba(16,124,16,.75),rgba(7,11,15,.85) 45%,rgba(0,255,136,.18)),
+        radial-gradient(circle at center,rgba(0,255,136,.10),transparent 60%);
+}
+
+.hero-contenido{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+@media (max-width:768px){
+    .hero-fondo-overlay{
+        background:
+            linear-gradient(160deg,rgba(16,124,16,.85),rgba(7,11,15,.94) 50%,rgba(0,255,136,.2)),
+            radial-gradient(circle at center,rgba(0,255,136,.12),transparent 60%);
+    }
+}
+
+@media (prefers-reduced-motion:reduce){
+    .hero-fondo-img{
+        animation:none;
+    }
+    .hero-fondo-img:nth-child(1){ opacity:1; }
+    .hero-fondo-img:nth-child(2),
+    .hero-fondo-img:nth-child(3){ opacity:0; }
+}
+
 </style>
 </head>
 
@@ -893,6 +957,15 @@ border-radius:6px;
 
 <section class="hero" id="inicio">
 
+<div class="hero-fondo-estrenos" aria-hidden="true">
+  <div class="hero-fondo-img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHAKeG4CMF2JjigZNvLIAEtc0Luy8xiEbMTyD15UXPclkHzaOAwd_VSWE&s=10');"></div>
+  <div class="hero-fondo-img" style="background-image:url('https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000113635/6331b3fbd65b83093f891b06cec5c69a531897ef2b4ed7b8c66b18bf220d12c3');"></div>
+  <div class="hero-fondo-img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx1vNcL4nM4QXiJCVrlEy4PeQPAWrB_0CAF-qiRLMyfu9MfPBwBNZZcLWR&s=10');"></div>
+</div>
+<div class="hero-fondo-overlay" aria-hidden="true"></div>
+
+<div class="hero-contenido">
+
 <img src="https://raw.githubusercontent.com/CDMGHXTC/CDMGHXTC.github.io/refs/heads/main/logo-mymgamer.png"
  class="hero-logo" alt="Logo MYMGAMERV2">
 
@@ -908,7 +981,7 @@ VER CATÁLOGO
   <input 
     type="text" 
     id="buscador" 
-    placeholder="🔎 Buscar juego..."
+    placeholder="🔎 Buscar juego o género..."
     style="
       padding:12px;
       width:80%;
@@ -919,6 +992,7 @@ VER CATÁLOGO
     ">
 </div>
 
+</div>
 
 </section>
 
@@ -928,33 +1002,6 @@ VER CATÁLOGO
 
 <div class="grid">
 
-<div class="card">
-<img src="https://picsum.photos/500/700?1">
-<div class="info">
-<span class="tag">PREVENTA</span>
-<h3>GTA VI</h3>
-<p>Xbox Series X|S</p>
-</div>
-</div>
-
-<div class="card">
-<img src="https://picsum.photos/500/700?2">
-<div class="info">
-<span class="tag">NUEVO</span>
-<h3>Fable</h3>
-<p>Xbox Series X|S</p>
-</div>
-</div>
-
-<div class="card">
-<img src="https://picsum.photos/500/700?3">
-<div class="info">
-<span class="tag">NUEVO</span>
-<h3>Gears of War</h3>
-<p>Xbox Series X|S</p>
-</div>
-</div>
-
 </div>
 
 </section>
@@ -963,6 +1010,1506 @@ VER CATÁLOGO
 <h2 class="titulo">🎮 Catálogo</h2>
 
 <div class="grid">
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHAKeG4CMF2JjigZNvLIAEtc0Luy8xiEbMTyD15UXPclkHzaOAwd_VSWE&s=10">
+<div class="info">
+<h3>NBA 2K27</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="NBA 2K27">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesNBA2K27()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000113635/6331b3fbd65b83093f891b06cec5c69a531897ef2b4ed7b8c66b18bf220d12c3">
+<div class="info">
+<h3>CAPTAIN TSUBASA 2 WORLD FIGHTERS</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="CAPTAIN TSUBASA 2 WORLD FIGHTERS">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesCaptainTsubasa2WorldFighters()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx1vNcL4nM4QXiJCVrlEy4PeQPAWrB_0CAF-qiRLMyfu9MfPBwBNZZcLWR&s=10">
+<div class="info">
+<h3>STAR WARS Zero Company</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="STAR WARS Zero Company">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesStarWarsZeroCompany()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://i.ytimg.com/vi/BtKwDUmXeWM/maxresdefault.jpg">
+<div class="info">
+<h3>Mortal Shell II</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Mortal Shell II">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMortalShellII()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://sm.ign.com/t/ign_es/screenshot/default/the-sinking-city-2_18q1.1280.jpg">
+<div class="info">
+<h3>The Sinking City 2</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="The Sinking City 2">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesTheSinkingCity2()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000021401/59686225dba24636062a421593effdb4fe136bbfd67b11c621fe92ed36a65734">
+<div class="info">
+<h3>Minecraft Dungeons</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Minecraft Dungeons">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMinecraftDungeons()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://cdn.dlcompare.com/others_jpg/upload/news/image/dispatch-team-drops-clues-about-5667665b-image-691276648.jpg.webp">
+<div class="info">
+<h3>Dispatch</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Dispatch">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesDispatch()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://elanillounico.com/wp-content/uploads/2026/08/witn-900x500.webp">
+<div class="info">
+<h3>El Señor de los Anillos: La Guerra del Norte</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="El Señor de los Anillos: La Guerra del Norte">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesWarInTheNorth()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtzFQICisYbXe-dK5qxMCAE5UynAxEnnj3kFxHMnB_1IaKB4bt">
+<div class="info">
+<h3>Guacamelee! Super Turbo + Guacamelee! 2</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Guacamelee! Super Turbo + Guacamelee! 2">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesGuacameleeBundle()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000074840/627b56f5fc68ddc47a266ffeeeb1eefd31303a938228170cf92c2f1738f65fda">
+<div class="info">
+<h3>Top Racer Collection</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Top Racer Collection">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesTopRacerCollection()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+
+<div class="card juego-card">
+<img src="https://images.gog-statics.com/acddf029dee2e477329a66482d722a865edd5c95d1a9531d39b546b7e3c53c98_product_card_v2_mobile_slider_639.jpg">
+<div class="info">
+<h3>Kane & Lynch 2</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Kane & Lynch 2">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesKaneAndLynch2()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq37M13OfekyM8VvbRXUafSIXsIJg3QCEJQpZRmkfrTw&s">
+<div class="info">
+<h3>Drug Dealer Simulator</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Drug Dealer Simulator">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesDrugDealerSimulator()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuO3P4MvS6YPGn8whi7xsttTUyNAzbhe4RR-RVFjWO9AiZsOor1XZg42Qq&s=10">
+<div class="info">
+<h3>Yakuza: Like a Dragon</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Yakuza: Like a Dragon">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesYakuzaLikeADragon()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://i.ytimg.com/vi/AHV8_4QDwgQ/maxresdefault.jpg">
+<div class="info">
+<h3>Mixtape</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Mixtape">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMixtape()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOk94emU8Oq898gCXwgfAUhlUPWlqgcnnaWz7PNHCdQoi2cv8avLOjYaf&s=10">
+<div class="info">
+<h3>Halo Campaign Evolved</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Halo Campaign Evolved">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesHaloCampaignEvolved()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBT9B5iQ0mJisIF9GbpuYYLvPD-IPiODtOCEg9VkY4h-FBQbo11mit6r0W&s=10">
+<div class="info">
+<h3>Beast of Reincarnation</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Beast of Reincarnation">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesBeastOfReincarnation()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJHXqP8pj6CWDguywIOuwrTUGVEZZSA8-8O7o73xEq2PU6PUxOI61M29M&s=10">
+<div class="info">
+<h3>The Adventures of Elliot: The Millennium Tales Prologue</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="The Adventures of Elliot: The Millennium Tales Prologue">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesAdventuresOfElliotPrologue()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://image.api.playstation.com/vulcan/ap/rnd/202603/1215/30972495c4d1b567dcd015b80c0d3af9c946efc8822944d7.jpg">
+<div class="info">
+<h3>Assassin's Creed Black Flag Resynced</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Assassin's Creed Black Flag Resynced">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesAssassinsCreedBlackFlagResynced()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqtpKkUUk9YRKZ9or0f7vjoBnyrIp_q0lYUw6_ZZaH3Az9mpFnGMulwu0z&s=10">
+<div class="info">
+<h3>Echoes of Aincrad</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Echoes of Aincrad">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesEchoesOfAincrad()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000049169/6938cc90d1cb28dd7c7fdf38187d5a7070a467399ed68d861d460adf493c3b28">
+<div class="info">
+<h3>Gas Station Simulator</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Gas Station Simulator">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesGasStationSimulator()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRpDlN1r2GRI88SQMvm21zMX2HYTDePKuj9IYhwNN7Tq1EpPtz2YHeqPE&s=10">
+<div class="info">
+<h3>Killer Instinct</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Killer Instinct">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesKillerInstinct()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5tTRyzXBwREl4g-IvLfLTSFw2IyaKVR4-clvzb6c3OcWJNNShJHH7ZQM&s=10">
+<div class="info">
+<h3>Hell Let Loose</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Hell Let Loose">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesHellLetLoose()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwdGyKCcZkIx-At4TlPSomXQnjbxyIvp1IeqAJXHbjOH_JRR_qC4yUt4tR&s=10">
+<div class="info">
+<h3>Mega Man 30th Anniversary Bundle</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Mega Man 30th Anniversary Bundle">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMegaMan30thAnniversaryBundle()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch2/70010000104256/1ed2a4c0069d2e9ce86595791836194814b3d2eba46b3edb9142576ba1b709e9">
+<div class="info">
+<h3>Darwin's Paradox!</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Darwin's Paradox!">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesDarwinsParadox()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRdK7sxQIlrWOIhxMyeso7j9bYl6k2X1EyaO_xb9_W_FYCyMN1mVCuxyc&s=10">
+<div class="info">
+<h3>MOUSE P.I. For Hire</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="MOUSE P.I. For Hire">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMousePIForHire()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQONjTdUz8-0fWsgdVgaTSivBNKk7bLcDwcAKSmby3MuJNp4wTCpTHG3us&s=10">
+<div class="info">
+<h3>PRAGMATA</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="PRAGMATA">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesPRAGMATA()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBVwdPchiFdNhkOok4gqiLuGGTfrbLqSaXPwjLqVKzorDPYsWBcA3M_To&s=10">
+<div class="info">
+<h3>Shadow Labyrinth</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Shadow Labyrinth">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesShadowLabyrinth()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQarW0CmYlsaKdGO0lucJnlSHD2aSfzGzM5Sr1nZorVrB_jhzl2">
+<div class="info">
+<h3>Balatro</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Balatro">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesBalatro()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT2XGwz3NrjItyfV9WSUVU5B0J4VYwr63wVAILyoPToViakQSY9">
+<div class="info">
+<h3>Hades II</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Hades II">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesHadesII()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://milestone.it/wp-content/uploads/2026/02/motogp-poster1-scaled.webp">
+<div class="info">
+<h3>MotoGP 26</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="MotoGP 26">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMotoGP26()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2353060/61fb8243de81a1041b19e11fae599f2b22327443/capsule_616x353.jpg?t=1783980749">
+<div class="info">
+<h3>Invincible VS</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Invincible VS">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesInvincibleVS()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPm6ZWHAR6oYnr1wSst9zZLcvMS3n5zcfX40E-b_6u_2x5EEXOF4B3CA8D&s=10">
+<div class="info">
+<h3>Alice Madness Returns</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Alice Madness Returns">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesAliceMadnessReturns()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://i.ytimg.com/vi/LnqWasjxQRc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA2E6_3XKJ8ECzFSJnYoPdIOVhupg">
+<div class="info">
+<h3>Call of Duty Modern Warfare 3</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Call of Duty Modern Warfare 3">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesCallOfDutyModernWarfare3()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3905110/b35160d2b92e594cd9dae6326d59c158c7333163/capsule_616x353.jpg?t=1768932018">
+<div class="info">
+<h3>The Last Faith</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="The Last Faith">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesTheLastFaith()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://wiki.subnautica.com/sn2/images/Subnautica2STOREPAGE.jpg?d27dc">
+<div class="info">
+<h3>Subnautica 2</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Subnautica 2">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesSubnautica2()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://storegamescolombia.com/files/images/noticias/1768436755_2.webp">
+<div class="info">
+<h3>Forza Horizon 6</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Forza Horizon 6">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesForzaHorizon6()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://www.lego.com/cdn/cs/set/assets/blt18519b2b57cf2876/02_LEGO_Dinner-dark_Hero-Standard_Desktop_v02.jpg">
+<div class="info">
+<h3>LEGO Batman El Legado del Caballero de la Noche</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="LEGO Batman El Legado del Caballero de la Noche">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesLEGOBatmanLegacyOfTheDarkKnight()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTys8O1EnTXR-ZyjczrOtd28KRAueHGdSj-DKrqBlhHwHpjgXOCTVs7UYRw&s=10">
+<div class="info">
+<h3>Crisol Theater of Idols</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Crisol Theater of Idols">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesCrisolTheaterOfIdols()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDBA2BA0MKqNql7whBoL0vg9fHQPl1S8x-3Uyphz6Xbxztn58WUVIsPh0&s=10">
+<div class="info">
+<h3>Bread & Fred</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Bread & Fred">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesBreadAndFred()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_DTxFg1KVfc38laXB9V7q30OBTYskXLfEryPNju1hGpc-qmZLNiNVSqmh&s=10">
+<div class="info">
+<h3>Hunt the Night</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Hunt the Night">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesHuntTheNight()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJghoYG7U0H6U9m5iadD5vtFGZy48VTcrJ9R4a4hIfASytonbu6etrN5Y&s=10">
+<div class="info">
+<h3>ROMEO IS A DEAD MAN</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="ROMEO IS A DEAD MAN">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesRomeoIsADeadMan()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://image.api.playstation.com/vulcan/ap/rnd/202512/1205/79661d7a2bdb9784749b4e57e1456ca89f7ac7bed8615aee.png">
+<div class="info">
+<h3>Resident Evil Requiem</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Resident Evil Requiem">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesResidentEvilRequiem()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://image.api.playstation.com/vulcan/ap/rnd/202601/0917/f2908e47dc9a1dc6d109ba4593727e7191a5dd605ea64358.jpg?w=440">
+<div class="info">
+<h3>WWE 2K26</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="WWE 2K26">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesWWE2K26()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSZkgF1K3MtXJfzs4zb9kHhjClomcrG_pk9qzI4KZkxO2gHjSvcIS1PHAd&s=10">
+<div class="info">
+<h3>John Carpenter's Toxic Commando</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="John Carpenter's Toxic Commando">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesToxicCommando()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2NCXOy1TOo8LjQuiOKOr9BGITCb1RJfyC93ZfgFoiELURAcLLSpk76Xr7&s=10">
+<div class="info">
+<h3>Monster Hunter Stories 3 Twisted Reflection</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Monster Hunter Stories 3 Twisted Reflection">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMonsterHunterStories3TwistedReflection()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNyrYzwq2hp4fib71jkEyFYOA-MqLKcjOc98cicCJPbgCGsvgKihxquChl&s=10">
+<div class="info">
+<h3>Crimson Desert</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Crimson Desert">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesCrimsonDesert()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRewTKFeemOkoTXH3KvhpNcXAPKvterbB1B4xgoCFpeRn_zeBTkRJXnvl4&s=10">
+<div class="info">
+<h3>High On Life</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="High On Life">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesHighOnLife()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://images.gog-statics.com/e3d7bcf0362aebafa810949087f90fcb254ed414a30b27a741fa35deee75e19f_product_card_v2_mobile_slider_639.jpg">
+<div class="info">
+<h3>Echoes of the End</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Echoes of the End">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesEchoesOfTheEnd()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4TPmbfSIglXEdnHWKq6sKOdjmjAigQXnrB4zrz36JySNvYX4q_osuWwE&s=10">
+<div class="info">
+<h3>Hellblade II Senua's Saga</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Hellblade II Senua's Saga">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesHellbladeIISenuasSaga()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLAWtWUlIka0q53XKxUYLKyxL9EFjyqgSSzq1vKEwihflQdEeGwgVspWJh&s=10">
+<div class="info">
+<h3>S.T.A.L.K.E.R. 2 Heart of Chornobyl</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="S.T.A.L.K.E.R. 2 Heart of Chornobyl">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesStalker2HeartOfChornobyl()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://assets-prd.ignimgs.com/2021/03/13/the-bus-button-1615596228707.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80">
+<div class="info">
+<h3>The Bus</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="The Bus">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesTheBus()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+<div class="card juego-card">
+<img src="https://i.pinimg.com/736x/f9/97/9e/f9979efd5e42ae090b5723c0269d63be.jpg">
+<div class="info">
+<h3>La Tierra Media Sombras de Mordor</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="La Tierra Media Sombras de Mordor">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesSombrasDeMordor()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://static.bandainamcoent.eu/high/code-vein/code-vein-II/00-product-page/CodeVeinII-header-mobile.jpg">
+<div class="info">
+<h3>CODE VEIN II</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="CODE VEIN II">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesCodeVein2()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://image.api.playstation.com/vulcan/ap/rnd/202509/0709/d18d0b60041a632ef5c7b021a099a6ebb84e59134ad10d5b.jpg">
+<div class="info">
+<h3>MY HERO ACADEMIA All’s Justice</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="MY HERO ACADEMIA All’s Justice">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMyHeroAcademiaAllsJustice()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRovGiP00LlvdqQ2kr9mZ4PqHZB8lxvcDI-pX794BnscS5jvMmUheXhtT0&s=10">
+<div class="info">
+<h3>Carmageddon Rogue Shift</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Carmageddon Rogue Shift">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesCarmageddonRogueShift()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://image.api.playstation.com/vulcan/ap/rnd/202512/1010/e562eeb6662765b100deca5d27c698d3ed4613f77f3e25c2.jpg">
+<div class="info">
+<h3>RIDE 6</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="RIDE 6">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesRide6()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAFw0Jycz4OplaPEi_yOp4SkDSCtYcJdFQiX2v9h5o4ah7Rz-3ykvJVCo&s=10">
+<div class="info">
+<h3>REANIMAL</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="REANIMAL">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesReanimal()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnl3u5tJ887Y6B8A3OjQBJ9E8nEoUZuBo52AWd1lNsjLkEidvwOQSIrIA&s=10">
+<div class="info">
+<h3>DRAGON QUEST VII Reimagined</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="DRAGON QUEST VII Reimagined">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesDragonQuest7Reimagined()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
 
 <div class="card juego-card">
 <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSz-XhVl8dzXhbAkHqPBtXarCKQ1T6Cn81XbF7FNioAxoD1zm5z">
@@ -13183,7 +14730,7 @@ cursor:pointer;
 
 
 <div class="card juego-card">
-<img src="https://altarofgaming.com/wp-content/uploads/2023/03/gears-of-war-4-game-cover-altar-of-gaming.png">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaV9htmpDBdn-MOIe6WOHfUIE9WXMUierFFYoMln3WxKP0EceC-VvAslY&s=10">
 <div class="info">
 <h3>Gears of War 4</h3>
 <div class="precio">$20.000</div>
@@ -16412,7 +17959,7 @@ cursor:pointer;
 <input
 type="text"
 id="buscadorFlotante"
-placeholder="🔎 Buscar juego...">
+placeholder="🔎 Buscar juego o género...">
 </div>
 
 <div id="overlay" style="
@@ -16529,15 +18076,86 @@ const precios = {
 
 
 const carrito = document.querySelector(".carrito");
+
+// Estrenos reutiliza las fichas del catálogo para mantener portada, precio,
+// carrito y detalles idénticos en ambos lugares.
+const titulosEstreno = new Set([
+  "NBA 2K27",
+  "CAPTAIN TSUBASA 2 WORLD FIGHTERS",
+  "STAR WARS Zero Company"
+]);
+const cuadriculaEstrenos = document.querySelector("#estrenos .grid");
+const tarjetasCatalogo = Array.from(
+  document.querySelectorAll("#catalogo .juego-card")
+);
+
+if (cuadriculaEstrenos) {
+  const tarjetasEstreno = tarjetasCatalogo
+    .filter((tarjeta) => titulosEstreno.has(tarjeta.querySelector("h3").textContent.trim()))
+    .map((tarjeta) => tarjeta.cloneNode(true));
+
+  cuadriculaEstrenos.prepend(...tarjetasEstreno);
+}
+
 const botones = document.querySelectorAll(".comprar");
+
+// El precio mostrado se unifica solo en las tarjetas del catálogo.
+document.querySelectorAll("#catalogo .juego-card .precio").forEach((precio) => {
+  precio.textContent = "$20.000";
+});
 
 const buscador = document.getElementById("buscador");
 
 let busquedaActiva = false;
 
+// Índice de géneros para que cada tarjeta pueda encontrarse por su tipo de juego.
+// La mayoría se toma de la ficha de detalles; estos once títulos no tenían género allí.
+const generosManuales = {
+  "DARK SOULS III": "Acción, RPG, soulslike",
+  "Far Cry 5": "Acción, aventura, disparos, mundo abierto",
+  "Jump Force": "Lucha, acción, anime",
+  "Watch Dogs Legion": "Acción, aventura, mundo abierto",
+  "STAR WARS Jedi: Fallen Order": "Acción, aventura, soulslike",
+  "Watch NARUTO SHIPPUDEN Ultimate Ninja STORM Legacy": "Lucha, acción, anime",
+  "Watch Tiny Tina's Wonderlands Legacy": "Acción, RPG, disparos, saqueo",
+  "Crash Team Racing Nitro-Fueled": "Carreras, arcade",
+  "Call of Duty: Black Ops Cold War": "Disparos, acción",
+  "Grand Theft Auto V": "Acción, aventura, mundo abierto",
+  "Mortal Kombat 11 Ultimate": "Lucha, acción"
+};
+
+function normalizarTexto(texto) {
+  return texto
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
+function prepararBusquedaPorGenero(listaProductos) {
+  listaProductos.forEach((producto) => {
+    const titulo = producto.querySelector("h3").textContent.trim();
+    const botonDetalles = producto.querySelector(
+      'button[onclick^="mostrarDetalles"]'
+    );
+    const controlador = botonDetalles?.getAttribute("onclick") || "";
+    const nombreFuncion = controlador.match(/(mostrarDetalles\w+)/)?.[1];
+    const codigoFuncion =
+      nombreFuncion && typeof window[nombreFuncion] === "function"
+        ? window[nombreFuncion].toString()
+        : "";
+    const coincidenciaGenero = codigoFuncion.match(
+      /Género\s*:\s*([^<`\r\n]+)/i
+    );
+    const generos = coincidenciaGenero?.[1].trim() || generosManuales[titulo] || "";
+
+    producto.dataset.generos = normalizarTexto(generos);
+  });
+}
+
 function filtrarJuegos(texto){
 
-    texto = texto.toLowerCase().trim();
+    texto = normalizarTexto(texto);
 
     // Si el buscador está vacío,
     // volvemos a la paginación normal
@@ -16556,12 +18174,12 @@ function filtrarJuegos(texto){
     // Buscar entre TODOS los juegos
     const resultados = productos.filter(producto => {
 
-        const nombre =
-            producto.querySelector("h3")
-            .textContent
-            .toLowerCase();
+        const nombre = normalizarTexto(
+            producto.querySelector("h3").textContent
+        );
+        const generos = producto.dataset.generos || "";
 
-        return nombre.includes(texto);
+        return nombre.includes(texto) || generos.includes(texto);
 
     });
 
@@ -16629,7 +18247,3751 @@ window.addEventListener("scroll", function(){
         cajaBuscadorFlotante.classList.remove("visible");
     }
 
-});  
+});   
+
+function mostrarDetallesMortalShellII(){
+
+document.getElementById("detalleTitulo").innerText =
+"Mortal Shell II";
+
+document.getElementById("detalleImagen").src =
+"https://i.ytimg.com/vi/BtKwDUmXeWM/maxresdefault.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+💀 Mortal Shell II
+
+Mortal Shell II es un soulslike de acción que lleva la fórmula del juego original a un mundo abierto más compacto y peligroso. Explora un territorio devastado, posee los cuerpos de antiguos guerreros para obtener sus capacidades y enfréntate a enemigos brutales mientras descubres una historia marcada por falsos dioses, corrupción y supervivencia.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, RPG y soulslike<br>
+📖 Historia: Entra en un mundo devastado dominado por fuerzas sobrenaturales<br>
+⚔️ Combate: Enfrentamientos rápidos, brutales y exigentes<br>
+💀 Receptáculos: Posee los cuerpos de guerreros derrotados y utiliza sus capacidades<br>
+🗡️ Armas: Descubre armas con diferentes posibilidades de mejora<br>
+🔨 Mejoras: Personaliza armas para adaptarlas a tu estilo de combate<br>
+🌍 Exploración: Recorre un mundo abierto compacto lleno de secretos<br>
+👹 Enemigos: Enfréntate a criaturas y guerreros extremadamente peligrosos<br>
+👑 Jefes: Derrota enemigos poderosos para avanzar por la aventura<br>
+🧠 Estrategia: Aprende patrones y administra tus recursos durante los combates<br>
+🏚️ Mundo: Ruinas y paisajes devastados llenos de peligros<br>
+🔮 Poderes: Despierta habilidades especiales mediante los receptáculos<br>
+🎯 Desafío: La muerte forma parte del aprendizaje y la progresión<br>
+👤 Jugador: Experiencia para un solo jugador<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesTheSinkingCity2(){
+
+document.getElementById("detalleTitulo").innerText =
+"The Sinking City 2";
+
+document.getElementById("detalleImagen").src =
+"https://sm.ign.com/t/ign_es/screenshot/default/the-sinking-city-2_18q1.1280.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🐙 The Sinking City 2
+
+The Sinking City 2 es un survival horror en tercera persona ambientado en el universo de horror cósmico de Lovecraft. En la Arkham de los años 20, Calvin Rafferty deberá investigar lugares inundados y llenos de criaturas mientras busca respuestas a un misterioso ritual. Los recursos son escasos y cada recorrido exige administrar cuidadosamente munición, objetos e inventario.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Survival horror, acción y aventura<br>
+📖 Historia: Calvin Rafferty investiga una Arkham devastada por fenómenos sobrenaturales<br>
+🐙 Lovecraft: Criaturas y horrores inspirados en los mitos de Cthulhu<br>
+🔫 Combate: Enfréntate a monstruos utilizando armas y recursos limitados<br>
+🧩 Investigación: Examina pistas y descubre secretos ocultos<br>
+🏚️ Exploración: Recorre edificios, calles y lugares abandonados<br>
+🌊 Inundación: Una extraña catástrofe ha transformado Arkham<br>
+🎒 Inventario: Administra cuidadosamente los objetos que encuentres<br>
+💥 Recursos: La munición y los suministros son limitados<br>
+👹 Criaturas: Enfréntate a seres grotescos y sobrenaturales<br>
+🧠 Rompecabezas: Resuelve desafíos para avanzar por diferentes áreas<br>
+🚪 Atajos: Descubre nuevas rutas para regresar a zonas anteriores<br>
+🌑 Ambientación: Terror oscuro inspirado en los años veinte<br>
+👤 Jugador: Experiencia para un solo jugador<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesMinecraftDungeons(){
+
+document.getElementById("detalleTitulo").innerText =
+"Minecraft Dungeons";
+
+document.getElementById("detalleImagen").src =
+"https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000021401/59686225dba24636062a421593effdb4fe136bbfd67b11c621fe92ed36a65734";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+⛏️ Minecraft Dungeons
+
+Minecraft Dungeons lleva el universo de Minecraft a una aventura de acción tipo dungeon crawler. Explora diferentes niveles llenos de enemigos, trampas y tesoros mientras utilizas armas cuerpo a cuerpo, ataques a distancia y artefactos mágicos. Puedes jugar solo o formar un grupo de hasta cuatro aventureros para enfrentarte a las hordas de enemigos.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura y dungeon crawler<br>
+📖 Historia: Enfréntate al Archillano y salva a los habitantes del mundo de Minecraft<br>
+⚔️ Combate: Lucha cuerpo a cuerpo contra grandes grupos de enemigos<br>
+🏹 Ataques a distancia: Utiliza arcos y diferentes tipos de proyectiles<br>
+✨ Artefactos: Equipa objetos especiales que proporcionan habilidades adicionales<br>
+👾 Enemigos: Combate zombis, esqueletos, creepers y otras criaturas<br>
+💎 Tesoros: Encuentra armas, armaduras y objetos durante tus expediciones<br>
+🗺️ Niveles: Explora diferentes escenarios llenos de rutas y secretos<br>
+🤝 Cooperativo: Juega con hasta cuatro personas localmente u online<br>
+👤 Solo: También puedes disfrutar la aventura individualmente<br>
+📈 Progresión: Consigue equipamiento cada vez más poderoso<br>
+🛡️ Armaduras: Personaliza tu personaje con diferentes piezas de equipo<br>
+🏆 Desafíos: Supera enemigos y niveles para conseguir mejores recompensas<br>
+🎨 Estilo: Utiliza la estética característica del universo Minecraft<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesDispatch(){
+
+document.getElementById("detalleTitulo").innerText =
+"Dispatch";
+
+document.getElementById("detalleImagen").src =
+"https://cdn.dlcompare.com/others_jpg/upload/news/image/dispatch-team-drops-clues-about-5667665b-image-691276648.jpg.webp";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🚨 Dispatch
+
+Dispatch es una comedia de aventuras narrativa ambientada en un peculiar centro de emergencias para superhéroes. Como Robert Robertson, antiguo héroe obligado a trabajar como despachador, deberás gestionar un equipo de héroes imperfectos, tomar decisiones durante las emergencias y desenvolverte entre conflictos, relaciones y situaciones llenas de humor.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Aventura narrativa y comedia<br>
+📖 Historia: Un antiguo superhéroe debe trabajar coordinando un equipo de héroes problemáticos<br>
+🦸 Héroes: Gestiona un grupo con habilidades, personalidades y problemas diferentes<br>
+📡 Despacho: Decide qué héroes enviar a cada emergencia<br>
+🧠 Decisiones: Tus elecciones influyen en el desarrollo de la historia<br>
+💬 Diálogos: Interactúa con los personajes mediante numerosas conversaciones<br>
+❤️ Relaciones: Las decisiones pueden modificar tus relaciones con el equipo<br>
+🚨 Emergencias: Responde a diferentes situaciones que ocurren por la ciudad<br>
+🏢 Central: Gestiona las operaciones desde el centro de despacho<br>
+😂 Humor: Combina situaciones absurdas con momentos más serios<br>
+🎬 Narrativa: Historia episódica centrada en personajes y decisiones<br>
+👥 Equipo: Conoce y desarrolla las relaciones entre los integrantes<br>
+🎨 Visuales: Estilo de animación inspirado en series de superhéroes<br>
+👤 Jugador: Experiencia para un solo jugador<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesWarInTheNorth(){
+
+document.getElementById("detalleTitulo").innerText =
+"El Señor de los Anillos: La Guerra del Norte";
+
+document.getElementById("detalleImagen").src =
+"https://elanillounico.com/wp-content/uploads/2026/08/witn-900x500.webp";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+💍 El Señor de los Anillos: La Guerra del Norte
+
+La edición Legacy de La Guerra del Norte recupera el RPG de acción de Tierra Media con mejoras para las plataformas modernas. Forma una nueva Comunidad para defender el norte mientras eliges entre tres héroes con estilos diferentes. Explora lugares conocidos del universo de Tolkien, mejora tu equipamiento y combate junto a tus compañeros en cooperativo.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: RPG de acción y aventura<br>
+📖 Historia: Una nueva compañía debe defender el norte de la Tierra Media de las fuerzas de Sauron<br>
+⚔️ Combate: Enfréntate a orcos, trolls, wargos y otras criaturas<br>
+🧙 Eradan: Ranger Dúnedain especializado en arcos, espadas y sigilo<br>
+🧝 Andriel: Elfa experta en magia, curación y ataques de área<br>
+🧔 Farin: Enano resistente especializado en combate cuerpo a cuerpo<br>
+🔄 Personajes: Cambia entre los tres héroes durante la aventura<br>
+🤝 Cooperativo: Juega con hasta tres jugadores de forma local u online<br>
+📈 RPG: Mejora habilidades, atributos y equipamiento<br>
+⚔️ Armas: Encuentra nuevas armas y armaduras para fortalecer a tu héroe<br>
+🦅 Beleram: Invoca al Gran Águila para apoyar tus combates<br>
+🏔️ Tierra Media: Explora Rivendel, Lothlórien, Mirkwood y otras regiones<br>
+👑 Personajes: Encuentra apariciones de figuras conocidas de la saga<br>
+🩸 Ambientación: Una visión más oscura y brutal de la Tierra Media<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesTopRacerCollection(){
+
+document.getElementById("detalleTitulo").innerText =
+"Top Racer Collection";
+
+document.getElementById("detalleImagen").src =
+"https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000074840/627b56f5fc68ddc47a266ffeeeb1eefd31303a938228170cf92c2f1738f65fda";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🏎️ Top Racer Collection
+
+Top Racer Collection reúne tres clásicos de carreras de los años 90 en un solo paquete: Top Racer, Top Racer 2 y Top Racer 3000. Disfruta de carreras rápidas con vehículos vistos desde arriba, pistas llenas de curvas y obstáculos y una buena dosis de nostalgia. También incluye contenido nuevo y opciones para competir con otros jugadores.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Carreras y arcade<br>
+📦 Contenido: Incluye Top Racer, Top Racer 2 y Top Racer 3000<br>
+🏁 Carreras: Compite en diferentes circuitos llenos de curvas y obstáculos<br>
+🚗 Vehículos: Conduce diferentes coches y mejora tu rendimiento en las carreras<br>
+⚡ Velocidad: Carreras rápidas con acción constante<br>
+🛣️ Circuitos: Pistas inspiradas en los clásicos juegos de carreras de los 90<br>
+🧠 Estrategia: Controla curvas, frenadas y adelantamientos para ganar<br>
+🎨 Visuales: Estética retro con gráficos y colores renovados<br>
+🎵 Música: Bandas sonoras inspiradas en la época clásica de los arcades<br>
+🏆 Campeonatos: Compite para superar diferentes eventos y desafíos<br>
+👥 Multijugador: Juega con otros participantes en diferentes modos<br>
+🤝 Local: Multijugador local para hasta cuatro jugadores<br>
+🌐 Online: Carreras online para hasta cuatro jugadores<br>
+🕹️ Nostalgia: Recupera la experiencia de los clásicos Top Racer<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesNBA2K27(){
+
+document.getElementById("detalleTitulo").innerText =
+"NBA 2K27";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHAKeG4CMF2JjigZNvLIAEtc0Luy8xiEbMTyD15UXPclkHzaOAwd_VSWE&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🏀 NBA 2K27
+
+NBA 2K27 lleva la experiencia de baloncesto de 2K a una nueva temporada con modos como MyCAREER, MyTEAM y MyNBA. Crea tu jugador, forma tu equipo ideal y compite en las canchas mientras disfrutas de nuevas animaciones, mejoras defensivas, tiro renovado y diferentes opciones de juego online.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Deportes y baloncesto<br>
+📖 Historia: Construye el legado de tu jugador y busca convertirte en una leyenda de la NBA<br>
+🏀 MyCAREER: Crea tu MyPLAYER y desarrolla su trayectoria<br>
+🌆 The City: Explora la ciudad y compite en diferentes canchas<br>
+👥 Crew: Forma equipo con amigos para competir juntos<br>
+🏆 MyTEAM: Construye un equipo utilizando estrellas de NBA y WNBA<br>
+🧠 MyNBA: Gestiona equipos y toma decisiones dentro de la liga<br>
+🎮 Jugabilidad: Nuevas animaciones y controles más avanzados<br>
+🔥 Tiro: Sistema de lanzamiento con nuevas mecánicas de ritmo<br>
+🛡️ Defensa: Sistema defensivo renovado y mejoras de inteligencia artificial<br>
+💪 Dribbling: Mayor personalización y control de movimientos<br>
+💥 Mate: Nuevo medidor de mates controlado manualmente<br>
+🌐 Multijugador: Partidas online y modos competitivos<br>
+🤝 Cooperativo: Modos para jugar junto a otros usuarios<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesCaptainTsubasa2WorldFighters(){
+
+document.getElementById("detalleTitulo").innerText =
+"CAPTAIN TSUBASA 2 WORLD FIGHTERS";
+
+document.getElementById("detalleImagen").src =
+"https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000113635/6331b3fbd65b83093f891b06cec5c69a531897ef2b4ed7b8c66b18bf220d12c3";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+⚽ CAPTAIN TSUBASA 2 WORLD FIGHTERS
+
+CAPTAIN TSUBASA 2 WORLD FIGHTERS lleva el fútbol de anime de Captain Tsubasa a enfrentamientos llenos de supermovimientos y acción espectacular. Controla a Tsubasa y a sus compañeros, utiliza habilidades especiales y compite en partidos donde la velocidad, la estrategia y las jugadas imposibles son protagonistas.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Deportes, fútbol y acción<br>
+📖 Historia: Acompaña a Tsubasa y sus compañeros en una nueva aventura futbolística<br>
+⚽ Fútbol: Disputa partidos con una jugabilidad inspirada en el anime<br>
+🔥 Supermovimientos: Ejecuta tiros y técnicas especiales espectaculares<br>
+🧑‍🎤 Personajes: Cuenta con 110 personajes jugables<br>
+🇯🇵 Selecciones: Disfruta de diferentes equipos y representaciones internacionales<br>
+🏃 Movimiento: Controla jugadores durante partidos rápidos y dinámicos<br>
+💥 Técnicas: Utiliza habilidades especiales para superar a los rivales<br>
+🏆 Partidos: Compite para conseguir la victoria en enfrentamientos intensos<br>
+👥 Plantillas: Combina diferentes personajes para formar tu equipo<br>
+🎮 Multijugador local: Juega partidos para dos jugadores<br>
+🌐 Multijugador online: Compite contra otros jugadores online<br>
+🎵 Música: Más de 100 temas acompañan la acción futbolística<br>
+🎨 Visuales: Presentación inspirada directamente en el anime<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesStarWarsZeroCompany(){
+
+document.getElementById("detalleTitulo").innerText =
+"STAR WARS Zero Company";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx1vNcL4nM4QXiJCVrlEy4PeQPAWrB_0CAF-qiRLMyfu9MfPBwBNZZcLWR&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🌌 STAR WARS Zero Company
+
+STAR WARS Zero Company es un RPG táctico por turnos ambientado en una época de grandes conflictos dentro del universo de Star Wars. Lidera una compañía de mercenarios, recluta personajes con distintas habilidades y toma decisiones que afectan a tu equipo mientras te enfrentas a enemigos mediante combates estratégicos al estilo táctico.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: RPG táctico y estrategia por turnos<br>
+📖 Historia: Lidera una compañía de mercenarios durante una época de conflictos en la galaxia<br>
+🪖 Escuadrón: Forma un equipo de personajes con habilidades diferentes<br>
+⚔️ Combate: Batallas por turnos donde cada movimiento cuenta<br>
+🧠 Estrategia: Planifica ataques, posiciones y habilidades para superar a tus enemigos<br>
+🌌 Star Wars: Explora una nueva historia dentro del universo de la franquicia<br>
+🤖 Droids: Recluta y utiliza droides con distintas funciones<br>
+🔫 Armas: Emplea blásters, habilidades especiales y tecnología de combate<br>
+👥 Personajes: Desarrolla relaciones entre los integrantes de Zero Company<br>
+📈 Progresión: Mejora habilidades y capacidades del escuadrón<br>
+🏕️ Base: Gestiona y personaliza tu base entre las misiones<br>
+🎯 Misiones: Completa operaciones tácticas con diferentes objetivos<br>
+💬 Decisiones: Las conversaciones y elecciones influyen en determinados acontecimientos<br>
+👤 Jugador: Campaña para un solo jugador<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesGuacameleeBundle(){
+
+document.getElementById("detalleTitulo").innerText =
+"Guacamelee! Super Turbo + Guacamelee! 2";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtzFQICisYbXe-dK5qxMCAE5UynAxEnnj3kFxHMnB_1IaKB4bt";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🇲🇽 Guacamelee! Super Turbo + Guacamelee! 2
+
+Este paquete reúne dos de las aventuras más divertidas de DrinkBox Studios. Ponte en la piel de Juan Aguacate y recorre mundos inspirados en el folclore mexicano mientras combates esqueletos, descubres nuevas habilidades y atraviesas plataformas llenas de desafíos. Una colección ideal para disfrutar de acción, humor, exploración y lucha libre con amigos en cooperativo local.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, plataformas y Metroidvania<br>
+📦 Contenido: Incluye Guacamelee! Super Turbo Championship Edition y Guacamelee! 2<br>
+📖 Historia: Sigue las aventuras de Juan Aguacate en mundos inspirados en México<br>
+🤼 Combate: Lucha libre mezclada con acción rápida y combos<br>
+🧩 Plataformas: Utiliza movimientos de combate para superar obstáculos<br>
+🌎 Mundos: Viaja entre diferentes dimensiones y escenarios<br>
+🐔 Transformación: Utiliza habilidades relacionadas con la transformación en pollo<br>
+💥 Habilidades: Desbloquea nuevas técnicas para combatir y explorar<br>
+👹 Enemigos: Enfréntate a esqueletos, jefes y enemigos especiales<br>
+🏆 Jefes: Combates contra enemigos con patrones y habilidades diferentes<br>
+🎭 Trajes: Cambia la apariencia y ciertas características del personaje<br>
+🤝 Cooperativo: Varias modalidades permiten jugar localmente con amigos<br>
+😂 Humor: Presentación llena de situaciones absurdas y personajes extravagantes<br>
+🎨 Estilo: Gráficos coloridos inspirados en el folclore mexicano<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesKaneAndLynch2(){
+
+document.getElementById("detalleTitulo").innerText =
+"Kane & Lynch 2";
+
+document.getElementById("detalleImagen").src =
+"https://images.gog-statics.com/acddf029dee2e477329a66482d722a865edd5c95d1a9531d39b546b7e3c53c98_product_card_v2_mobile_slider_639.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🔫 Kane & Lynch 2
+
+Kane & Lynch 2 es un shooter en tercera persona intenso y oscuro que sigue a dos criminales atrapados en una peligrosa operación en Shanghái. La historia se presenta con una estética de cámara de vídeo temblorosa que da a los tiroteos una sensación cruda y caótica. La cooperación entre Kane y Lynch es fundamental para sobrevivir al constante enfrentamiento con fuerzas policiales y bandas rivales.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Shooter y acción en tercera persona<br>
+📖 Historia: Kane y Lynch quedan atrapados en una violenta operación criminal en Shanghái<br>
+🔫 Combate: Enfrentamientos intensos con armas de fuego<br>
+👥 Protagonistas: Controla a Kane o Lynch dependiendo del modo de juego<br>
+🏙️ Ambientación: Shanghái como escenario principal de la aventura<br>
+💣 Destrucción: Escenarios llenos de situaciones caóticas y explosiones<br>
+🛡️ Cobertura: Utiliza objetos del entorno para protegerte de los enemigos<br>
+👮 Enemigos: Enfréntate a policías, criminales y fuerzas rivales<br>
+🎥 Cámara: Estética de vídeo amateur que aporta una presentación única<br>
+🌃 Acción: Persecuciones y tiroteos constantes en las calles de la ciudad<br>
+🤝 Cooperativo: La campaña puede jugarse junto a otro jugador<br>
+🌐 Multijugador: Cuenta con diferentes modos competitivos online<br>
+🎯 Objetivos: Completa operaciones y sobrevive a los enfrentamientos<br>
+🔊 Sonido: Efectos y ambiente urbano acompañan el caos de las misiones<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesDrugDealerSimulator(){
+
+document.getElementById("detalleTitulo").innerText =
+"Drug Dealer Simulator";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq37M13OfekyM8VvbRXUafSIXsIJg3QCEJQpZRmkfrTw&s";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+💊 Drug Dealer Simulator
+
+Drug Dealer Simulator es una experiencia de simulación y gestión en primera persona donde comienzas con una pequeña operación ilegal y buscas convertirla en una organización mucho más grande. Compra mercancía, prepara productos, contrata personas y administra tus recursos mientras intentas evitar a las autoridades y mantener el control de tu territorio.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Simulación, gestión y aventura<br>
+📖 Historia: Comienza desde abajo e intenta construir una organización criminal<br>
+💰 Economía: Administra dinero, mercancía y ganancias<br>
+📦 Suministros: Compra y gestiona productos para mantener el negocio<br>
+🧪 Producción: Prepara diferentes productos para distribuirlos<br>
+🤝 Contactos: Trabaja con diferentes personas para hacer crecer la operación<br>
+👥 Personal: Contrata ayudantes y expande tu grupo<br>
+🏙️ Territorio: Explora la ciudad y controla diferentes zonas<br>
+🚔 Riesgo: Evita a las autoridades y otros problemas durante tus operaciones<br>
+🛍️ Compradores: Atiende diferentes clientes y cumple sus pedidos<br>
+📈 Progreso: Aumenta tu reputación y capacidad de negocio<br>
+🏠 Propiedades: Utiliza diferentes lugares para desarrollar tus actividades<br>
+🎯 Objetivos: Completa encargos y consigue suficiente dinero para progresar<br>
+👤 Jugador: Experiencia principalmente para un solo jugador<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesYakuzaLikeADragon(){
+
+document.getElementById("detalleTitulo").innerText =
+"Yakuza: Like a Dragon";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuO3P4MvS6YPGn8whi7xsttTUyNAzbhe4RR-RVFjWO9AiZsOor1XZg42Qq&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🐉 Yakuza: Like a Dragon
+
+Yakuza: Like a Dragon cambia el tradicional combate de la saga por un sistema de RPG por turnos protagonizado por Ichiban Kasuga. Después de pasar años en prisión, Ichiban regresa a Kamurocho y descubre que su antiguo clan prácticamente ha desaparecido. Su búsqueda de respuestas lo lleva hasta Yokohama, donde deberá formar un grupo de compañeros y comenzar una nueva vida desde cero.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: RPG, acción y aventura<br>
+📖 Historia: Ichiban Kasuga busca descubrir la verdad detrás de la traición que destruyó su antigua vida<br>
+🐉 Protagonista: Controla a Ichiban y acompaña su transformación personal<br>
+⚔️ Combate: Sistema de batalla RPG por turnos con diferentes habilidades<br>
+👥 Compañeros: Forma un equipo con personajes con habilidades únicas<br>
+🎭 Trabajos: Cambia de profesión para obtener nuevos estilos y habilidades<br>
+🏙️ Yokohama: Explora una gran ciudad llena de actividades y secretos<br>
+🎰 Actividades: Disfruta de minijuegos, carreras, arcades y otros entretenimientos<br>
+🍜 Restaurantes: Visita diferentes establecimientos para obtener ventajas temporales<br>
+👹 Enemigos: Enfréntate a bandas criminales y rivales extravagantes<br>
+💪 Progresión: Sube de nivel y mejora las características de tu grupo<br>
+🧠 Estrategia: Combina trabajos y habilidades para aprovechar las debilidades enemigas<br>
+🎬 Narrativa: Historia dramática combinada con humor característico de Yakuza<br>
+🎵 Música: Banda sonora con temas intensos y momentos más relajados<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesMixtape(){
+
+document.getElementById("detalleTitulo").innerText =
+"Mixtape";
+
+document.getElementById("detalleImagen").src =
+"https://i.ytimg.com/vi/AHV8_4QDwgQ/maxresdefault.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🎵 Mixtape
+
+Mixtape es una aventura narrativa ambientada durante la última noche de instituto de tres amigos. La historia combina exploración, momentos musicales y recuerdos de una amistad que está a punto de cambiar para siempre. A lo largo de su recorrido podrás disfrutar de diferentes actividades mientras descubres las experiencias que marcaron a los protagonistas.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Aventura narrativa y exploración<br>
+📖 Historia: Tres amigos viven su última gran noche antes de separarse para comenzar una nueva etapa<br>
+🎵 Música: La música es una parte esencial de la experiencia<br>
+👥 Amistad: La aventura gira alrededor de los recuerdos compartidos entre los protagonistas<br>
+🛹 Exploración: Recorre diferentes lugares durante una noche inolvidable<br>
+🎨 Estilo: Presentación juvenil con una fuerte identidad visual<br>
+📼 Recuerdos: Revive momentos que forman parte de la historia de los personajes<br>
+🎸 Cultura: Ambientación inspirada en la música y cultura juvenil<br>
+🌙 Noche: La aventura sucede durante una única noche llena de actividades<br>
+🎯 Objetivos: Completa diferentes situaciones y momentos de la aventura<br>
+🧩 Interacción: Participa en actividades y descubre elementos del entorno<br>
+😂 Humor: Combina situaciones divertidas con momentos emocionales<br>
+🎬 Narrativa: Historia centrada en la amistad y el paso hacia la adultez<br>
+👤 Jugador: Experiencia para un solo jugador<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesHaloCampaignEvolved(){
+
+document.getElementById("detalleTitulo").innerText =
+"Halo Campaign Evolved";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOk94emU8Oq898gCXwgfAUhlUPWlqgcnnaWz7PNHCdQoi2cv8avLOjYaf&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🪖 Halo: Campaign Evolved
+
+Halo: Campaign Evolved es una recreación modernizada de la campaña original de Halo: Combat Evolved, reconstruida desde cero para las plataformas actuales. Controla al Jefe Maestro en su llegada a Alpha Halo, enfrenta al Covenant y descubre secretos del anillo mientras recorres grandes escenarios con vehículos, armas y combates renovados.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Shooter en primera persona<br>
+📖 Historia: El Jefe Maestro llega a Alpha Halo y debe descubrir los secretos del misterioso anillo<br>
+🔫 Armas: Utiliza un amplio arsenal humano y alienígena<br>
+👽 Covenant: Enfréntate a diferentes fuerzas enemigas del Covenant<br>
+💀 Flood: Combate contra una de las mayores amenazas de la saga Halo<br>
+🚙 Vehículos: Utiliza vehículos clásicos de la franquicia durante la campaña<br>
+🌍 Alpha Halo: Explora grandes zonas exteriores e instalaciones antiguas<br>
+🧠 Estrategia: Cambia armas y tácticas según cada situación de combate<br>
+💥 Acción: Enfrentamientos intensos a gran escala<br>
+💀 Calaveras: Activa modificadores opcionales para cambiar la experiencia de juego<br>
+🤝 Cooperativo: Campaña para 2 jugadores en pantalla dividida y hasta 4 online<br>
+🌐 Crossplay: Juego cooperativo entre plataformas compatibles<br>
+🎨 Gráficos: Campaña reconstruida y modernizada desde cero<br>
+🏆 Progresión: Completa misiones principales y descubre secretos del anillo<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesBeastOfReincarnation(){
+
+document.getElementById("detalleTitulo").innerText =
+"Beast of Reincarnation";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBT9B5iQ0mJisIF9GbpuYYLvPD-IPiODtOCEg9VkY4h-FBQbo11mit6r0W&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🐕 Beast of Reincarnation
+
+Beast of Reincarnation es un RPG de acción desarrollado por Game Freak que presenta un Japón posapocalíptico consumido por la corrupción. Emma, una mujer marcada por una maldición, recorre este mundo devastado junto a Koo, su compañero canino. La aventura combina combates en tiempo real, exploración y órdenes estratégicas para aprovechar las habilidades de ambos protagonistas.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, RPG y aventura<br>
+📖 Historia: Emma y Koo recorren un Japón posapocalíptico buscando sobrevivir en un mundo devastado<br>
+🐕 Compañero: Koo acompaña a Emma y participa activamente en los combates<br>
+⚔️ Combate: Lucha en tiempo real contra criaturas y amenazas<br>
+🧠 Estrategia: Combina ataques directos con órdenes para Koo<br>
+🌲 Mundo: Explora bosques, ruinas y paisajes transformados por la corrupción<br>
+👹 Criaturas: Enfréntate a monstruos nacidos de un mundo corrompido<br>
+🗡️ Habilidades: Desarrolla nuevas capacidades para Emma y Koo<br>
+🌱 Corrupción: Un extraño fenómeno transforma la naturaleza y el entorno<br>
+🎯 Objetivos: Avanza por un mundo peligroso y descubre lo que ocurrió<br>
+💥 Acción: Combates exigentes que requieren precisión y estrategia<br>
+🌄 Exploración: Recorre un mundo cambiante con diferentes zonas<br>
+🎨 Visuales: Escenarios naturales mezclados con elementos posapocalípticos<br>
+👤 Jugador: Experiencia para un solo jugador<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+function mostrarDetallesAdventuresOfElliotPrologue(){
+
+document.getElementById("detalleTitulo").innerText =
+"The Adventures of Elliot: The Millennium Tales Prologue";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJHXqP8pj6CWDguywIOuwrTUGVEZZSA8-8O7o73xEq2PU6PUxOI61M29M&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🧚 The Adventures of Elliot: The Millennium Tales Prologue
+
+Este prólogo permite conocer el comienzo de la aventura de Elliot y Faie en el mundo de Philabieldia. Explora nuevas zonas, combate enemigos, consigue armas y magicita y descubre parte del misterio que rodea esta historia ambientada a través de distintas eras. El progreso guardado del prólogo puede trasladarse a la versión completa.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: RPG de acción y aventura<br>
+📖 Historia: Elliot y Faie emprenden una aventura para descubrir los secretos de Philabieldia<br>
+🗡️ Combate: Lucha en tiempo real contra diferentes enemigos<br>
+🧚 Compañera: Faie proporciona habilidades de apoyo durante la aventura<br>
+🌍 Exploración: Recorre un continente lleno de caminos y zonas desconocidas<br>
+🪄 Magicita: Encuentra recursos mágicos que ayudan durante el viaje<br>
+⚔️ Armas: Descubre y utiliza diferentes armas para fortalecer a Elliot<br>
+🧩 Progreso: El prólogo permite avanzar en la misión principal y explorar libremente<br>
+🏞️ Mundo: Entornos inspirados en fantasía y distintas épocas<br>
+🎨 Visuales: Estética HD-2D con escenarios detallados y coloridos<br>
+👾 Enemigos: Criaturas y amenazas repartidas por las distintas áreas<br>
+📜 Narrativa: Misterio relacionado con la historia del mundo y sus mil años<br>
+💾 Guardado: El progreso puede transferirse a la versión completa<br>
+👤 Jugador: Experiencia para un solo jugador<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesAssassinsCreedBlackFlagResynced(){
+
+document.getElementById("detalleTitulo").innerText =
+"Assassin's Creed Black Flag Resynced";
+
+document.getElementById("detalleImagen").src =
+"https://image.api.playstation.com/vulcan/ap/rnd/202603/1215/30972495c4d1b567dcd015b80c0d3af9c946efc8822944d7.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🏴‍☠️ Assassin's Creed Black Flag Resynced
+
+Assassin's Creed Black Flag Resynced reconstruye la aventura pirata de Edward Kenway con gráficos renovados, mejoras jugables y contenido adicional. Navega por el Caribe a bordo del Jackdaw, participa en batallas navales, explora islas y ciudades y descubre una nueva versión de la historia de uno de los Assassin's Creed más queridos.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura y mundo abierto<br>
+📖 Historia: Edward Kenway se ve envuelto en la lucha entre asesinos y templarios<br>
+🏴‍☠️ Piratería: Conviértete en capitán y recorre el Caribe<br>
+🚢 Navegación: Controla el Jackdaw y explora grandes zonas marítimas<br>
+⚓ Batallas navales: Enfréntate a barcos enemigos utilizando cañones y maniobras<br>
+🗡️ Combate: Utiliza espadas, pistolas y movimientos de asesino<br>
+🕵️ Sigilo: Elimina enemigos desde las sombras y utiliza diferentes tácticas<br>
+🌴 Exploración: Descubre islas, selvas, ciudades y naufragios<br>
+💰 Saqueo: Obtén recursos y mejora tu barco durante la aventura<br>
+🐦 Mundo abierto: Viaja libremente por el Caribe y encuentra actividades secundarias<br>
+🎬 Contenido adicional: Incluye nuevas historias y elementos exclusivos de esta versión<br>
+🌦️ Clima: Cambios atmosféricos y condiciones marítimas más dinámicas<br>
+🎨 Gráficos: Mejoras visuales, iluminación y efectos modernos<br>
+📸 Modo Foto: Captura momentos y paisajes del Caribe<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesEchoesOfAincrad(){
+
+document.getElementById("detalleTitulo").innerText =
+"Echoes of Aincrad";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqtpKkUUk9YRKZ9or0f7vjoBnyrIp_q0lYUw6_ZZaH3Az9mpFnGMulwu0z&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+⚔️ Echoes of Aincrad
+
+Echoes of Aincrad es un RPG de acción ambientado en el famoso mundo de Aincrad, donde cada batalla puede ser decisiva. Crea a tu héroe, elige tu equipo, mejora tus habilidades y recorre ciudades, llanuras y peligrosas mazmorras mientras completas misiones y descubres nuevas zonas en una aventura llena de combates en tiempo real.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: RPG de acción y aventura<br>
+📖 Historia: Adéntrate en Aincrad y lucha por sobrevivir en un mundo lleno de peligros<br>
+⚔️ Combate: Sistema de acción en tiempo real basado en habilidades y reflejos<br>
+🧑‍🎤 Personaje: Crea y personaliza a tu propio héroe<br>
+🤝 Compañeros: Forma equipo con diferentes personajes y adapta sus tácticas<br>
+📈 Progresión: Sube de nivel y desbloquea nuevas habilidades<br>
+🗡️ Equipo: Consigue armas y equipamiento para mejorar tu personaje<br>
+🏙️ Ciudades: Visita diferentes asentamientos y zonas de descanso<br>
+🏰 Mazmorras: Explora áreas peligrosas repletas de enemigos y tesoros<br>
+🗺️ Exploración: El mapa se amplía conforme avanza la historia<br>
+💎 Tesoros: Encuentra objetos raros y recompensas ocultas<br>
+👹 Enemigos: Enfréntate a criaturas y enemigos cada vez más poderosos<br>
+🎯 Misiones: Completa objetivos principales y actividades de exploración<br>
+🎨 Visuales: Mundo de fantasía inspirado en Sword Art Online<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesGasStationSimulator(){
+
+document.getElementById("detalleTitulo").innerText =
+"Gas Station Simulator";
+
+document.getElementById("detalleImagen").src =
+"https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000049169/6938cc90d1cb28dd7c7fdf38187d5a7070a467399ed68d861d460adf493c3b28";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+⛽ Gas Station Simulator
+
+Gas Station Simulator te pone al frente de una estación de servicio que empieza prácticamente desde cero. Limpia, repara, amplía el negocio y atiende a todo tipo de clientes mientras administras suministros, empleados y recursos. A medida que avanzas puedes transformar una pequeña gasolinera en un negocio mucho más grande y rentable.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Simulación, gestión y estrategia<br>
+📖 Historia: Convierte una vieja gasolinera en un negocio exitoso<br>
+⛽ Estación: Atiende vehículos y clientes durante la jornada<br>
+🧹 Limpieza: Mantén las instalaciones en buenas condiciones<br>
+🔧 Reparaciones: Repara y mejora diferentes partes de la estación<br>
+🏗️ Expansión: Amplía el negocio y desbloquea nuevas áreas<br>
+📦 Suministros: Gestiona combustible, productos y recursos<br>
+💰 Finanzas: Controla ingresos, gastos y beneficios<br>
+👷 Empleados: Contrata y administra trabajadores para ayudarte<br>
+🚗 Clientes: Atiende diferentes tipos de clientes y sus necesidades<br>
+🏪 Negocio: Añade servicios y nuevas opciones para aumentar las ganancias<br>
+🛠️ Personalización: Mejora el aspecto y funcionamiento de la estación<br>
+🎯 Objetivos: Completa tareas y progresa para desarrollar el negocio<br>
+😄 Eventos: Situaciones inesperadas añaden variedad a la gestión<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesKillerInstinct(){
+
+document.getElementById("detalleTitulo").innerText =
+"Killer Instinct";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRpDlN1r2GRI88SQMvm21zMX2HYTDePKuj9IYhwNN7Tq1EpPtz2YHeqPE&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🥊 Killer Instinct
+
+Killer Instinct es un juego de lucha rápido y espectacular en el que cada personaje posee movimientos, habilidades y estilos de combate diferentes. Encadena golpes, realiza combos, utiliza breakers y aprende a dominar las mecánicas avanzadas para superar a tus rivales tanto en partidas individuales como en enfrentamientos multijugador.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Lucha<br>
+📖 Historia: Enfréntate a una gran variedad de luchadores con diferentes estilos<br>
+🥊 Combate: Sistema de lucha rápido basado en ataques y combos<br>
+🔥 Combos: Encadena múltiples golpes para causar grandes cantidades de daño<br>
+💥 Combo Breaker: Interrumpe los combos del rival en el momento adecuado<br>
+⚡ Instinct Mode: Activa capacidades especiales para cambiar el rumbo del combate<br>
+👊 Luchadores: Cada personaje posee técnicas y habilidades únicas<br>
+🏆 Desafíos: Pon a prueba tus habilidades en diferentes modos<br>
+🌐 Multijugador: Compite online contra otros jugadores<br>
+🕹️ Local: Juega combates locales para dos jugadores<br>
+💻 Juego cruzado: Posibilidad de jugar con usuarios de PC compatibles<br>
+🎯 Entrenamiento: Aprende movimientos y practica tus combos<br>
+🎨 Estilo: Presentación colorida y combates muy dinámicos<br>
+🔊 Efectos: Golpes y efectos especiales acompañan la acción<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesHellLetLoose(){
+
+document.getElementById("detalleTitulo").innerText =
+"Hell Let Loose";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVTst_b4MvHeqpGnpaIx_QtnO2pOJAGVEBgFFdIVaDe1Rxu-nFhhDspFA&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🎖️ Hell Let Loose
+
+Hell Let Loose es un shooter táctico en primera persona ambientado en la Segunda Guerra Mundial. Sus enormes batallas enfrentan a equipos de hasta 50 jugadores por bando en escenarios donde la comunicación, la estrategia y el trabajo en equipo son fundamentales. Combate con infantería, utiliza tanques y artillería y ayuda a conquistar el frente.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Shooter táctico en primera persona<br>
+📖 Historia: Recrea grandes enfrentamientos inspirados en la Segunda Guerra Mundial<br>
+🔫 Combate: Utiliza armas históricas y combate con precisión táctica<br>
+🪖 Infantería: Participa en batallas terrestres junto a tu escuadrón<br>
+🚜 Vehículos: Utiliza tanques y otros vehículos militares<br>
+💣 Artillería: Coordina ataques y bombardeos para apoyar al equipo<br>
+🌍 Mapas: Grandes escenarios inspirados en campos de batalla reales<br>
+👥 Equipos: Batallas con hasta 100 jugadores en total<br>
+📡 Comunicación: Coordina movimientos y objetivos con tu escuadrón<br>
+🎯 Objetivos: Captura y defiende sectores estratégicos del mapa<br>
+🧠 Estrategia: La organización y el trabajo en equipo son esenciales<br>
+🌐 Multijugador: Grandes partidas online con jugadores reales<br>
+🔄 Multijugador multiplataforma: Conecta con jugadores compatibles de Xbox<br>
+🎖️ Roles: Diferentes especialidades dentro del campo de batalla<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesMegaMan30thAnniversaryBundle(){
+
+document.getElementById("detalleTitulo").innerText =
+"Mega Man 30th Anniversary Bundle";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2FbIo3sqdabj1IENEgnMRGNhWtmmzUkoowooMK6_OVEEEMqVMjj0xTIo&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🤖 Mega Man 30th Anniversary Bundle
+
+Mega Man 30th Anniversary Bundle reúne una enorme colección de aventuras clásicas de la saga Mega Man en un solo paquete. Incluye cinco recopilaciones con juegos de Mega Man y Mega Man X, además de Mega Man 11, ofreciendo una gran cantidad de niveles, jefes, armas y desafíos para los amantes de la serie.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción y plataformas<br>
+📖 Historia: Reúne diferentes aventuras clásicas de Mega Man y Mega Man X<br>
+🤖 Mega Man: Disfruta de varios títulos de la saga principal<br>
+⚡ Mega Man X: Incluye múltiples entregas de la serie X<br>
+🎮 Mega Man 11: Aventura moderna incluida en el paquete<br>
+🔫 Armas: Obtén habilidades y armas al derrotar a diferentes jefes<br>
+👾 Enemigos: Enfréntate a numerosos Robot Masters y amenazas mecánicas<br>
+🏆 Desafíos: Supera niveles exigentes y enfrentamientos contra jefes<br>
+🧩 Colección: Cinco recopilaciones reunidas dentro del bundle<br>
+📚 Contenido: Incluye un total de 19 aventuras de la franquicia<br>
+🎵 Sonido: Música clásica característica de la saga<br>
+🎨 Estilo: Combina juegos retro con títulos más modernos<br>
+🕹️ Jugabilidad: Plataformas y acción con controles precisos<br>
+📦 Bundle: Mega Man Legacy Collection, Legacy Collection 2, X Legacy Collection, X Legacy Collection 2 y Mega Man 11<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S
+</p>
+`;
+}
+
+function mostrarDetallesDarwinsParadox(){
+
+document.getElementById("detalleTitulo").innerText =
+"Darwin's Paradox!";
+
+document.getElementById("detalleImagen").src =
+"https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch2/70010000104256/1ed2a4c0069d2e9ce86595791836194814b3d2eba46b3edb9142576ba1b709e9";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🐙 Darwin's Paradox!
+
+Darwin's Paradox! es una aventura de plataformas, exploración y rompecabezas protagonizada por un pequeño pulpo con habilidades especiales. Tras ser arrastrado desde el océano hasta un gigantesco depósito industrial, Darwin deberá sobrevivir a peligros, máquinas y criaturas mientras descubre una misteriosa conspiración. Usa el camuflaje, nada, escóndete y aprovecha tus habilidades para avanzar por un mundo lleno de secretos.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Plataformas, aventura y rompecabezas<br>
+📖 Historia: Darwin busca regresar al océano mientras descubre una peligrosa conspiración<br>
+🧠 Rompecabezas: Supera desafíos utilizando las habilidades únicas del pulpo<br>
+🌊 Exploración: Recorre entornos industriales y zonas llenas de secretos<br>
+🥷 Camuflaje: Ocúltate de enemigos y peligros aprovechando el entorno<br>
+💦 Natación: Utiliza el agua para desplazarte y superar obstáculos<br>
+🦑 Habilidades: Usa ventosas, tinta y otras capacidades especiales<br>
+⚠️ Peligros: Enfréntate a máquinas, criaturas y trampas<br>
+🎨 Estilo visual: Dirección artística colorida y estilo de película animada<br>
+🌍 Mundo: Escenarios interactivos con distintos niveles y desafíos<br>
+🎯 Objetivo: Sobrevive y encuentra el camino de regreso al océano<br>
+📚 Narrativa: Historia con misterio, humor y momentos de tensión<br>
+👤 Jugador: Experiencia para un solo jugador<br>
+🏆 Progreso: Avanza resolviendo desafíos y descubriendo nuevos caminos<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesMousePIForHire(){
+
+document.getElementById("detalleTitulo").innerText =
+"MOUSE: P.I. For Hire";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRdK7sxQIlrWOIhxMyeso7j9bYl6k2X1EyaO_xb9_W_FYCyMN1mVCuxyc&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🐭 MOUSE: P.I. For Hire
+
+MOUSE: P.I. For Hire es un shooter de acción con una estética inspirada en los dibujos animados clásicos de principios del siglo XX. Juegas como un detective privado que debe investigar una ciudad llena de corrupción, enemigos y misterios. Combina tiroteos intensos con exploración, investigación y una ambientación noir muy particular.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Shooter, acción y aventura<br>
+📖 Historia: Un detective privado investiga una ciudad dominada por el crimen y la corrupción<br>
+🔫 Combate: Disparos rápidos contra distintos tipos de enemigos<br>
+🕵️ Investigación: Sigue pistas y descubre secretos durante tus casos<br>
+🎨 Estilo visual: Animación inspirada en cartoons clásicos<br>
+🏙️ Ambientación: Ciudad noir con una estética de los años 30<br>
+💥 Armas: Utiliza diferentes herramientas y armas para enfrentarte a amenazas<br>
+👾 Enemigos: Combate mafiosos, criaturas y rivales peligrosos<br>
+🚪 Exploración: Recorre calles, interiores y distintas zonas de la ciudad<br>
+🧩 Desafíos: Resuelve situaciones y supera obstáculos mientras investigas<br>
+🎬 Presentación: Animaciones y escenarios inspirados en cortometrajes clásicos<br>
+🎵 Sonido: Banda sonora con influencia jazz y ambientación detectivesca<br>
+👤 Jugador: Experiencia para un solo jugador<br>
+🌃 Estilo: Mezcla de acción, misterio y estética pulp<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesPRAGMATA(){
+
+document.getElementById("detalleTitulo").innerText =
+"PRAGMATA";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQONjTdUz8-0fWsgdVgaTSivBNKk7bLcDwcAKSmby3MuJNp4wTCpTHG3us&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🚀 PRAGMATA
+
+PRAGMATA es una aventura de acción y ciencia ficción de Capcom ambientada en una estación lunar dominada por una inteligencia artificial fuera de control. Hugh y Diana deberán trabajar juntos para sobrevivir, combatir enemigos y descubrir qué ocurrió en este misterioso lugar. La relación entre ambos protagonistas es clave para avanzar y descubrir los secretos de la historia.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura y ciencia ficción<br>
+📖 Historia: Hugh y Diana intentan escapar de una estación lunar controlada por una IA<br>
+🤖 Protagonistas: Controla a Hugh y trabaja junto a Diana, una joven androide<br>
+🔫 Combate: Enfréntate a amenazas mecánicas y enemigos de ciencia ficción<br>
+🧠 Estrategia: Combina las habilidades de ambos personajes para avanzar<br>
+🧩 Rompecabezas: Resuelve desafíos utilizando cooperación y observación<br>
+🌕 Ambientación: Estación lunar misteriosa y tecnológica<br>
+🚀 Ciencia ficción: Tecnología avanzada, robots e instalaciones espaciales<br>
+👾 Enemigos: Máquinas y amenazas controladas por sistemas artificiales<br>
+🎬 Narrativa: Historia centrada en la relación entre Hugh y Diana<br>
+🏃 Exploración: Recorre diferentes sectores de la instalación lunar<br>
+🎯 Objetivo: Descubrir la verdad y encontrar una forma de regresar a la Tierra<br>
+🎨 Gráficos: Escenarios futuristas con una fuerte identidad visual<br>
+👤 Jugador: Experiencia para un solo jugador<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesShadowLabyrinth(){
+
+document.getElementById("detalleTitulo").innerText =
+"Shadow Labyrinth";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBVwdPchiFdNhkOok4gqiLuGGTfrbLqSaXPwjLqVKzorDPYsWBcA3M_To&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+👾 Shadow Labyrinth
+
+Shadow Labyrinth es una aventura de acción y plataformas en 2D que reimagina el universo de PAC-MAN con una propuesta oscura y desafiante. Como Swordsman No. 8, explora un misterioso planeta guiado por el orbe Puck, descubre secretos de antiguas guerras y derrota criaturas cada vez más peligrosas mientras desarrollas nuevas habilidades.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Plataformas, acción y aventura<br>
+📖 Historia: Swordsman No. 8 despierta en un planeta misterioso bajo la guía de Puck<br>
+⚔️ Combate: Enfréntate cuerpo a cuerpo contra criaturas y monstruos<br>
+🌌 Exploración: Recorre un planeta lleno de ruinas, secretos y peligros<br>
+👾 Enemigos: Criaturas alienígenas y monstruos evolucionados<br>
+🟡 Puck: Un misterioso orbe amarillo que guía al protagonista<br>
+🧩 Habilidades: Descubre nuevos poderes para avanzar por el mundo<br>
+🗺️ Mundo: Diferentes zonas conectadas para explorar y descubrir<br>
+💀 Desafío: Combates y plataformas que exigen precisión y habilidad<br>
+🎨 Visuales: Estilo 2D con ambientación oscura y ciencia ficción<br>
+🤖 Inspiración: Reinterpretación alternativa del universo de PAC-MAN<br>
+🔓 Secretos: Encuentra rutas ocultas y elementos del pasado del planeta<br>
+🏃 Movimiento: Salta, combate y utiliza nuevas capacidades para progresar<br>
+👤 Jugador: Experiencia para un solo jugador<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesBalatro(){
+
+document.getElementById("detalleTitulo").innerText =
+"Balatro";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQarW0CmYlsaKdGO0lucJnlSHD2aSfzGzM5Sr1nZorVrB_jhzl2";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🃏 Balatro
+
+Balatro es un roguelike de construcción de mazos inspirado en el póquer, donde cada partida gira alrededor de crear combinaciones cada vez más poderosas. Usa cartas, comodines y mejoras para conseguir suficientes fichas, superar las diferentes ciegas y construir una estrategia capaz de llegar hasta el desafío final.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Roguelike y construcción de mazos<br>
+📖 Historia: Progresa a través de partidas llenas de cartas, desafíos y combinaciones<br>
+🃏 Cartas: Utiliza manos de póquer para obtener diferentes cantidades de fichas<br>
+🤡 Comodines: Añade efectos especiales que cambian la estrategia de cada partida<br>
+🔥 Sinergias: Combina cartas y efectos para crear jugadas muy poderosas<br>
+🧠 Estrategia: Cada decisión puede cambiar el rumbo de la partida<br>
+🎲 Roguelike: Cada intento presenta nuevas posibilidades y configuraciones<br>
+🏆 Desafíos: Supera ciegas y obstáculos cada vez más difíciles<br>
+💰 Fichas: Consigue la cantidad necesaria para avanzar<br>
+🃏 Mazos: Desbloquea y utiliza distintas opciones para crear estrategias<br>
+✨ Mejoras: Potencia tus cartas y modifica las reglas a tu favor<br>
+🔄 Rejugabilidad: Cada partida puede desarrollarse de una manera diferente<br>
+👤 Jugador: Experiencia para un solo jugador<br>
+🎨 Estilo: Diseño retro con una presentación sencilla y muy llamativa<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesHadesII(){
+
+document.getElementById("detalleTitulo").innerText =
+"Hades II";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT2XGwz3NrjItyfV9WSUVU5B0J4VYwr63wVAILyoPToViakQSY9";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🔥 Hades II
+
+Hades II continúa la fórmula de acción roguelike de Supergiant Games con una nueva protagonista, nuevos enemigos y una aventura ambientada nuevamente en la mitología griega. Melínoe deberá enfrentarse a las fuerzas del Titán del Tiempo mientras explora lugares cambiantes, obtiene nuevas habilidades y fortalece su poder en cada intento.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, roguelike y RPG<br>
+📖 Historia: Melínoe lucha contra las fuerzas del Titán del Tiempo<br>
+⚔️ Combate: Enfréntate rápidamente a enemigos de la mitología griega<br>
+🏛️ Mitología: Explora un mundo inspirado en leyendas y dioses griegos<br>
+🔮 Magia: Utiliza hechizos, poderes y habilidades especiales<br>
+🧙 Protagonista: Controla a Melínoe, princesa inmortal del Inframundo<br>
+🗡️ Armas: Utiliza diferentes armas y estilos de combate<br>
+✨ Mejoras: Consigue poderes permanentes y mejoras durante tus intentos<br>
+🎲 Roguelike: Cada recorrido cambia y ofrece nuevas posibilidades<br>
+👿 Enemigos: Combate criaturas, dioses y fuerzas sobrenaturales<br>
+🌌 Exploración: Recorre entornos míticos y zonas llenas de secretos<br>
+🎵 Música: Banda sonora original integrada con la acción<br>
+🎨 Visuales: Escenarios pintados a mano y personajes detallados<br>
+👤 Jugador: Experiencia para un solo jugador<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+function mostrarDetallesMotoGP26(){
+
+document.getElementById("detalleTitulo").innerText =
+"MotoGP 26";
+
+document.getElementById("detalleImagen").src =
+"https://resources.motogp.pulselive.com/photo-resources/2026/04/29/e44bf345-1f5a-424c-8988-a4286433c27f/MGP26_Launch-copy.jpg?width=1440&height=810";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🏍️ MotoGP 26
+
+MotoGP 26 lleva toda la intensidad del campeonato oficial de 2026 a las consolas con pilotos, equipos, motos y circuitos de la temporada. Su renovado sistema de físicas ofrece un control más preciso y una experiencia de conducción más realista, mientras el modo Carrera permite construir una trayectoria desde Rookie hasta convertirse en una leyenda.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Motos, velocidad y simulación deportiva<br>
+🏆 Campeonato: Incluye la temporada oficial de MotoGP 2026<br>
+🏍️ Categorías: MotoGP, Moto2 y Moto3<br>
+🧑‍✈️ Pilotos: Compite con pilotos oficiales del campeonato<br>
+🏁 Circuitos: Corre en las pistas oficiales de la temporada<br>
+⚙️ Física: Sistema de conducción renovado centrado en el movimiento del piloto<br>
+🎮 Experiencia Arcade: Conducción más accesible para comenzar rápidamente<br>
+🏎️ Experiencia Pro: Simulación más exigente y realista<br>
+📈 Carrera: Evoluciona desde Rookie hasta convertirte en leyenda<br>
+💼 Gestión: Toma decisiones relacionadas con contratos y equipos<br>
+🧠 Ayudas: Tutoriales, dificultad adaptable y ayudas de conducción<br>
+🏍️ Entrenamiento: Motard, Flat Track, Minibike y motos de producción<br>
+🌐 Multijugador: Carreras online con hasta 22 jugadores y juego cruzado<br>
+🎨 Personalización: Edita cascos, adhesivos y diferentes elementos visuales<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+function mostrarDetallesInvincibleVS(){
+
+document.getElementById("detalleTitulo").innerText =
+"Invincible VS";
+
+document.getElementById("detalleImagen").src =
+"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2353060/61fb8243de81a1041b19e11fae599f2b22327443/capsule_616x353.jpg?t=1783980749";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🦸 Invincible VS
+
+Entra en el brutal universo de Invincible y forma un equipo de tres superhéroes para enfrentarte a tus rivales. Combina ataques, habilidades especiales y tácticas defensivas en combates rápidos y sangrientos mientras controlas a algunos de los personajes más conocidos de la serie y los cómics.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Lucha y acción.<br>
+🦸 Personajes: Controla a diferentes héroes y villanos del universo Invincible.<br>
+👥 Equipos 3v3: Forma equipos de tres personajes para enfrentarte al rival.<br>
+🥊 Combate: Utiliza ataques rápidos, combos y diferentes técnicas.<br>
+💥 Supermovimientos: Ejecuta ataques especiales capaces de causar gran daño.<br>
+🔥 Ultimates: Desata habilidades definitivas para cambiar el desarrollo de la pelea.<br>
+🛡️ Defensa: Bloquea y utiliza movimientos defensivos para responder a los ataques.<br>
+🎯 Estrategia: Cambia de personaje y combina habilidades para obtener ventaja.<br>
+🏙️ Arenas: Combate en diferentes escenarios inspirados en el universo de Invincible.<br>
+📖 Historia: Cuenta con un modo historia cinematográfico con una narrativa original.<br>
+🕹️ Arcade: Lucha contra diferentes rivales utilizando tu equipo elegido.<br>
+🥋 Entrenamiento: Practica combos y aprende las habilidades de cada personaje.<br>
+👥 Multijugador local: Enfréntate a otro jugador en la misma consola.<br>
+🌐 Multijugador online: Compite online contra otros jugadores y usuarios de plataformas compatibles.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesAliceMadnessReturns(){
+
+document.getElementById("detalleTitulo").innerText =
+"Alice: Madness Returns";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPm6ZWHAR6oYnr1wSst9zZLcvMS3n5zcfX40E-b_6u_2x5EEXOF4B3CA8D&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🎩 Alice: Madness Returns
+
+Alice regresa al País de las Maravillas, pero esta vez el mundo que conocía se ha convertido en una pesadilla grotesca. Mientras intenta descubrir la verdad sobre el incendio que destruyó a su familia, deberá enfrentarse a criaturas deformadas, resolver acertijos y luchar contra las fuerzas que están consumiendo Wonderland.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura y plataformas.<br>
+📖 Historia: Alice busca descubrir la verdad sobre la muerte de su familia mientras intenta recuperar su cordura.<br>
+👧 Alice: Controla a la protagonista durante su viaje por Wonderland.<br>
+🔪 Vorpal Blade: Utiliza la espada característica para enfrentarte a enemigos.<br>
+🐴 Hobby Horse: Utiliza esta poderosa arma cuerpo a cuerpo para causar grandes daños.<br>
+🫖 Teapot Cannon: Lanza proyectiles explosivos contra enemigos a distancia.<br>
+✨ Habilidades: Desbloquea poderes especiales para facilitar la exploración y el combate.<br>
+🐰 Wonderland: Explora un mundo fantástico transformado en una pesadilla.<br>
+👹 Criaturas: Enfréntate a diferentes enemigos inspirados en los personajes de Wonderland.<br>
+🧩 Puzles: Resuelve acertijos y utiliza mecanismos para avanzar.<br>
+🌹 Recuerdos: Descubre pistas relacionadas con el pasado de Alice.<br>
+🎨 Diseños: Cambia los vestidos de Alice, algunos de ellos con características especiales.<br>
+🪄 Transformaciones: Utiliza diferentes habilidades para cambiar de tamaño y superar obstáculos.<br>
+🏰 Escenarios: Recorre castillos, bosques, zonas submarinas y lugares fantásticos.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesCallOfDutyModernWarfare3(){
+
+document.getElementById("detalleTitulo").innerText =
+"Call of Duty: Modern Warfare 3";
+
+document.getElementById("detalleImagen").src =
+"https://i.ytimg.com/vi/LnqWasjxQRc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA2E6_3XKJ8ECzFSJnYoPdIOVhupg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+💥 Call of Duty: Modern Warfare 3
+
+Regresa a la guerra moderna en una intensa campaña donde la amenaza de Vladimir Makarov vuelve a poner al mundo al borde del conflicto. Acompaña a los operadores de la Task Force 141, utiliza un enorme arsenal y participa también en modos multijugador y Zombies llenos de acción.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Shooter en primera persona y acción.<br>
+📖 Campaña: Enfréntate a Vladimir Makarov junto a la Task Force 141.<br>
+🪖 Task Force 141: Controla a operadores especializados durante diferentes operaciones.<br>
+🔫 Arsenal: Utiliza rifles, pistolas, escopetas, explosivos y equipamiento táctico.<br>
+🎯 Misiones: Completa operaciones con diferentes objetivos y posibilidades.<br>
+🌎 Escenarios: Combate en diferentes localizaciones alrededor del mundo.<br>
+🧠 Misiones abiertas: Algunas operaciones permiten elegir diferentes rutas y estrategias.<br>
+👥 Multijugador: Compite online en numerosos mapas y modos.<br>
+🤝 Cooperativo: Participa junto a otros jugadores en modos cooperativos.<br>
+🧟 Zombies: Enfréntate a hordas de muertos vivientes en un enorme mapa abierto.<br>
+👹 Jefes: Combate contra enemigos especiales y amenazas de gran tamaño en Zombies.<br>
+📈 Progresión: Desbloquea armas, accesorios y equipamiento para mejorar tu operador.<br>
+🗺️ Mapas: Disfruta de nuevos escenarios y diferentes experiencias competitivas.<br>
+🌐 Juego cruzado: Permite jugar con usuarios de plataformas compatibles.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesTheLastFaith(){
+
+document.getElementById("detalleTitulo").innerText =
+"The Last Faith";
+
+document.getElementById("detalleImagen").src =
+"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3905110/b35160d2b92e594cd9dae6326d59c158c7333163/capsule_616x353.jpg?t=1768932018";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🩸 The Last Faith
+
+Despierta como Eryk en un mundo gótico devastado donde tu memoria comienza a desaparecer y una misteriosa enfermedad amenaza con consumir tu mente. Explora un enorme mapa no lineal, descubre armas y hechizos y enfréntate a enemigos y jefes brutales en una aventura que mezcla metroidvania y soulslike.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Metroidvania, soulslike y RPG.<br>
+📖 Historia: Eryk despierta sin recordar su pasado y se embarca en una misión para encontrar una forma de salvarse.<br>
+👤 Eryk: Controla al protagonista mientras descubre los secretos de su mundo.<br>
+⚔️ Combate: Utiliza ataques precisos y diferentes técnicas para enfrentarte a los enemigos.<br>
+🗡️ Armas: Consigue espadas, hachas, armas de fuego y otros instrumentos.<br>
+🔫 Armas de fuego: Utiliza armas a distancia para atacar enemigos desde lejos.<br>
+✨ Hechizos: Aprende y utiliza poderes arcanos durante los combates.<br>
+🩸 Ejecuciones: Realiza ejecuciones brutales sobre enemigos debilitados.<br>
+👹 Enemigos: Enfréntate a numerosas criaturas y guerreros sobrenaturales.<br>
+👑 Jefes: Supera enfrentamientos contra poderosos jefes y criaturas únicas.<br>
+🗺️ Exploración: Recorre un mundo conectado lleno de caminos alternativos y secretos.<br>
+🔑 Habilidades: Desbloquea poderes que permiten acceder a zonas anteriormente inaccesibles.<br>
+🎒 Objetos: Encuentra equipamiento y recursos para mejorar tus posibilidades de supervivencia.<br>
+🏰 Ambientación: Explora castillos, montañas nevadas y escenarios góticos bajo la luz de la luna.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesSubnautica2(){
+
+document.getElementById("detalleTitulo").innerText =
+"Subnautica 2";
+
+document.getElementById("detalleImagen").src =
+"https://wiki.subnautica.com/sn2/images/Subnautica2STOREPAGE.jpg?d27dc";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🌊 Subnautica 2
+
+Sumérgete en un nuevo planeta oceánico alienígena lleno de criaturas desconocidas, profundos abismos y misteriosos biomas. Construye tu base, investiga nuevas formas de vida y desarrolla tu tecnología mientras descubres qué ocurrió en este nuevo mundo submarino. Actualmente se encuentra en fase Game Preview.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Supervivencia, aventura y exploración.<br>
+🌊 Océano alienígena: Explora un nuevo planeta cubierto principalmente por agua.<br>
+🐠 Criaturas: Descubre numerosas formas de vida desde pequeños animales hasta enormes leviatanes.<br>
+🔬 Investigación: Escanea criaturas y estudia sus características.<br>
+🧬 Biomuestreador: Recoge muestras biológicas para investigar las especies del planeta.<br>
+🏗️ Construcción: Crea bases y estructuras para sobrevivir y organizar tus recursos.<br>
+🎨 Personalización: Modifica y adapta las bases a tus necesidades.<br>
+🛠️ Fabricación: Crea herramientas, equipamiento y objetos utilizando recursos del entorno.<br>
+🎒 Recursos: Recolecta materiales necesarios para explorar y sobrevivir.<br>
+🌿 Biomas: Descubre diferentes ecosistemas submarinos con características únicas.<br>
+🕳️ Abismos: Desciende hasta zonas profundas donde existen nuevos peligros.<br>
+🤝 Cooperativo: Permite jugar online con hasta cuatro jugadores.<br>
+👥 Multijugador: Explora y sobrevive junto a otros jugadores.<br>
+🧠 Evolución genética: Utiliza los descubrimientos para adaptar tu cuerpo a las condiciones del planeta.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesForzaHorizon6(){
+
+document.getElementById("detalleTitulo").innerText =
+"Forza Horizon 6";
+
+document.getElementById("detalleImagen").src =
+"https://storegamescolombia.com/files/images/noticias/1768436755_2.webp";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🏎️ Forza Horizon 6
+
+Viaja hasta Japón para vivir la mayor aventura de conducción de Forza Horizon hasta ahora. Recorre ciudades, carreteras y paisajes naturales en un enorme mundo abierto, consigue cientos de coches y compite en diferentes eventos mientras construyes tu reputación como piloto.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Carreras de mundo abierto.<br>
+🇯🇵 Japón: Explora un enorme mapa inspirado en diferentes regiones de Japón.<br>
+🏎️ Coches: Conduce más de 550 vehículos reales.<br>
+🏁 Carreras: Participa en diferentes tipos de eventos y competiciones.<br>
+🌆 Tokio: Recorre grandes zonas urbanas y calles de la ciudad.<br>
+🌲 Naturaleza: Explora montañas, bosques, costas y paisajes rurales.<br>
+🌦️ Clima: Adapta tu conducción a diferentes condiciones meteorológicas.<br>
+🌙 Día y noche: Disfruta del mundo de Horizon durante diferentes momentos del día.<br>
+🔧 Tuning: Personaliza y mejora el rendimiento de tus vehículos.<br>
+🎨 Diseños: Modifica la apariencia de tus coches con diferentes diseños y vinilos.<br>
+🏆 Progresión: Desarrolla tu carrera y desbloquea nuevos eventos y vehículos.<br>
+👥 Multijugador: Compite online junto a otros jugadores.<br>
+🤝 CoLab: Crea y disfruta eventos personalizados con tus amigos.<br>
+🛠️ EventLab: Utiliza herramientas de creación para diseñar experiencias propias.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesLEGOBatmanLegacyOfTheDarkKnight(){
+
+document.getElementById("detalleTitulo").innerText =
+"LEGO Batman: El Legado del Caballero de la Noche";
+
+document.getElementById("detalleImagen").src =
+"https://www.lego.com/cdn/cs/set/assets/blt18519b2b57cf2876/02_LEGO_Dinner-dark_Hero-Standard_Desktop_v02.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🦇 LEGO Batman: El Legado del Caballero de la Noche
+
+Recorre la historia de Bruce Wayne desde sus primeros pasos hasta convertirse en el legendario Caballero de la Noche. Explora una Gotham City abierta, resuelve crímenes, combate a los villanos más famosos de Batman y forma una nueva familia de aliados mientras construyes tu propio legado.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción y aventura.<br>
+🦇 Batman: Controla a Bruce Wayne y utiliza sus gadgets y habilidades.<br>
+👥 Personajes: Juega con Batman, Robin, Batgirl, Nightwing, Catwoman y otros personajes.<br>
+🧰 Gadgets: Utiliza diferentes dispositivos de los héroes para resolver desafíos.<br>
+🥊 Combate: Enfréntate a los criminales y villanos de Gotham.<br>
+🃏 Villanos: Combate contra Joker, Penguin, Mr. Freeze, Poison Ivy, Bane y muchos más.<br>
+🌆 Gotham City: Explora una Gotham abierta llena de secretos y actividades.<br>
+🚗 Vehículos: Conduce más de 20 Batmóviles y Batcycles.<br>
+🎭 Trajes: Consigue más de 100 trajes inspirados en la historia de Batman.<br>
+🕵️ Crímenes: Investiga diferentes situaciones y completa desafíos repartidos por Gotham.<br>
+🏛️ Batcueva: Personaliza la Batcueva con numerosos objetos y trofeos.<br>
+🧩 Puzles: Utiliza las habilidades de diferentes personajes para resolver obstáculos.<br>
+🏆 Desafíos: Completa actividades y objetivos para avanzar y conseguir recompensas.<br>
+👤 Jugador: La campaña principal está diseñada para un solo jugador.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+function mostrarDetallesCrisolTheaterOfIdols(){
+
+document.getElementById("detalleTitulo").innerText =
+"Crisol: Theater of Idols";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTys8O1EnTXR-ZyjczrOtd28KRAueHGdSj-DKrqBlhHwHpjgXOCTVs7UYRw&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🩸 Crisol: Theater of Idols
+
+Adéntrate en Tormentosa, una isla maldita inspirada en una versión oscura de la España histórica. Controla a Gabriel, un soldado capaz de utilizar su propia sangre como munición, mientras exploras ruinas, descubres antiguos secretos y te enfrentas a criaturas y estatuas que han cobrado vida.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Terror, acción y aventura.<br>
+📖 Historia: Gabriel recibe una misión divina y debe descubrir los secretos de la isla de Tormentosa.<br>
+🩸 Sangre: Utiliza tu propia sangre como munición para armas y poderes.<br>
+🔫 Armas: Utiliza diferentes armas y mejora su rendimiento durante la aventura.<br>
+❤️ Vida: Cada disparo con sangre consume parte de tu propia salud.<br>
+✨ Poderes: Desbloquea y mejora habilidades relacionadas con la sangre.<br>
+🏚️ Tormentosa: Explora una isla llena de ruinas, calles y zonas abandonadas.<br>
+🗿 Estatuas: Enfréntate a estatuas que cobran vida y se convierten en peligrosos enemigos.<br>
+👹 Criaturas: Combate contra diferentes amenazas sobrenaturales.<br>
+🧩 Puzles: Resuelve acertijos y utiliza el entorno para avanzar.<br>
+💰 Monedas: Encuentra monedas durante la exploración para mejorar armas y poderes.<br>
+⚔️ Combate: Combina armas y habilidades para enfrentarte a los enemigos.<br>
+🌑 Atmósfera: Mezcla historia, folclore y elementos religiosos dentro de un mundo de terror.<br>
+👤 Jugador: Experiencia diseñada para un solo jugador.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesBreadAndFred(){
+
+document.getElementById("detalleTitulo").innerText =
+"Bread & Fred";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPetKMwajBSTnuqsWE5sOswZFeV1Uh3x9lASGYBkEdjUN_o5V_oGu-ALLT&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🐧 Bread & Fred
+
+Prepárate para una aventura cooperativa donde dos pingüinos están unidos por una cuerda y deben trabajar juntos para subir hasta la cima de una montaña nevada. Cada salto requiere coordinación y precisión, y un pequeño error puede hacer que ambos vuelvan a caer.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Plataformas y cooperativo.<br>
+🐧 Bread: Controla a uno de los pingüinos que forman el equipo.<br>
+🐧 Fred: Trabaja junto a Bread para superar los obstáculos.<br>
+🤝 Cooperativo: La aventura está diseñada alrededor de dos jugadores trabajando juntos.<br>
+🪢 Cuerda: Ambos personajes están conectados y deben aprovecharla para avanzar.<br>
+🏔️ Montaña: El objetivo principal es alcanzar la cima de una enorme montaña nevada.<br>
+🧗 Escalada: Salta, agárrate y sube por diferentes superficies.<br>
+🎯 Precisión: Cada salto requiere calcular cuidadosamente el movimiento.<br>
+🧠 Coordinación: Los dos jugadores deben sincronizar sus acciones constantemente.<br>
+❄️ Nieve: Los escenarios están ambientados en una montaña llena de zonas heladas.<br>
+💥 Caídas: Un fallo puede hacer que los dos personajes pierdan parte de su progreso.<br>
+🏆 Progreso: Intenta llegar cada vez más alto y superar tus propios límites.<br>
+😂 Humor: Las físicas y las caídas generan situaciones divertidas y caóticas.<br>
+👥 Dos jugadores: La experiencia principal está pensada para jugar entre dos personas.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesHuntTheNight(){
+
+document.getElementById("detalleTitulo").innerText =
+"Hunt the Night";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_DTxFg1KVfc38laXB9V7q30OBTYskXLfEryPNju1hGpc-qmZLNiNVSqmh&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🌑 Hunt the Night
+
+Entra en el mundo en ruinas de Medhram, donde la humanidad sobrevive durante el día mientras la Noche trae criaturas capaces de destruir todo a su paso. Ponte en la piel de Vesper, una cazadora perteneciente a los Stalkers, y lucha por romper el ciclo de extinción que amenaza a la humanidad.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: RPG de acción y fantasía oscura.<br>
+📖 Historia: Vesper intenta salvar a la humanidad de un ciclo mortal provocado por la Noche.<br>
+🌑 La Noche: Un periodo oscuro donde aparecen criaturas que amenazan la supervivencia humana.<br>
+👩 Vesper: Controla a una cazadora perteneciente a los Stalkers.<br>
+⚔️ Combate: Utiliza ataques rápidos, armas y poderes durante los enfrentamientos.<br>
+🔫 Arsenal: Equipa diferentes armas y adapta tu equipo a cada situación.<br>
+✨ Poderes: Utiliza habilidades especiales para aumentar tu capacidad de combate.<br>
+🧪 Mejoras: Desarrolla diferentes características como daño crítico, robo de vida o veneno.<br>
+🗡️ Corto alcance: Utiliza ataques cuerpo a cuerpo para enfrentarte a enemigos cercanos.<br>
+🎯 Distancia: Utiliza armas de fuego para atacar desde posiciones seguras.<br>
+👹 Jefes: Enfréntate a criaturas poderosas y grandes enemigos de la Noche.<br>
+🗺️ Medhram: Explora un mundo devastado lleno de mazmorras y lugares misteriosos.<br>
+🧩 Puzles: Resuelve desafíos y trampas dentro de diferentes mazmorras.<br>
+🏹 Hunts: Acepta contratos para localizar y eliminar poderosas criaturas.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesRomeoIsADeadMan(){
+
+document.getElementById("detalleTitulo").innerText =
+"ROMEO IS A DEAD MAN";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJghoYG7U0H6U9m5iadD5vtFGZy48VTcrJ9R4a4hIfASytonbu6etrN5Y&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+💀 ROMEO IS A DEAD MAN
+
+Romeo Stargazer sobrevive a un incidente que destruye el espacio-tiempo y recibe una nueva oportunidad gracias a una tecnología experimental. Convertido en agente de la Policía Espaciotemporal, deberá perseguir criminales a través del cosmos mientras busca pistas sobre la desaparición de Juliet.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción y aventura.<br>
+📖 Historia: Romeo busca a Juliet mientras investiga una conspiración relacionada con la destrucción del espacio-tiempo.<br>
+💀 Romeo Stargazer: Controla al protagonista convertido en agente especial de la Policía Espaciotemporal.<br>
+⏳ Espacio-tiempo: Viaja por escenarios afectados por la ruptura de la realidad.<br>
+⚔️ Espadas: Utiliza diferentes armas cuerpo a cuerpo para derrotar enemigos.<br>
+🔫 Armas de fuego: Combina ataques con armas de largo alcance.<br>
+🩸 Sangre: Absorbe la sangre de los enemigos para aumentar tus capacidades.<br>
+🔥 Verano Sangriento: Desata una poderosa técnica especial utilizando la sangre acumulada.<br>
+🛠️ Mejoras: Refuerza y modifica las armas de Romeo durante la aventura.<br>
+👹 Enemigos: Enfréntate a oleadas de criminales y enemigos espacio-temporales.<br>
+🚀 Cosmos: Viaja por diferentes escenarios relacionados con el espacio y el tiempo.<br>
+🕵️ Investigación: Busca pistas sobre Juliet y los acontecimientos que rodean su desaparición.<br>
+📖 Capítulos: Avanza por diferentes capítulos de la historia principal.<br>
+🎯 Misiones: Completa objetivos principales y diferentes misiones secundarias.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesResidentEvilRequiem(){
+
+document.getElementById("detalleTitulo").innerText =
+"Resident Evil Requiem";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzoxIukQha8BDpH_9GAS5cV6LlQrt38E2MADZx5JcUPD9oebcDiN2zL9w&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🧟 Resident Evil Requiem
+
+Una nueva historia de survival horror reúne a dos protagonistas muy diferentes. Grace Ashcroft, analista del FBI, deberá investigar una serie de acontecimientos aterradores, mientras Leon S. Kennedy vuelve a enfrentarse a situaciones extremas. Sus historias terminarán conectándose en una nueva amenaza para el universo de Resident Evil.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Survival horror y acción.<br>
+📖 Historia: Grace y Leon se ven involucrados en diferentes acontecimientos que terminan conectándose.<br>
+👩 Grace Ashcroft: Controla a la analista del FBI durante sus investigaciones.<br>
+👨 Leon S. Kennedy: El legendario agente regresa con un estilo de juego centrado en la acción.<br>
+🔦 Exploración: Recorre lugares oscuros mientras buscas pistas y recursos.<br>
+🧩 Puzles: Resuelve acertijos para avanzar por las diferentes zonas.<br>
+👹 Criaturas: Enfréntate a amenazas biológicas y enemigos sobrenaturales.<br>
+🔫 Armas: Utiliza diferentes armas para sobrevivir a los enfrentamientos.<br>
+🎒 Recursos: Administra munición, objetos curativos y otros elementos necesarios.<br>
+😱 Terror: Combina tensión, oscuridad y momentos de acción intensa.<br>
+🏚️ Escenarios: Explora edificios, instalaciones y lugares relacionados con los acontecimientos.<br>
+🕵️ Investigación: Examina pistas para descubrir qué está sucediendo.<br>
+🎬 Narrativa: Presenta una historia cinematográfica que conecta a sus protagonistas.<br>
+👤 Jugador: Experiencia diseñada para un solo jugador.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesWWE2K26(){
+
+document.getElementById("detalleTitulo").innerText =
+"WWE 2K26";
+
+document.getElementById("detalleImagen").src =
+"https://image.api.playstation.com/vulcan/ap/rnd/202601/1209/a247b6822c435aa171ba98ff1855c36ceaf8ece5918094b5.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🤼 WWE 2K26
+
+Entra en el espectáculo de WWE con una enorme plantilla de Superestrellas y Leyendas. Disfruta de nuevos tipos de combates, controla tu propio Universo WWE, crea rivalidades y compite en diferentes modos mientras intentas convertirte en la mayor superestrella del entretenimiento deportivo.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Lucha libre y deportes.<br>
+⭐ Superestrellas: Utiliza una enorme plantilla de luchadores actuales y Leyendas.<br>
+🏆 2K Showcase: Revive y reescribe momentos importantes de la carrera de CM Punk.<br>
+🥊 Combate: Utiliza golpes, agarres, llaves y movimientos especiales.<br>
+💥 Nuevos combates: Disfruta de tipos de combate como I Quit, Inferno y Dumpster.<br>
+🗑️ Dumpster Match: Lanza a tus rivales a los contenedores para conseguir la victoria.<br>
+🔥 Inferno Match: Combate rodeado de fuego mientras intentas derrotar a tu rival.<br>
+🎤 Promos: Utiliza nuevas opciones para desarrollar rivalidades y segmentos.<br>
+🌎 Universo WWE: Controla shows, PLE, rivalidades y resultados de tu propia WWE.<br>
+🧠 Asistente de Universo: Utiliza herramientas para facilitar la creación y gestión de tu Universo.<br>
+🏝️ The Island: Participa en nuevas experiencias y zonas dentro del juego.<br>
+🦴 Scrapyard Brawl: Combate en una nueva arena con un estilo diferente.<br>
+👥 Multijugador: Compite online contra otros jugadores.<br>
+🤝 Cooperativo: Disfruta de modos locales y online para varios jugadores.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesToxicCommando(){
+
+document.getElementById("detalleTitulo").innerText =
+"John Carpenter's Toxic Commando";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSZkgF1K3MtXJfzs4zb9kHhjClomcrG_pk9qzI4KZkxO2gHjSvcIS1PHAd&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+☣️ John Carpenter's Toxic Commando
+
+En un futuro cercano, un experimento destinado a aprovechar la energía del núcleo terrestre provoca una catástrofe y libera una criatura que convierte a los vivos en monstruos. Reúne a tu comando, equipa armas devastadoras y prepárate para atravesar hordas de criaturas en una aventura de acción cooperativa inspirada en el cine de terror de los años 80.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Shooter en primera persona y acción.<br>
+📖 Historia: Un experimento fallido libera una amenaza capaz de transformar a los humanos en monstruos.<br>
+🪖 Comando: Forma parte de un grupo armado encargado de salvar al mundo.<br>
+🔫 Arsenal: Utiliza rifles, escopetas, explosivos y armas especiales.<br>
+💥 Combate: Enfréntate a enormes hordas de enemigos simultáneamente.<br>
+🧟 Zombis: Combate contra criaturas transformadas por la sustancia tóxica.<br>
+☣️ Sludge God: Enfréntate a la entidad responsable de la catástrofe.<br>
+🤝 Cooperativo: Forma un equipo online de hasta cuatro jugadores.<br>
+👥 Escuadrón: Coordina tus acciones con tus compañeros para sobrevivir.<br>
+🚙 Vehículos: Utiliza vehículos para recorrer los escenarios y atravesar hordas.<br>
+📈 Habilidades: Mejora tus capacidades y desarrolla nuevas posibilidades de combate.<br>
+🎯 Desafíos: Enfréntate a misiones cada vez más exigentes.<br>
+🎬 Inspiración: Combina acción, humor y terror inspirados en el cine de los años 80.<br>
+🌐 Cooperación multiplataforma: Juega junto a usuarios de plataformas compatibles.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+function mostrarDetallesMonsterHunterStories3TwistedReflection(){
+
+document.getElementById("detalleTitulo").innerText =
+"Monster Hunter Stories 3: Twisted Reflection";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2NCXOy1TOo8LjQuiOKOr9BGITCb1RJfyC93ZfgFoiELURAcLLSpk76Xr7&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🐉 Monster Hunter Stories 3: Twisted Reflection
+
+Embárcate en una nueva aventura RPG dentro del universo de Monster Hunter. Dos Rathalos gemelos nacen en medio de una época marcada por la guerra y la amenaza de extinción de numerosas especies. Como Rider, tendrás que crear vínculos con tus monstruos y descubrir la verdad que conecta a las dos naciones enfrentadas.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: RPG y aventura.<br>
+📖 Historia: Las naciones de Azuria y Vermeil se encuentran al borde del conflicto mientras aparecen dos Rathalos gemelos.<br>
+🐉 Rathalos: Los dos gemelos nacidos del mismo huevo son fundamentales para el misterio central.<br>
+👤 Rider: Controla a un Rider capaz de formar vínculos con monstruos.<br>
+🥚 Huevos: Encuentra huevos de monstruos para conseguir nuevas criaturas compañeras.<br>
+🤝 Vínculos: Forma una relación con tus Monsties para mejorar sus capacidades.<br>
+⚔️ Combate: Participa en batallas RPG utilizando ataques y habilidades estratégicas.<br>
+🧠 Estrategia: Elige correctamente tus acciones para aprovechar las ventajas de cada monstruo.<br>
+🧬 Monsties: Cría, desarrolla y utiliza diferentes especies durante la aventura.<br>
+📈 Progresión: Mejora las capacidades del Rider y de tus monstruos.<br>
+🌍 Mundo: Explora regiones afectadas por la guerra y los cambios de la naturaleza.<br>
+👹 Monstruos: Encuentra numerosas especies conocidas y nuevas criaturas.<br>
+🗺️ Exploración: Recorre diferentes zonas mientras investigas el origen del conflicto.<br>
+🎯 Misterio: Descubre qué ocurrió durante la antigua guerra relacionada con los Rathalos.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesCrimsonDesert(){
+
+document.getElementById("detalleTitulo").innerText =
+"Crimson Desert";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNyrYzwq2hp4fib71jkEyFYOA-MqLKcjOc98cicCJPbgCGsvgKihxquChl&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+⚔️ Crimson Desert
+
+Adéntrate en Pywel, un mundo abierto devastado por guerras y conflictos entre diferentes facciones. Controla a Kliff, líder de los Greymanes, y emprende una aventura épica en la que tendrás que combatir, explorar enormes territorios y descubrir los acontecimientos que están detrás de la situación del continente.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura y RPG.<br>
+📖 Historia: Kliff y los Greymanes intentan sobrevivir en Pywel mientras enfrentan diferentes amenazas.<br>
+⚔️ Kliff: Controla al líder de los Greymanes y desarrolla sus habilidades de combate.<br>
+🗡️ Combate: Utiliza espadas, armas, escudos y diferentes técnicas.<br>
+🏹 Armas: Combina combate cuerpo a cuerpo y ataques a distancia.<br>
+🧗 Movimiento: Escala, salta y recorre grandes estructuras y paisajes.<br>
+🐎 Monturas: Utiliza diferentes animales y medios para desplazarte por el mundo.<br>
+🌍 Mundo abierto: Explora un enorme territorio con diferentes regiones y ecosistemas.<br>
+🏰 Ciudades: Visita fortalezas, asentamientos y zonas controladas por distintas facciones.<br>
+👹 Criaturas: Enfréntate a animales salvajes, monstruos y enemigos humanos.<br>
+📈 Progresión: Mejora las habilidades, armas y equipamiento de Kliff.<br>
+🎒 Equipamiento: Consigue recursos y objetos para mejorar tus capacidades.<br>
+🌦️ Entorno: El mundo presenta diferentes condiciones ambientales y situaciones dinámicas.<br>
+🎯 Exploración: Descubre secretos, actividades y acontecimientos fuera de la historia principal.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesHighOnLife(){
+
+document.getElementById("detalleTitulo").innerText =
+"High On Life";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP3zuPd2ZifUji6oc_woBcCup8wSC-PYvkzCgkEtXF-CIOVfDO9kolcW0B&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🔫 High On Life
+
+Después de que un cartel alienígena invade la Tierra para utilizar a los humanos como drogas, un joven sin experiencia termina convertido en cazarrecompensas espacial. Viaja por diferentes planetas, conoce armas que hablan y enfréntate a Garmantuous y su banda en una aventura cargada de acción y humor absurdo.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Shooter en primera persona y aventura.<br>
+📖 Historia: Un cartel alienígena invade la Tierra y obliga al protagonista a convertirse en cazarrecompensas.<br>
+🔫 Armas parlantes: Utiliza armas alienígenas capaces de hablar y tener personalidades propias.<br>
+🧑‍🚀 Cazarrecompensas: Acepta contratos y persigue objetivos por diferentes mundos.<br>
+👽 Alienígenas: Enfréntate a numerosas especies y enemigos extraterrestres.<br>
+🌌 Planetas: Viaja por diferentes mundos llenos de vida y peligros.<br>
+💥 Combate: Combina armas, habilidades y movimiento para derrotar enemigos.<br>
+✨ Habilidades: Consigue capacidades especiales para mejorar tu forma de combatir y explorar.<br>
+🪝 Herramientas: Utiliza diferentes herramientas para alcanzar lugares difíciles.<br>
+👹 Jefes: Enfréntate a poderosos objetivos y líderes del cartel alienígena.<br>
+💰 Recompensas: Consigue dinero y recursos después de completar contratos.<br>
+🛠️ Mejoras: Utiliza los recursos para mejorar tus armas y capacidades.<br>
+😂 Humor: La aventura está llena de diálogos y situaciones absurdas.<br>
+👤 Jugador: Experiencia diseñada para un solo jugador.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesEchoesOfTheEnd(){
+
+document.getElementById("detalleTitulo").innerText =
+"Echoes of the End";
+
+document.getElementById("detalleImagen").src =
+"https://images.gog-statics.com/e3d7bcf0362aebafa810949087f90fcb254ed414a30b27a741fa35deee75e19f_product_card_v2_mobile_slider_639.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+✨ Echoes of the End
+
+Acompaña a Ryn, una poderosa Vestige capaz de utilizar magia antigua, en un viaje para rescatar a su hermano y proteger a su pueblo. Junto a Abram, se embarcará en una aventura por un mundo al borde del colapso donde los secretos del pasado y la guerra amenazan con destruirlo todo.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura y RPG.<br>
+📖 Historia: Ryn debe rescatar a su hermano mientras descubre secretos relacionados con la guerra y su propio poder.<br>
+✨ Ryn: Controla a una Vestige con capacidad para utilizar magia antigua.<br>
+🪄 Magia: Utiliza poderes sobrenaturales para combatir y manipular el entorno.<br>
+⚔️ Combate: Combina ataques físicos y mágicos durante los enfrentamientos.<br>
+🗡️ Armas: Utiliza diferentes tipos de armas y estilos de combate.<br>
+🤝 Abram: Viaja junto a Ryn y aporta habilidades y conocimientos durante la aventura.<br>
+👹 Enemigos: Enfréntate a soldados, criaturas y diferentes amenazas sobrenaturales.<br>
+🗺️ Exploración: Recorre un mundo de fantasía con diferentes regiones y caminos.<br>
+🧩 Puzles: Resuelve desafíos utilizando las habilidades de Ryn y Abram.<br>
+📈 Progresión: Mejora las habilidades y el equipamiento para afrontar nuevos peligros.<br>
+👗 Atuendos: Consigue diferentes atuendos para personalizar a los protagonistas.<br>
+🏺 Reliquias: Reúne objetos que pueden modificar tu arsenal y capacidades.<br>
+🌍 Aema: Explora un mundo marcado por la guerra y el colapso de antiguas civilizaciones.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesHellbladeIISenuasSaga(){
+
+document.getElementById("detalleTitulo").innerText =
+"Hellblade II: Senua's Saga";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4TPmbfSIglXEdnHWKq6sKOdjmjAigQXnrB4zrz36JySNvYX4q_osuWwE&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🗡️ Hellblade II: Senua's Saga
+
+Senua emprende un brutal viaje por la Islandia de la época vikinga para enfrentarse a la violencia, los mitos y los horrores que la rodean. Su búsqueda la llevará por paisajes extremos mientras lucha contra enemigos y contra la oscuridad que también existe dentro de su propia mente.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción y aventura.<br>
+📖 Historia: Senua viaja por Islandia para salvar a víctimas de la tiranía y enfrentarse a nuevos horrores.<br>
+👩 Senua: Controla a la guerrera celta durante toda la aventura.<br>
+🧠 Psicosis: La perspectiva de Senua influye en la forma en que percibes el mundo y los acontecimientos.<br>
+⚔️ Combate: Participa en enfrentamientos cuerpo a cuerpo intensos y brutales.<br>
+🗡️ Espada: Utiliza la espada como principal arma durante los combates.<br>
+👹 Enemigos: Enfréntate a guerreros y criaturas inspiradas en la mitología nórdica.<br>
+🌋 Islandia: Recorre paisajes inspirados en la Islandia del siglo X.<br>
+🏔️ Entorno: Explora montañas, cuevas, costas y diferentes territorios naturales.<br>
+🧩 Puzles: Utiliza la percepción y el entorno para resolver diferentes desafíos.<br>
+🎧 Sonido: El audio y las voces tienen un papel importante en la experiencia de Senua.<br>
+🎬 Presentación: Utiliza una puesta en escena cinematográfica y detallada.<br>
+🌑 Atmósfera: Combina mitología, oscuridad y supervivencia para crear tensión constante.<br>
+👤 Jugador: Experiencia diseñada para un solo jugador.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesStalker2HeartOfChornobyl(){
+
+document.getElementById("detalleTitulo").innerText =
+"S.T.A.L.K.E.R. 2: Heart of Chornobyl";
+
+document.getElementById("detalleImagen").src =
+"https://xboxwire.thesourcemediaassets.com/sites/4/STALKER_2_KeyArt-a24b7b9119016d43ee6d-1900x1080-1-cdf3d97eed9b5ef70830.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+☢️ S.T.A.L.K.E.R. 2: Heart of Chornobyl
+
+Regresa a la Zona de Exclusión de Chornóbil en una aventura de supervivencia en primera persona. Explora un enorme mundo abierto lleno de anomalías, facciones hostiles, criaturas mutantes y recursos que tendrás que administrar mientras intentas descubrir los secretos que se esconden en el corazón de la Zona.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Shooter, supervivencia y RPG.<br>
+📖 Historia: Skif entra en la Zona buscando un nuevo comienzo y acaba involucrado en acontecimientos que pueden cambiar su destino.<br>
+☢️ La Zona: Explora un enorme territorio postapocalíptico afectado por anomalías y radiación.<br>
+🔫 Arsenal: Utiliza pistolas, rifles, escopetas y diferentes armas modificables.<br>
+🎯 Combate: Enfréntate a humanos y mutantes utilizando diferentes tácticas.<br>
+👹 Mutantes: Lucha contra criaturas deformadas por las condiciones de la Zona.<br>
+☣️ Anomalías: Evita fenómenos peligrosos que pueden aparecer en diferentes áreas.<br>
+💎 Artefactos: Busca objetos especiales creados por las anomalías para obtener ventajas.<br>
+🎒 Recursos: Administra alimentos, medicamentos, munición y equipamiento.<br>
+🛠️ Mejoras: Modifica armas y equipamiento para adaptarlos a tu estilo.<br>
+🤝 Facciones: Interactúa con diferentes grupos que compiten por el control de la Zona.<br>
+🗺️ Mundo abierto: Explora regiones conectadas sin seguir necesariamente una ruta fija.<br>
+🌦️ Clima: El entorno presenta cambios meteorológicos y diferentes condiciones.<br>
+🎯 Decisiones: Tus acciones pueden influir en acontecimientos y relaciones.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesTheBus(){
+
+document.getElementById("detalleTitulo").innerText =
+"The Bus";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRRmk5AfKVherDjDu0cbPTmYXbGTwvIDe4HFvJ0kHzxATcnKxdZ78xfC0&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🚌 The Bus
+
+Conduce autobuses con licencia oficial por una recreación a escala 1:1 de Berlín. Transporta pasajeros, vende billetes, respeta horarios y gestiona tu propia empresa mientras recorres una ciudad viva con tráfico, peatones, clima cambiante y diferentes estaciones.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Simulación y transporte.<br>
+🚌 Autobuses: Conduce modelos oficiales de Scania, MAN y VDL.<br>
+🏙️ Berlín: Explora una representación a escala 1:1 de la ciudad.<br>
+🛣️ Rutas: Recorre numerosas rutas basadas en líneas reales de Berlín.<br>
+🚏 Paradas: Transporta pasajeros entre más de 200 paradas.<br>
+🎫 Billetes: Vende billetes a los pasajeros que suben al autobús.<br>
+🚦 Tráfico: Comparte las calles con vehículos, peatones y semáforos.<br>
+🌦️ Clima: El tiempo puede cambiar durante tus recorridos.<br>
+🌙 Día y noche: Conduce durante diferentes momentos del día.<br>
+🍂 Estaciones: Experimenta distintas condiciones asociadas a las estaciones del año.<br>
+💼 Modo Economía: Construye y administra tu propia empresa de autobuses.<br>
+💰 Gestión: Invierte en vehículos, personal y mantenimiento.<br>
+🛠️ Reparaciones: Mantén tu flota en buenas condiciones de funcionamiento.<br>
+📷 Modo Foto: Captura imágenes de tus autobuses y de la ciudad.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+function mostrarDetallesSombrasDeMordor(){
+
+document.getElementById("detalleTitulo").innerText =
+"La Tierra Media: Sombras de Mordor";
+
+document.getElementById("detalleImagen").src =
+"https://i.pinimg.com/736x/f9/97/9e/f9979efd5e42ae090b5723c0269d63be.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+⚔️ La Tierra Media: Sombras de Mordor
+
+Ponte en la piel de Talion, un montaraz de Gondor que regresa de la muerte con poderes sobrenaturales. Explora Mordor, enfréntate a ejércitos de orcos y crea tu propia leyenda mientras buscas venganza contra quienes destruyeron tu vida.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura y RPG.<br>
+📖 Historia: Talion busca venganza después de ser asesinado junto a su familia en Mordor.<br>
+⚔️ Talion: Controla al montaraz unido al espíritu de Celebrimbor.<br>
+👻 Celebrimbor: Un poderoso espíritu élfico que otorga nuevas habilidades al protagonista.<br>
+🗡️ Combate: Utiliza espada, daga, arco y diferentes ataques especiales.<br>
+🏹 Arco: El combate a distancia permite atacar enemigos y explotar sus puntos débiles.<br>
+🤫 Sigilo: Utiliza el sigilo para infiltrarte y eliminar enemigos silenciosamente.<br>
+👹 Uruks: Enfréntate a numerosos capitanes y soldados orcos.<br>
+🧠 Sistema Némesis: Los enemigos recuerdan tus encuentros y pueden evolucionar según tus acciones.<br>
+🎯 Capitanes: Investiga sus debilidades y encuentra la mejor forma de derrotarlos.<br>
+🌋 Mordor: Explora fortalezas, campamentos, montañas y diferentes zonas del territorio.<br>
+💀 Runas: Consigue runas para mejorar las armas y capacidades de Talion.<br>
+📈 Progresión: Desbloquea nuevas habilidades y desarrolla diferentes estilos de combate.<br>
+⚔️ Conquista: Manipula enemigos y utiliza sus relaciones dentro de la jerarquía orca.<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesCodeVein2(){
+
+document.getElementById("detalleTitulo").innerText =
+"CODE VEIN II";
+
+document.getElementById("detalleImagen").src =
+"https://static.bandainamcoent.eu/high/code-vein/code-vein-II/00-product-page/CodeVeinII-header-mobile.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🩸 CODE VEIN II
+
+En un futuro donde humanos y resucitados conviven, la aparición de la Luna Rapacis transforma a los Revenants en criaturas llamadas Horrores. Como cazador de resucitados, tendrás que viajar entre pasado y presente junto a Lou para impedir el colapso del mundo mientras descubres una historia que conecta generaciones.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: RPG de acción.<br>
+📖 Historia: Viaja entre diferentes épocas para evitar el colapso provocado por la Luna Rapacis.<br>
+🩸 Resucitados: Controla a un cazador especializado en detener a los Revenants transformados.<br>
+👧 Lou: Viaja junto a una joven capaz de manipular el tiempo.<br>
+⏳ Viaje temporal: Cambia entre pasado y presente para descubrir secretos y modificar situaciones.<br>
+⚔️ Combate: Utiliza ataques cuerpo a cuerpo, habilidades y poderes sobrenaturales.<br>
+🗡️ Armas: Equipa diferentes armas y adapta tu estilo de combate.<br>
+✨ Habilidades: Desbloquea poderes y capacidades para desarrollar tu personaje.<br>
+👹 Horrores: Enfréntate a Revenants transformados en monstruos peligrosos.<br>
+👥 Compañeros: Viaja junto a personajes que pueden ayudarte durante los enfrentamientos.<br>
+🗺️ Exploración: Recorre un enorme mundo lleno de zonas y secretos.<br>
+📈 Progresión: Mejora atributos, habilidades y equipamiento.<br>
+🧩 Misterios: Descubre información sobre los acontecimientos que conectan las diferentes épocas.<br>
+🌑 Ambientación: Un mundo oscuro inspirado en el universo de CODE VEIN.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesMyHeroAcademiaAllsJustice(){
+
+document.getElementById("detalleTitulo").innerText =
+"MY HERO ACADEMIA: All’s Justice";
+
+document.getElementById("detalleImagen").src =
+"https://image.api.playstation.com/vulcan/ap/rnd/202509/0709/d18d0b60041a632ef5c7b021a099a6ebb84e59134ad10d5b.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+💥 MY HERO ACADEMIA: All’s Justice
+
+Vive la batalla final de My Hero Academia en un espectacular juego de lucha 3D. Controla a tus héroes y villanos favoritos en combates 3 contra 3 y utiliza sus Quirks al máximo mientras revives algunos de los momentos más importantes de la Guerra Final.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Lucha y acción.<br>
+🦸 Héroes: Controla personajes de My Hero Academia en sus versiones más poderosas.<br>
+🦹 Villanos: Utiliza algunos de los principales antagonistas de la serie.<br>
+✨ Quirks: Aprovecha las habilidades especiales de cada personaje.<br>
+💥 Combate 3v3: Forma equipos de tres luchadores y combina sus capacidades.<br>
+🥊 Ataques: Utiliza ataques normales, especiales y movimientos únicos.<br>
+🔥 Plus Ultra: Desata poderosas técnicas especiales durante los enfrentamientos.<br>
+🏙️ Arenas: Combate en escenarios inspirados en el anime.<br>
+🎯 Estrategia: Combina los Quirks de tus personajes para obtener ventaja.<br>
+📖 Story Mode: Revive acontecimientos de la Guerra Final desde diferentes perspectivas.<br>
+⚔️ Final War: Participa en el enfrentamiento decisivo entre héroes y villanos.<br>
+🗂️ Archives Battle: Recrea combates históricos de la serie.<br>
+👥 Multijugador local: Compite con otro jugador en la misma consola.<br>
+🌐 Multijugador online: Enfréntate a otros jugadores por internet.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesCarmageddonRogueShift(){
+
+document.getElementById("detalleTitulo").innerText =
+"Carmageddon: Rogue Shift";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRovGiP00LlvdqQ2kr9mZ4PqHZB8lxvcDI-pX794BnscS5jvMmUheXhtT0&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🚗 Carmageddon: Rogue Shift
+
+Regresa al universo de Carmageddon en un apocalipsis donde los vehículos son la única esperanza de supervivencia. Conduce por pistas infestadas de mutantes, atropella hordas de enemigos, consigue armas y mejoras y descubre qué necesitas para llegar hasta la salvación.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Carreras, acción y roguelite.<br>
+🚗 Vehículo: Utiliza un coche armado como principal herramienta de supervivencia.<br>
+🧟 Perdidos: Atropella hordas de humanos mutados y criaturas hostiles.<br>
+🔫 Armas: Consigue diferentes armas y sistemas ofensivos para el vehículo.<br>
+🛠️ Mejoras: Mejora piezas, armas y características del coche.<br>
+💥 Destrucción: Destroza enemigos y obstáculos mientras recorres las pistas.<br>
+🌆 Ruinas: Conduce por un mundo devastado después de una catástrofe mundial.<br>
+🌙 Noche: El peligro aumenta cuando aparecen enemigos especiales durante la noche.<br>
+👹 Mutaciones: Enfréntate a criaturas con habilidades y ataques diferentes.<br>
+🎯 Supervivencia: Mantén tu vehículo en condiciones y administra tus recursos.<br>
+🏁 Carreras: Avanza por diferentes circuitos y desafíos.<br>
+🪙 Recompensas: Consigue recursos para fortalecer tu vehículo.<br>
+🔄 Roguelite: Cada intento puede ofrecer diferentes situaciones y posibilidades.<br>
+🏔️ Salvación: Tu objetivo final es alcanzar el único camino que lleva a un lugar seguro.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesRide6(){
+
+document.getElementById("detalleTitulo").innerText =
+"RIDE 6";
+
+document.getElementById("detalleImagen").src =
+"https://image.api.playstation.com/vulcan/ap/rnd/202512/1010/e562eeb6662765b100deca5d27c698d3ed4613f77f3e25c2.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🏍️ RIDE 6
+
+Vive la pasión de las motocicletas en una nueva experiencia de conducción que combina arcade y simulación. Compite con motos de diferentes categorías, mejora tus habilidades en la Riding School y participa en carreras online para demostrar quién domina la pista.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Carreras, motociclismo y simulación.<br>
+🏍️ Motocicletas: Conduce una gran variedad de motos de diferentes categorías.<br>
+🏁 Carreras: Participa en eventos y competiciones repartidos por diferentes circuitos.<br>
+🏆 Carrera: Desarrolla tu trayectoria y progresa como piloto.<br>
+🎮 Arcade: Disfruta de una experiencia de conducción rápida y accesible.<br>
+🏎️ Pro: Utiliza un sistema de conducción más exigente y realista.<br>
+🎓 Riding School: Aprende técnicas y fundamentos para mejorar tus habilidades.<br>
+🛞 Conducción: Mejora frenadas, trazadas, aceleración y control de la motocicleta.<br>
+🔧 Configuración: Ajusta diferentes elementos de la moto según tu estilo.<br>
+🎨 Personalización: Modifica motos, trajes y cascos.<br>
+🗺️ Circuitos: Compite en diferentes pistas y localizaciones.<br>
+👥 Multijugador: Compite online contra otros pilotos.<br>
+🌐 Multijugador multiplataforma: Compite con usuarios de plataformas compatibles.<br>
+🏆 Monthly Challenges: Participa en desafíos mensuales para conseguir recompensas.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesReanimal(){
+
+document.getElementById("detalleTitulo").innerText =
+"REANIMAL";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAFw0Jycz4OplaPEi_yOp4SkDSCtYcJdFQiX2v9h5o4ah7Rz-3ykvJVCo&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+😱 REANIMAL
+
+Los creadores de Little Nightmares regresan con una aventura de terror más oscura. Dos hermanos deberán recorrer un mundo de pesadilla lleno de criaturas grotescas, resolver obstáculos y trabajar juntos para escapar de una isla donde ocurrieron acontecimientos terribles.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Terror, aventura y plataformas.<br>
+📖 Historia: Dos hermanos intentan escapar de una isla donde fueron abandonados y enfrentarse a sus peores pesadillas.<br>
+👦 Hermanos: Controla a dos protagonistas con habilidades diferentes.<br>
+🤝 Cooperativo: Diseñado para jugar acompañado por otra persona.<br>
+🖥️ Cámara: Utiliza una perspectiva compartida que aumenta la tensión.<br>
+🧩 Puzles: Resuelve desafíos utilizando las habilidades de ambos personajes.<br>
+🏃 Plataformas: Salta, escala y atraviesa escenarios peligrosos.<br>
+👹 Criaturas: Evita monstruos grotescos que habitan en la isla.<br>
+🌑 Atmósfera: La oscuridad y los espacios cerrados generan una sensación constante de peligro.<br>
+🔦 Exploración: Recorre diferentes zonas buscando caminos y secretos.<br>
+🛠️ Herramientas: Utiliza objetos del entorno para avanzar y superar obstáculos.<br>
+🏚️ Escenarios: Explora lugares abandonados, edificios y zonas naturales.<br>
+😱 Terror: Combina tensión, persecuciones y apariciones inquietantes.<br>
+👥 Multijugador: Disfruta del modo cooperativo online y local para dos jugadores.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
+
+
+function mostrarDetallesDragonQuest7Reimagined(){
+
+document.getElementById("detalleTitulo").innerText =
+"DRAGON QUEST VII Reimagined";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnl3u5tJ887Y6B8A3OjQBJ9E8nEoUZuBo52AWd1lNsjLkEidvwOQSIrIA&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🗺️ DRAGON QUEST VII Reimagined
+
+Embárcate en una gran aventura que comienza en la tranquila isla de Estarda y se extiende mucho más allá de sus costas. Viaja entre diferentes épocas, explora nuevas islas, reúne compañeros y descubre por qué el mundo parece haber perdido casi todos sus continentes.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: RPG y aventura.<br>
+📖 Historia: Un joven hijo de pescadores descubre que existe mucho más allá de la tranquila isla de Estarda.<br>
+🌊 Estarda: Comienza tu aventura en la isla natal del protagonista.<br>
+🗺️ Exploración: Descubre nuevas islas y regiones a medida que avanzas.<br>
+⛵ Navegación: Viaja por el mundo para descubrir territorios perdidos.<br>
+⚔️ Combate: Enfréntate a monstruos mediante batallas estratégicas.<br>
+👥 Compañeros: Forma un grupo de aliados con diferentes habilidades.<br>
+🧙 Vocaciones: Desarrolla distintas profesiones para aprender habilidades y conjuros.<br>
+🔄 Pluriempleo: Combina dos vocaciones al mismo tiempo para ampliar las capacidades del grupo.<br>
+📈 Progresión: Sube de nivel y desarrolla estadísticas, habilidades y equipamiento.<br>
+👹 Monstruos: Enfréntate a numerosas criaturas características de Dragon Quest.<br>
+🎯 Tácticas: Elige diferentes estrategias para controlar automáticamente a tu grupo.<br>
+⚡ Ataques preventivos: Sorprende a enemigos más débiles antes de entrar en combate completo.<br>
+🏝️ Islas: Descubre territorios que habían desaparecido del mundo conocido.<br>
+🎮 Compatibilidad: Xbox Series X|S.
+</p>
+`;
+}
 
 function mostrarDetallesFatalFuryCityOfTheWolves(){
 
@@ -48882,6 +54244,76 @@ font-weight:bold;
 `;
 }
 
+function mostrarDetallesJurassicWorldEvolution2(){
+
+document.getElementById("detalleTitulo").innerText =
+"Jurassic World Evolution 2";
+
+document.getElementById("detalleImagen").src =
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoaz5QbTqXooq8bg3rI-RLGP-TmAkn6xjgKmha-eEKbRANop7CaLDsiSM&s=10";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+
+🦖 Jurassic World Evolution 2
+
+Jurassic World Evolution 2 es un completo simulador de gestión de parques de dinosaurios ambientado en el universo de Jurassic World. Construye instalaciones, crea y cuida numerosas especies prehistóricas, administra científicos y atiende las necesidades de tus visitantes. También podrás enfrentarte a diferentes situaciones y revivir momentos inspirados en las películas mediante sus distintos modos de juego.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Simulación, gestión y estrategia<br>
+📖 Historia: Administra parques de dinosaurios mientras haces frente a diferentes situaciones y desafíos<br>
+🦖 Dinosaurios: Más de 75 especies prehistóricas para descubrir y mantener<br>
+🧬 Genética: Modifica características y rasgos mediante bioingeniería<br>
+🏗️ Construcción: Crea edificios, recintos y diferentes instalaciones para el parque<br>
+👨‍🔬 Científicos: Contrata especialistas para investigar y desarrollar nuevas especies<br>
+🚁 Expediciones: Envía equipos para localizar fósiles y obtener ADN<br>
+🥚 Incubación: Cría dinosaurios y controla sus características antes de incorporarlos al parque<br>
+👥 Visitantes: Atiende las necesidades de distintos tipos de huéspedes<br>
+💰 Gestión: Controla ingresos, gastos, personal y funcionamiento del parque<br>
+🌍 Ubicaciones: Construye parques en diferentes entornos y regiones del mundo<br>
+🎬 Campaña: Disfruta de una historia narrativa relacionada con Jurassic World<br>
+🌀 Chaos Theory: Revive situaciones inspiradas en las películas con diferentes escenarios<br>
+🏆 Modos: Incluye Campaña, Chaos Theory, Desafío y Sandbox<br>
+🎮 Compatibilidad: Xbox One y Xbox Series X|S
+</p>
+`;
+}
+
 function mostrarDetallesARKSurvivalAscended(){
 
 document.getElementById("detalleTitulo").innerText =
@@ -55640,6 +61072,8 @@ const productos = Array.from(
 
 const paginacion = document.getElementById("paginacion");
 const infoPaginacion = document.getElementById("infoPaginacion");
+
+prepararBusquedaPorGenero(productos);
 
 
 // ========================================
