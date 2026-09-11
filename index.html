@@ -1889,6 +1889,351 @@ body{
     display:none!important;
   }
 }
+
+/* ===== JUEGOS RECOMENDADOS DEL DÍA ===== */
+.recomendados-dia{
+    position:relative;
+    margin:35px auto 45px;
+    padding:32px 20px 38px;
+    max-width:1050px;
+    border:1px solid rgba(0,255,136,.28);
+    border-radius:24px;
+    background:
+        radial-gradient(circle at 50% 0%,rgba(0,255,136,.12),transparent 45%),
+        linear-gradient(145deg,#111a20,#080d12);
+    box-shadow:0 0 35px rgba(0,255,136,.10), inset 0 0 35px rgba(0,0,0,.35);
+    overflow:hidden;
+}
+
+.recomendados-dia::before,
+.recomendados-dia::after{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border:1px solid rgba(0,255,136,.10);
+    border-radius:50%;
+    pointer-events:none;
+}
+
+.recomendados-dia::before{left:-110px;top:-110px;}
+.recomendados-dia::after{right:-110px;bottom:-110px;}
+
+.recomendados-cabecera{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.recomendados-cabecera .titulo{
+    margin-bottom:8px;
+}
+
+.recomendados-subtitulo{
+    margin:0;
+    color:#aebdb7;
+    font-size:.95rem;
+}
+
+.ruleta-luz{
+    position:absolute;
+    left:50%;
+    top:88px;
+    width:360px;
+    height:360px;
+    transform:translateX(-50%);
+    border-radius:50%;
+    border:2px dashed rgba(0,255,136,.13);
+    box-shadow:0 0 45px rgba(0,255,136,.08);
+    animation:ruletaPulso 2.8s ease-in-out infinite;
+    pointer-events:none;
+}
+
+.ruleta-luz::before,
+.ruleta-luz::after{
+    content:"✦";
+    position:absolute;
+    color:#00ff88;
+    text-shadow:0 0 12px #00ff88;
+    animation:ruletaChispa 1.8s linear infinite;
+}
+
+.ruleta-luz::before{left:18px;top:70px;}
+.ruleta-luz::after{right:20px;bottom:55px;animation-delay:.7s;}
+
+.recomendados-grid{
+    position:relative;
+    z-index:3;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+    max-width:900px;
+    margin:0 auto;
+}
+
+/* Tarjetas compactas de la ruleta */
+.recomendados-grid .juego-card{
+    width:100%;
+    max-width:none;
+}
+
+.recomendados-grid .juego-card img{
+    height:170px;
+    object-fit:cover;
+}
+
+.recomendados-grid .juego-card .info{
+    padding:11px;
+}
+
+.recomendados-grid .juego-card .info h3{
+    min-height:36px;
+    font-size:16px;
+    line-height:1.2;
+}
+
+.recomendados-grid .juego-card .precio{
+    font-size:20px;
+    margin:7px 0;
+}
+
+.recomendados-grid .juego-card .info button{
+    padding:9px 7px !important;
+    margin-top:6px !important;
+    font-size:12px !important;
+}
+
+/* En celulares se muestran una debajo de otra */
+@media(max-width:760px){
+    .recomendados-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        max-width:100%;
+        gap:8px;
+    }
+
+    .recomendados-grid .juego-card img{
+        height:105px;
+    }
+
+    .recomendados-grid .juego-card .info{
+        padding:7px;
+    }
+
+    .recomendados-grid .juego-card .info h3{
+        min-height:32px;
+        font-size:11px;
+        line-height:1.15;
+    }
+
+    .recomendados-grid .juego-card .precio{
+        font-size:15px;
+        margin:5px 0;
+    }
+
+    .recomendados-grid .juego-card .info button{
+        padding:7px 4px !important;
+        margin-top:4px !important;
+        font-size:9px !important;
+        border-radius:6px !important;
+    }
+}
+
+.recomendado-slot{
+    min-height:0;
+    position:relative;
+    transform-origin:center;
+}
+
+/* Explosión de sorpresa al revelar cada tarjeta */
+.recomendado-slot::before,
+.recomendado-slot::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    border:3px solid #00ff88;
+    box-shadow:0 0 18px rgba(0,255,136,.8);
+    opacity:0;
+    pointer-events:none;
+    z-index:8;
+}
+
+.recomendado-slot.explosion::before{
+    animation:explosionAnillo .75s ease-out forwards;
+}
+
+.recomendado-slot.explosion::after{
+    border-color:#ffffff;
+    box-shadow:0 0 18px rgba(255,255,255,.85);
+    animation:explosionDestello .45s ease-out forwards;
+}
+
+.recomendado-slot.girando{
+    animation:ruletaGiro .16s linear infinite;
+}
+
+.recomendado-slot.revelado{
+    animation:ruletaRevelacion .75s cubic-bezier(.2,.9,.25,1) both;
+}
+
+.recomendados-controles{
+    position:relative;
+    z-index:4;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    margin-top:25px;
+}
+
+.btn-ruleta{
+    border:1px solid #00ff88;
+    background:linear-gradient(135deg,#00ff88,#00c96b);
+    color:#04100b;
+    font-weight:900;
+    padding:13px 28px;
+    border-radius:999px;
+    cursor:pointer;
+    letter-spacing:.5px;
+    box-shadow:0 0 18px rgba(0,255,136,.35);
+    transition:.25s ease;
+}
+
+.btn-ruleta:hover{
+    transform:translateY(-2px) scale(1.04);
+    box-shadow:0 0 25px rgba(0,255,136,.55),0 0 45px rgba(0,255,136,.18);
+}
+
+.recomendados-contador{
+    color:#7e9189;
+    font-size:.82rem;
+}
+
+.recomendados-confeti{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:5;
+}
+
+.recomendados-confeti span{
+    position:absolute;
+    top:-20px;
+    width:7px;
+    height:13px;
+    background:#00ff88;
+    opacity:0;
+    transform:rotate(20deg);
+}
+
+.recomendados-confeti.activo span{
+    animation:confetiCaida 1.8s ease-out forwards;
+}
+
+.recomendados-confeti span:nth-child(1){left:8%;animation-delay:.02s}
+.recomendados-confeti span:nth-child(2){left:17%;animation-delay:.12s}
+.recomendados-confeti span:nth-child(3){left:27%;animation-delay:.22s}
+.recomendados-confeti span:nth-child(4){left:38%;animation-delay:.06s}
+.recomendados-confeti span:nth-child(5){left:49%;animation-delay:.18s}
+.recomendados-confeti span:nth-child(6){left:60%;animation-delay:.28s}
+.recomendados-confeti span:nth-child(7){left:71%;animation-delay:.08s}
+.recomendados-confeti span:nth-child(8){left:82%;animation-delay:.20s}
+.recomendados-confeti span:nth-child(9){left:91%;animation-delay:.30s}
+
+@keyframes ruletaGiro{
+    0%{transform:translateY(0) rotate(0deg) scale(.96);filter:brightness(1)}
+    50%{transform:translateY(-5px) rotate(1.5deg) scale(1.015);filter:brightness(1.45)}
+    100%{transform:translateY(0) rotate(-1.5deg) scale(.96);filter:brightness(1)}
+}
+
+@keyframes ruletaRevelacion{
+    0%{opacity:.2;transform:scale(.72) rotateY(90deg);filter:blur(8px) brightness(2)}
+    55%{opacity:1;transform:scale(1.06) rotateY(-8deg);filter:blur(0) brightness(1.35)}
+    100%{opacity:1;transform:scale(1) rotateY(0);filter:blur(0) brightness(1)}
+}
+
+@keyframes ruletaPulso{
+    0%,100%{transform:translateX(-50%) scale(.94);opacity:.45}
+    50%{transform:translateX(-50%) scale(1.04);opacity:.9}
+}
+
+@keyframes ruletaChispa{
+    0%{transform:scale(.6) rotate(0deg);opacity:.2}
+    50%{transform:scale(1.4) rotate(180deg);opacity:1}
+    100%{transform:scale(.6) rotate(360deg);opacity:.2}
+}
+
+@keyframes confetiCaida{
+    0%{opacity:1;transform:translateY(-20px) translateX(0) rotate(0deg)}
+    100%{opacity:0;transform:translateY(460px) translateX(35px) rotate(540deg)}
+}
+
+@keyframes explosionAnillo{
+    0%{opacity:0;transform:translate(-50%,-50%) scale(.15);border-width:7px}
+    18%{opacity:1;transform:translate(-50%,-50%) scale(.5);border-width:5px}
+    100%{opacity:0;transform:translate(-50%,-50%) scale(8);border-width:1px}
+}
+
+@keyframes explosionDestello{
+    0%{opacity:0;transform:translate(-50%,-50%) scale(.1)}
+    20%{opacity:1;transform:translate(-50%,-50%) scale(1.8)}
+    100%{opacity:0;transform:translate(-50%,-50%) scale(5)}
+}
+
+@media(max-width:800px){
+    /* Mantener las 3 recomendaciones en una sola fila también en móvil */
+    .recomendados-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+        max-width:100% !important;
+        gap:5px !important;
+    }
+
+    .recomendados-grid .juego-card{
+        min-width:0;
+        border-radius:9px;
+    }
+
+    .recomendados-grid .juego-card img{
+        height:72px !important;
+        border-radius:8px 8px 0 0;
+    }
+
+    .recomendados-grid .juego-card .info{
+        padding:5px !important;
+    }
+
+    .recomendados-grid .juego-card .info h3{
+        min-height:25px !important;
+        font-size:9px !important;
+        line-height:1.1 !important;
+        margin:2px 0 !important;
+    }
+
+    .recomendados-grid .juego-card .precio{
+        font-size:12px !important;
+        margin:3px 0 !important;
+    }
+
+    .recomendados-grid .juego-card .info button{
+        padding:5px 2px !important;
+        margin-top:3px !important;
+        font-size:8px !important;
+        line-height:1.1 !important;
+        border-radius:5px !important;
+    }
+
+    .ruleta-luz{
+        width:210px;
+        height:210px;
+        top:110px;
+    }
+}
+
 </style>
 
 
@@ -1983,10 +2328,56 @@ VER CATÁLOGO
 </section>
 
 
+
+<section id="recomendadosDia" class="recomendados-dia">
+  <div class="recomendados-confeti" id="recomendadosConfeti" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="ruleta-luz" aria-hidden="true"></div>
+  <div class="recomendados-cabecera">
+    <h2 class="titulo">🎰 Juegos recomendados del día</h2>
+    <p class="recomendados-subtitulo">Tres juegos elegidos de tu catálogo. La selección cambia cada 24 horas.</p>
+  </div>
+  <div class="recomendados-grid" id="recomendadosGrid">
+    <div class="recomendado-slot"></div>
+    <div class="recomendado-slot"></div>
+    <div class="recomendado-slot"></div>
+  </div>
+  <div class="recomendados-controles">
+    <button class="btn-ruleta" id="girarRecomendados" type="button">🎲 GIRAR RULETA</button>
+    <div class="recomendados-contador" id="recomendadosContador">Selección diaria activa</div>
+  </div>
+</section>
+
 <section id="estrenos">
 <h2 class="titulo">🔥 Estrenos</h2>
 
 <div class="grid">
+<div class="card juego-card">
+<img src="https://store-images.s-microsoft.com/image/apps.11380.14561871058235733.97430526-b0ae-43ed-891e-248b62fb0c21.b6c2cb39-3ffb-4caa-b3b5-e6f312c02557">
+<div class="info">
+<h3>METAL GEAR SOLID: MASTER COLLECTION Vol.2</h3>
+<div class="precio">$30.000</div>
+<button class="comprar" data-juego="METAL GEAR SOLID: MASTER COLLECTION Vol.2">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMetalGearSolidMasterCollectionVol2()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
 
 </div>
 
@@ -1996,6 +2387,106 @@ VER CATÁLOGO
 <h2 class="titulo">🎮 Catálogo</h2>
 
 <div class="grid">
+<div class="card juego-card">
+<img src="https://image.api.playstation.com/vulcan/ap/rnd/202205/3113/om0M2UIe8P2NBuRbhgKqb7bO.jpg?w=440">
+<div class="info">
+<h3>Destroy All Humans! - Jumbo Pack</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Destroy All Humans! - Jumbo Pack">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesDestroyAllHumansJumboPack()" style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch2/70010000098088/3a61ab14db3d1d0e2e023de03b2866a270b5bdc2b6295f42a2e16e84110f1ce6">
+<div class="info">
+<h3>Valheim</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="Valheim">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesValheim()" style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://www.nintendo.com/eu/media/images/assets/nintendo_switch_games/mlbtheshow26/16x9_MlbTheShow26_image1600w.jpg">
+<div class="info">
+<h3>MLB The Show 26</h3>
+<div class="precio">$20.000</div>
+<button class="comprar" data-juego="MLB The Show 26">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMLBTheShow26()" style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
+
+<div class="card juego-card">
+<img src="https://store-images.s-microsoft.com/image/apps.11380.14561871058235733.97430526-b0ae-43ed-891e-248b62fb0c21.b6c2cb39-3ffb-4caa-b3b5-e6f312c02557">
+<div class="info">
+<h3>METAL GEAR SOLID: MASTER COLLECTION Vol.2</h3>
+<div class="precio">$30.000</div>
+<button class="comprar" data-juego="METAL GEAR SOLID: MASTER COLLECTION Vol.2">
+Agregar al carrito
+</button>
+<button onclick="mostrarDetallesMetalGearSolidMasterCollectionVol2()"
+style="
+width:100%;
+margin-top:8px;
+padding:12px;
+background:#00ff88;
+border:none;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+">
+📖 Ver detalles
+</button>
+</div>
+</div>
+
 
 <div class="card juego-card">
 <img src="https://i.ytimg.com/vi/xLhxqjG885Y/maxresdefault.jpg">
@@ -19119,6 +19610,7 @@ cursor:pointer;
 
 <div class="info-paginacion" id="infoPaginacion"></div>
 
+
 <div class="paginacion" id="paginacion"></div>
 
 
@@ -19289,6 +19781,10 @@ const carrito = document.querySelector(".carrito");
 // Estrenos reutiliza las fichas del catálogo para mantener portada, precio,
 // carrito y detalles idénticos en ambos lugares.
 const titulosEstreno = new Set([
+  "The Blood of Dawnwalker",
+  "Onimusha: Way of the Sword",
+  "Mortal Shell II",
+  "The Sinking City 2",
   "NBA 2K27",
   "CAPTAIN TSUBASA 2 WORLD FIGHTERS",
   "STAR WARS Zero Company"
@@ -19312,6 +19808,8 @@ const buscador = document.getElementById("buscador");
 
 let busquedaActiva = false;
 let botonQueAbrioModal = null;
+let scrollAntesDeDetalles = 0;
+let cerrandoDetallesPorHistorial = false;
 
 // Índice de géneros para que cada tarjeta pueda encontrarse por su tipo de juego.
 // La mayoría se toma de la ficha de detalles; estos once títulos no tenían género allí.
@@ -19326,7 +19824,8 @@ const generosManuales = {
   "Crash Team Racing Nitro-Fueled": "Carreras, arcade",
   "Call of Duty: Black Ops Cold War": "Disparos, acción",
   "Grand Theft Auto V": "Acción, aventura, mundo abierto",
-  "Mortal Kombat 11 Ultimate": "Lucha, acción"
+  "Mortal Kombat 11 Ultimate": "Lucha, acción",
+  "MLB The Show 26": "Deportes, béisbol, simulación"
 };
 
 function normalizarTexto(texto) {
@@ -19352,7 +19851,11 @@ function prepararBusquedaPorGenero(listaProductos) {
     const coincidenciaGenero = codigoFuncion.match(
       /Género\s*:\s*([^<`\r\n]+)/i
     );
-    const generos = coincidenciaGenero?.[1].trim() || generosManuales[titulo] || "";
+    const generoDeFicha = coincidenciaGenero?.[1].trim() || "";
+    const generoManual = generosManuales[titulo] || "";
+    const generos = [generoManual, generoDeFicha]
+      .filter(Boolean)
+      .join(", ");
 
     producto.dataset.generos = normalizarTexto(generos);
   });
@@ -19494,7 +19997,7 @@ padding:8px 15px;
 border-radius:20px;
 font-weight:bold;
 ">
-✅ XBOX SERIES X|S
+✅ XBOX ONE & XBOX SERIES X|S
 </div>
 
 </div>
@@ -19514,7 +20017,7 @@ font-weight:bold;
 👑 Jefes: Enfréntate a enemigos formidables en duelos de vida o muerte<br>
 ✨ Habilidades: Utiliza poderes sobrenaturales y técnicas especiales durante los combates<br>
 🎨 Ambientación: Fantasía oscura inspirada en el Japón histórico<br>
-🎮 Compatibilidad: Xbox Series X|S
+🎮 Compatibilidad: Xbox One & Xbox Series X|S
 </p>
 `;
 }
@@ -19555,7 +20058,7 @@ padding:8px 15px;
 border-radius:20px;
 font-weight:bold;
 ">
-✅ XBOX SERIES X|S
+✅ XBOX ONE & XBOX SERIES X|S
 </div>
 
 </div>
@@ -19575,7 +20078,7 @@ font-weight:bold;
 👥 Personajes: Interactúa con habitantes y personajes que pueden afectar la historia<br>
 🎯 Misiones: Completa objetivos principales y actividades dentro del mundo abierto<br>
 🎨 Tecnología: Mundo desarrollado con Unreal Engine 5 y alto nivel de detalle visual<br>
-🎮 Compatibilidad: Xbox Series X|S
+🎮 Compatibilidad: Xbox One & Xbox Series X|Ss X|S
 </p>
 `;
 }
@@ -62669,43 +63172,52 @@ localStorage.setItem(
 );
   
 }
-botones.forEach(boton => {
-  boton.addEventListener("click", () => {
+function agregarJuegoAlCarrito(boton) {
 
-    const juego = boton.dataset.juego;
+  const juego = boton.dataset.juego;
 
-    if (!juego) return;
+  if (!juego) return;
 
-    if (juegos[juego]) {
-      juegos[juego].cantidad++;
-    } else {
-      juegos[juego] = {
-        cantidad: 1,
-        // El precio se toma de la tarjeta mostrada: una sola fuente de datos.
-        precio: Number(
-          boton.closest(".juego-card").querySelector(".precio").textContent.replace(/[^\d]/g, "")
-        )
-      };
-    }carrito.classList.remove("carrito-pop");
+  const tarjeta = boton.closest(".juego-card");
+  const precioElemento = tarjeta?.querySelector(".precio");
 
-void carrito.offsetWidth;
+  if (juegos[juego]) {
+    juegos[juego].cantidad++;
+  } else {
+    juegos[juego] = {
+      cantidad: 1,
+      precio: Number(
+        (precioElemento?.textContent || "0").replace(/[^\d]/g, "")
+      )
+    };
+  }
 
-carrito.classList.add("carrito-pop");
+  carrito.classList.remove("carrito-pop");
+  void carrito.offsetWidth;
+  carrito.classList.add("carrito-pop");
 
-cantidad++;
+  cantidad++;
 
+  actualizarCarrito();
 
+  const sonido = document.getElementById("sonidoAgregar");
+  if(sonido){
+    sonido.play().catch(()=>{});
+  }
 
-actualizarCarrito();
-
-const sonido = document.getElementById("sonidoAgregar");
-
-if(sonido){
-  sonido.play().catch(()=>{});
+  mostrarToast(`✅ ${juego} agregado al carrito`);
 }
 
-mostrarToast(`✅ ${juego} agregado al carrito`);
-  });
+// Delegación: también funciona con las tarjetas clonadas por la ruleta.
+document.addEventListener("click", (event) => {
+  const botonComprar = event.target.closest(".comprar");
+
+  if (!botonComprar) return;
+
+  event.preventDefault();
+  event.stopPropagation();
+
+  agregarJuegoAlCarrito(botonComprar);
 });
 
 carrito.addEventListener("click", () => {
@@ -62851,11 +63363,21 @@ document.getElementById("overlay").style.display = "none";
 
 document.body.style.overflow = "auto";
 
+const posicionGuardada = scrollAntesDeDetalles;
+
 if (botonQueAbrioModal?.isConnected) {
-  botonQueAbrioModal.focus();
+  botonQueAbrioModal.focus({ preventScroll: true });
 }
 
 botonQueAbrioModal = null;
+
+requestAnimationFrame(() => {
+  window.scrollTo({
+    top: posicionGuardada,
+    left: 0,
+    behavior: "auto"
+  });
+});
 
 }
 
@@ -62866,16 +63388,20 @@ document.addEventListener("click", (event) => {
   );
 
   if (botonDetalles) {
+    // Este listener usa captura para guardar la posición ANTES de que
+    // el onclick de la ficha ejecute history.pushState().
+    scrollAntesDeDetalles = window.scrollY;
     botonQueAbrioModal = botonDetalles;
+
     const modal = document.getElementById("modalDetalles");
     modal.scrollTop = 0;
+
     requestAnimationFrame(() => {
-      // Dar foco no debe desplazar el contenido hasta el botón Cerrar.
       document.getElementById("cerrarDetallesBtn").focus({ preventScroll: true });
       modal.scrollTop = 0;
     });
   }
-});
+}, true);
 
 // El modal se puede cerrar con Escape y el foco no sale de él con Tab.
 document.addEventListener("keydown", (event) => {
@@ -62944,7 +63470,7 @@ function mostrarPagina(pagina) {
     history.pushState({ pagina: paginaActual }, "", "#pagina-" + paginaActual);
 }
 
-function mostrarPaginaSinHistorial(pagina) {
+function mostrarPaginaSinHistorial(pagina, desplazar = true) {
 
 	paginacion.style.display = "flex";
 	
@@ -62999,9 +63525,11 @@ function mostrarPaginaSinHistorial(pagina) {
         `Mostrando ${desde} - ${hasta} de ${productos.length} juegos`;
 
 
-    document.getElementById("catalogo").scrollIntoView({
-        behavior: "smooth"
-    });
+    if (desplazar) {
+        document.getElementById("catalogo").scrollIntoView({
+            behavior: "smooth"
+        });
+    }
 }
 
 
@@ -63020,8 +63548,36 @@ window.addEventListener("popstate", function(event) {
     // Si el modal de detalles está abierto y este popstate no es el
     // estado del modal, significa que estamos saliendo de él: lo cerramos.
     const modal = document.getElementById("modalDetalles");
-    if (modal.style.display === "block") {
+    const estabaEnDetalles = modal.style.display === "block";
+
+    if (estabaEnDetalles) {
+        cerrandoDetallesPorHistorial = true;
         cerrarDetallesSinHistorial();
+    }
+
+    // Si acabamos de cerrar un detalle, restauramos la página actual
+    // sin desplazarla al inicio del catálogo.
+    if (estabaEnDetalles) {
+        if (busquedaActiva) {
+            return;
+        }
+
+        if (event.state && event.state.pagina) {
+            mostrarPaginaSinHistorial(event.state.pagina, false);
+        } else {
+            mostrarPaginaSinHistorial(1, false);
+        }
+
+        requestAnimationFrame(() => {
+            window.scrollTo({
+                top: scrollAntesDeDetalles,
+                left: 0,
+                behavior: "auto"
+            });
+            cerrandoDetallesPorHistorial = false;
+        });
+
+        return;
     }
 
     // Si hay una búsqueda activa, no tocamos la paginación:
@@ -63138,11 +63694,60 @@ function crearBotonesPaginacion(totalPaginas) {
 
 
 
+function mostrarDetallesMetalGearSolidMasterCollectionVol2(){
+document.getElementById("detalleTitulo").innerText =
+"METAL GEAR SOLID: MASTER COLLECTION Vol.2";
+document.getElementById("detalleImagen").src =
+"https://store-images.s-microsoft.com/image/apps.11380.14561871058235733.97430526-b0ae-43ed-891e-248b62fb0c21.b6c2cb39-3ffb-4caa-b3b5-e6f312c02557";
+document.body.style.overflow = "hidden";
+document.getElementById("overlay").style.display = "block";
+document.getElementById("modalDetalles").style.display = "block";
+history.pushState({modal:true}, "", "#detalle");
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+🕵️ METAL GEAR SOLID: MASTER COLLECTION Vol.2
+
+La segunda entrega de la Master Collection reúne METAL GEAR SOLID 4: Guns of the Patriots y METAL GEAR SOLID: Peace Walker. La colección lleva estas experiencias de espionaje táctico a Xbox Series X|S e incluye contenido adicional y material digital.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, sigilo y espionaje táctico<br>
+📖 Historia: Vive las historias de Solid Snake y Big Boss a través de dos entregas esenciales de la saga<br>
+🕵️ METAL GEAR SOLID 4: Controla a Solid Snake en su última misión y descubre el desenlace de su historia<br>
+🐍 PEACE WALKER: Acompaña a Big Boss en una aventura de espionaje táctico en su versión HD Collection<br>
+🥷 Sigilo: Infiltración, estrategia y evasión para superar las misiones sin ser detectado<br>
+👥 Multijugador: Peace Walker admite partidas en línea de hasta 6 jugadores<br>
+🎁 Bonus: Incluye METAL GEAR Ghost Babel como contenido adicional<br>
+📚 Contenido digital: Screenplay Books, Master Books y METAL GEAR SOLID 4 Database<br>
+🎵 Banda sonora: Incluye METAL GEAR SOLID: Digital Soundtrack Vol.2<br>
+🎮 Plataforma: Optimizado para Xbox Series X|S<br>
+
+</p>
+`;
+}
+
 // ========================================
-// INICIAR
+// INICIAR: mostrar INICIO sin saltar al catálogo
 // ========================================
 
-mostrarPagina(1);
+mostrarPaginaSinHistorial(1, false);
 
 
 </script>
@@ -63221,6 +63826,16 @@ Cerrar
 </div>
 
 <script>
+/* ===== INICIO SIEMPRE EN LA PARTE SUPERIOR ===== */
+if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+}
+window.addEventListener("load", () => {
+    if (!window.location.hash) {
+        window.scrollTo(0, 0);
+    }
+});
+
 /* ===== ANIMACIONES AL BAJAR POR LA PÁGINA ===== */
 document.addEventListener("DOMContentLoaded", () => {
     const elementos = document.querySelectorAll(".card, .titulo");
@@ -63239,6 +63854,376 @@ document.addEventListener("DOMContentLoaded", () => {
 
     elementos.forEach((elemento) => observador.observe(elemento));
 });
+
+
+function mostrarDetallesDestroyAllHumansJumboPack(){
+
+document.getElementById("detalleTitulo").innerText =
+"Destroy All Humans! - Jumbo Pack";
+
+document.getElementById("detalleImagen").src =
+"https://image.api.playstation.com/vulcan/ap/rnd/202205/3113/om0M2UIe8P2NBuRbhgKqb7bO.jpg?w=440";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+👽 Destroy All Humans! - Jumbo Pack
+
+Este paquete reúne Destroy All Humans!, Destroy All Humans! - Clone Carnage y Destroy All Humans! 2 - Reprobed, además de sus contenidos adicionales incluidos.
+</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura y ciencia ficción
+<br>📦 Contenido: Incluye Destroy All Humans!, Destroy All Humans! - Clone Carnage y Destroy All Humans! 2 - Reprobed
+<br>👽 Destroy All Humans!: Controla a Crypto-137 y aterroriza a la humanidad utilizando armas alienígenas y poderes psíquicos
+<br>💥 Clone Carnage: Enfréntate a desafíos de caos y destrucción con Crypto
+<br>🛸 Destroy All Humans! 2 - Reprobed: Continúa la invasión alienígena en una aventura de acción ambientada en los años 60
+<br>🎨 Contenido adicional: Incluye packs de aspectos y el DLC Challenge Accepted para Destroy All Humans! 2 - Reprobed
+<br>👥 Multijugador: Modos multijugador y cooperativos incluidos según el contenido del paquete
+<br>🎮 Compatibilidad: Xbox One & Xbox Series X|S
+</p>
+`;
+}
+
+function mostrarDetallesValheim(){
+
+document.getElementById("detalleTitulo").innerText =
+"Valheim";
+
+document.getElementById("detalleImagen").src =
+"https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch2/70010000098088/3a61ab14db3d1d0e2e023de03b2866a270b5bdc2b6295f42a2e16e84110f1ce6";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+⚔️ Valheim
+
+Valheim es un juego de exploración y supervivencia ambientado en un mundo generado por procedimientos e inspirado en la mitología nórdica. Conviértete en un vikingo, explora tierras desconocidas, construye tu hogar, fabrica equipo y enfréntate a poderosos enemigos para demostrar tu valía ante Odín.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX ONE
+</div>
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Acción, aventura, exploración y supervivencia<br>
+📖 Historia: Encarna a un vikingo desterrado y explora el décimo mundo para demostrar tu valía ante Odín<br>
+🌍 Mundo generado: Explora un mundo generado por procedimientos con distintos biomas, recursos y peligros<br>
+⚔️ Combate: Utiliza hachas, espadas, arcos, bloqueos, esquivas y paradas para enfrentarte a tus enemigos<br>
+🏰 Construcción: Construye refugios, aldeas, salones vikingos y fortalezas teniendo en cuenta la estructura y la defensa<br>
+🛠️ Fabricación: Recolecta materiales y descubre nuevas recetas para fabricar armas, herramientas, objetos y alimentos<br>
+🍖 Supervivencia: El sistema de alimentación proporciona bonificaciones de salud, resistencia y regeneración según lo que consumas<br>
+⛵ Exploración: Navega por mares abiertos para descubrir nuevas tierras, recursos y criaturas<br>
+👹 Enemigos: Enfréntate a criaturas peligrosas y poderosos jefes regionales conocidos como los Desterrados<br>
+👥 Multijugador: Juega en solitario o con hasta 10 jugadores en línea<br>
+🤝 Cooperativo: Cooperativo en línea de 2 a 10 jugadores y cooperación multiplataforma de Xbox<br>
+🌐 Multiplataforma: Compatible con multijugador y cooperativo multiplataforma de Xbox<br>
+🎨 Tecnología: Mundo generado por procedimientos con diferentes entornos, recursos y enemigos<br>
+🎮 Compatibilidad: Xbox One & Xbox Series X|S
+</p>
+`;
+}
+
+function mostrarDetallesMLBTheShow26(){
+
+document.getElementById("detalleTitulo").innerText =
+"MLB The Show 26";
+
+document.getElementById("detalleImagen").src =
+"https://www.nintendo.com/eu/media/images/assets/nintendo_switch_games/mlbtheshow26/16x9_MlbTheShow26_image1600w.jpg";
+
+document.body.style.overflow = "hidden";
+
+document.getElementById("overlay").style.display = "block";
+
+document.getElementById("modalDetalles").style.display = "block";
+
+history.pushState({modal:true}, "", "#detalle");
+
+document.getElementById("detalleTexto").innerHTML = `
+<p>
+⚾ MLB The Show 26
+
+MLB The Show 26 es una experiencia de béisbol que te permite tomar el control y dejar tu huella en la MLB. Descubre nuevas mecánicas de Road To The Show, experiencias más profundas en Franchise y acción de béisbol con un alto nivel de realismo.</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 0;
+">
+
+<div style="
+background:#c9dfb7;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+">
+✅ XBOX SERIES X|S
+</div>
+
+</div>
+
+<p>
+🎮 Género: Deportes, béisbol y simulación<br>
+📖 Historia: Construye tu carrera y busca convertirte en una leyenda del béisbol<br>
+⚾ Road To The Show: Vive una carrera ampliada y avanza desde tus primeros pasos hasta buscar un lugar en Cooperstown<br>
+🏟️ Franchise: Disfruta de experiencias más profundas dentro de una franquicia de la MLB<br>
+💥 Big Zone Hitting: Obtén mayor control sobre la colocación del swing para buscar el punto óptimo<br>
+🎯 Bear Down Pitching: Utiliza concentración de élite para controlar tus lanzamientos en los momentos cruciales<br>
+🏆 The Negro Leagues: Descubre nuevas historias, leyendas, uniformes y estadios en la cuarta temporada de Storylines<br>
+👥 Multijugador: Multijugador local de 2 a 4 jugadores y en línea de 2 a 8 jugadores<br>
+🤝 Cooperativo: Cooperativo local de 2 a 4 jugadores y en línea de 2 a 3 jugadores<br>
+🌐 Multiplataforma: Compatible con multijugador y cooperativo multiplataforma de Xbox<br>
+🎨 Tecnología: 4K Ultra HD, HDR10 y rendimiento de 60 fps o superior<br>
+🎮 Compatibilidad: Xbox Series X|S
+</p>
+`;
+}
+
+
+// ========================================
+// JUEGOS RECOMENDADOS DEL DÍA - RULETA
+// ========================================
+(function iniciarRecomendadosDelDia(){
+    const grid = document.getElementById("recomendadosGrid");
+    const boton = document.getElementById("girarRecomendados");
+    const contador = document.getElementById("recomendadosContador");
+    const confeti = document.getElementById("recomendadosConfeti");
+
+    if (!grid || !boton) return;
+
+    const slots = Array.from(grid.querySelectorAll(".recomendado-slot"));
+    const catalogo = Array.from(document.querySelectorAll("#catalogo .juego-card"));
+    const CLAVE = "mymgamerv2_recomendados_24h";
+    const DURACION_24H = 24 * 60 * 60 * 1000;
+
+    function barajar(array){
+        const copia = [...array];
+        for(let i = copia.length - 1; i > 0; i--){
+            const j = Math.floor(Math.random() * (i + 1));
+            [copia[i], copia[j]] = [copia[j], copia[i]];
+        }
+        return copia;
+    }
+
+    function obtenerSeleccionGuardada(){
+        try{
+            const guardada = JSON.parse(localStorage.getItem(CLAVE) || "null");
+            if(
+                guardada &&
+                Number.isFinite(guardada.fecha) &&
+                Date.now() - guardada.fecha < DURACION_24H &&
+                Array.isArray(guardada.juegos) &&
+                guardada.juegos.length === 3 &&
+                guardada.juegos.every(titulo => typeof titulo === "string" && titulo.trim())
+            ){
+                return guardada.juegos;
+            }
+        }catch(error){
+            console.warn("No se pudo leer la selección diaria.", error);
+        }
+        return null;
+    }
+
+    function crearNuevaSeleccion(){
+        const seleccion = barajar(catalogo).slice(0, 3);
+        const titulos = seleccion
+            .map(juego => juego.querySelector("h3")?.textContent.trim() || "")
+            .filter(Boolean);
+
+        const datos = {
+            fecha: Date.now(),
+            juegos: titulos
+        };
+
+        try{
+            localStorage.setItem(CLAVE, JSON.stringify(datos));
+        }catch(error){
+            console.warn("No se pudo guardar la selección diaria.", error);
+        }
+
+        return titulos;
+    }
+
+    function obtenerJuegos(){
+        const guardados = obtenerSeleccionGuardada();
+        return guardados && guardados.length === 3 ? guardados : crearNuevaSeleccion();
+    }
+
+    function buscarTarjeta(titulo){
+        return catalogo.find(card => {
+            const h3 = card.querySelector("h3");
+            return h3 && h3.textContent.trim() === titulo;
+        });
+    }
+
+    function limpiarSlot(slot){
+        slot.className = "recomendado-slot";
+        slot.innerHTML = "";
+    }
+
+    function revelarTarjeta(slot, titulo){
+        const original = buscarTarjeta(titulo);
+        if(!original) return false;
+
+        // Clonamos la tarjeta que ya existe en el catálogo. cloneNode(true)
+        // conserva toda su estructura y sus atributos, incluidos los botones inline.
+        const tarjeta = original.cloneNode(true);
+
+        // La paginación puede haber puesto la tarjeta original en display:none.
+        // Quitamos ese estilo del clon para que el recomendado siempre sea visible.
+        tarjeta.style.removeProperty("display");
+        tarjeta.hidden = false;
+        tarjeta.removeAttribute("hidden");
+
+        // El catálogo usa .card { opacity:0 } y revela las tarjetas
+        // mediante la clase .visible. Al clonar una tarjeta para la ruleta,
+        // debemos marcarla como visible para que no quede transparente.
+        tarjeta.classList.add("visible");
+        tarjeta.style.opacity = "1";
+        tarjeta.style.filter = "blur(0)";
+
+        slot.innerHTML = "";
+        slot.appendChild(tarjeta);
+        return true;
+    }
+
+    function mostrarJuegos(juegos, animar = true){
+        slots.forEach(limpiarSlot);
+
+        if(!animar) return;
+
+        juegos.slice(0, 3).forEach((titulo, indice) => {
+            const slot = slots[indice];
+            if(!slot) return;
+
+            slot.classList.add("girando");
+
+            setTimeout(() => {
+                revelarTarjeta(slot, titulo);
+                slot.classList.remove("girando");
+                slot.classList.add("revelado");
+
+                slot.classList.remove("explosion");
+                void slot.offsetWidth;
+                slot.classList.add("explosion");
+                setTimeout(() => slot.classList.remove("explosion"), 800);
+            }, 1250 + indice * 350);
+        });
+
+        setTimeout(() => {
+            confeti?.classList.remove("activo");
+            void confeti?.offsetWidth;
+            confeti?.classList.add("activo");
+        }, 2450);
+    }
+
+    function actualizarContador(){
+        try{
+            const guardada = JSON.parse(localStorage.getItem(CLAVE) || "null");
+            if(guardada?.fecha){
+                const restante = Math.max(0, DURACION_24H - (Date.now() - guardada.fecha));
+                const horas = Math.floor(restante / 3600000);
+                const minutos = Math.floor((restante % 3600000) / 60000);
+                contador.textContent = `⏳ Próximo cambio en ${horas}h ${minutos}min`;
+            }
+        }catch(error){}
+    }
+
+    let juegosActuales = obtenerJuegos();
+
+    // Importante: al cargar la página NO se muestran las tarjetas.
+    // Solo se revelan al pulsar GIRAR RULETA.
+    slots.forEach(limpiarSlot);
+    actualizarContador();
+
+    boton.addEventListener("click", () => {
+        if (boton.disabled) return;
+
+        boton.disabled = true;
+        boton.textContent = "🎰 GIRANDO...";
+        mostrarJuegos(juegosActuales, true);
+
+        setTimeout(() => {
+            boton.disabled = false;
+            boton.textContent = "🎲 GIRAR RULETA";
+        }, 3000);
+    });
+
+    setInterval(() => {
+        const guardados = obtenerSeleccionGuardada();
+        if(!guardados){
+            juegosActuales = crearNuevaSeleccion();
+            slots.forEach(limpiarSlot);
+        }
+        actualizarContador();
+    }, 60000);
+})();
+
 </script>
 
 </body>
